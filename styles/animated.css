@@ -1,0 +1,127 @@
+
+.ai-anonymity-section {
+  background-color: #25222B;
+  border-radius: 30px;
+  color: #fff;
+  padding: 60px 30px;
+  max-width: 1120px;
+  margin: 40px auto; /* <-- This centers it horizontally */
+}
+
+.ai-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f177cd;
+  position: relative;
+}
+
+
+.arrow-icon-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+/* Vertical line under the icon */
+.arrow-icon-img::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 350px;
+  background: linear-gradient(to bottom, #f177cd, transparent);
+  border-radius: 2px;
+}
+
+/* Heading text */
+.highlight {
+  margin-left: 20px;
+  color: #f177cd;
+  display: inline-block;
+}
+
+.ai-text h2 {
+  color: #ff7cec;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.arrow-icon {
+  font-size: 22px;
+  margin-right: 8px;
+}
+
+.highlight {
+  color: #ff7cec;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.ai-features li {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 16px;
+  font-size: 17px;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+}
+
+.check-icon-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 25px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* ===== Animated Floating Images ===== */
+.positioned-img {
+  position: absolute;
+}
+
+.float1 {
+  top: 0;
+  right: -50px;
+  animation: floatY 2s ease-in-out infinite alternate;
+}
+
+.float2 {
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  animation: floatZoom 2s ease-in-out infinite alternate;
+}
+
+.float3 {
+  bottom: 0;
+  left: 0;
+  animation: floatYReverse 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatY {
+  0% { transform: translateY(100px); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes floatYReverse {
+  0% { transform: translateY(-30px); }
+  100% { transform: translateY(30px); }
+}
+
+@keyframes floatZoom {
+  0% { transform: translateX(-50%) scale(1.1); }
+  100% { transform: translateX(-50%) scale(0.9); }
+}
+
+
