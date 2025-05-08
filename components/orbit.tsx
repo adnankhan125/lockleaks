@@ -2,12 +2,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import orbit1tele from '../public/images/telegram.png';
-import orbit1X from '../public/images/x.png';
-import orbit2only from '../public/images/only.png';
-import orbit2e from '../public/images/e.png';
-import orbit3eye from '../public/images/eye.png';
-import orbitrobo from '../public/images/robo.png';
+import orbit1tele from '../public/images/tele.svg';
+import orbit1X from '../public/images/xx.svg';
+import orbit2only from '../public/images/only.svg';
+import orbit2e from '../public/images/e.svg';
+import orbit3eye from '../public/images/dis.svg';
+import orbitrobo from '../public/images/robo.svg';
+import orbitgoogle from '../public/images/google.svg';
 import centerkey from '../public/images/key.png';
 import starts from '../public/images/Vector.png';
 // import bg from '../public/images/bg.png';
@@ -46,23 +47,23 @@ export default function Home() {
       {/* Orbit 1 */}
       <div className="orbit orbit-1">
         <div className="orbit-ring orbit-ring-1"></div>
-        <Image src={orbit1tele} className="planet orbit-1-p1" alt="icon1" />
-        <Image src={orbit1X} className="planet orbit-1-p2" alt="icon2" />
+        <Image src={orbit2only} className="planet orbit-1-p1" alt="icon1" />
+        <Image src={orbit2e} className="planet orbit-1-p2" alt="icon2" />
       </div>
 
       {/* Orbit 2 */}
       <div className="orbit orbit-2">
         <div className="orbit-ring orbit-ring-2"></div>
-        <Image src={orbit2only} className="planet orbit-2-p1" alt="icon3" />
-        <Image src={orbit2e} className="planet orbit-2-p2" alt="icon4" />
+        <Image src={orbit1tele} className="planet orbit-2-p1" alt="icon3" />
+        <Image src={orbit1X} className="planet orbit-2-p2" alt="icon4" />
       </div>
 
       {/* Orbit 3 */}
       <div className="orbit orbit-3">
         <div className="orbit-ring orbit-ring-3"></div>
-        <Image src={orbit3eye} className="planet orbit-3-p1" alt="icon5" />
+        <Image src={orbitrobo} className="planet orbit-3-p1" alt="icon5" />
         <Image src={orbit3eye} className="planet orbit-3-p2" alt="icon6" />
-        <Image src={orbitrobo} className="planet orbit-3-p3" alt="icon7" />
+        <Image src={orbitgoogle} className="planet orbit-3-p3" alt="icon7" />
       </div>
 
       {/* Center Content */}

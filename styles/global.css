@@ -18,8 +18,8 @@ body::before {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background: rgba(255, 0, 255, 0.3); /* Pink color */
-  filter: blur(40px); /* Circular blur effect */
+  background: rgba(255, 0, 255, 0.3); 
+  filter: blur(40px);
   animation: moveCircle 10s linear infinite;
 }
 
@@ -31,8 +31,8 @@ body::after {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: rgba(255, 0, 255, 0.3); /* Pink color */
-  filter: blur(40px); /* Circular blur effect */
+  background: rgba(255, 0, 255, 0.3); 
+  filter: blur(40px); 
   animation: moveCircle2 12s linear infinite;
 }
 
@@ -64,6 +64,17 @@ body::after {
     top: 40%;
     left: 60%;
   }
+}
+
+
+/* styles/global.css */
+body {
+  font-family: 'Inter', sans-serif; /* Apply Inter font to headings */
+}
+
+h1, h2, h3, h4, h5, h6, a {
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font globally */
+
 }
 
 
@@ -189,102 +200,18 @@ body::after {
     padding-top: 10px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== Colors and Buttons ===== */
-.text-pink {
-  color: #f75ef2 !important;
-}
-
-.text-purple {
-  color: #d26dff !important;
-}
-
-.btn-pink {
-  background-color: #e24ee9;
-  color: white;
-  border-radius: 8px;
-  border: none;
-  font-weight: 600;
-  padding: 12px 25px;
-  transition: 0.3s ease;
-}
-
-.btn-pink:hover {
-  background-color: #c63ccf;
-}
-
-/* ===== Layout for Visual Section ===== */
-.protect-visual-section {
-  background-color: #0d0b14;
-}
-
-/* ===== Image Stack Styling ===== */
-.image-stack {
-  position: relative;
-  width: 250px;
-  height: 400px;
-}
-
-/* All stacked images are absolutely positioned */
-.positioned-img {
-  position: absolute;
-}
-/* ===== Individual Image Positions and Animations ===== */
-
-/* FACE: top-right */
-.float1 {
-  position: absolute;
-  top: 0;
-  right: -80px;
-  animation: floatY 2s ease-in-out infinite alternate;
-}
-
-/* PHONE: centered */
-.float2 {
-  position: absolute;
-  top: 130px;
-  left: 70%;
-  transform: translateX(-50%) scale(1);
-  animation: floatZoom 2s ease-in-out infinite alternate;
-}
-
-/* HAND: bottom-left */
-.float3 {
-  position: absolute;
-  bottom: 0;
-  left: 10px;
-  animation: floatYReverse 2s ease-in-out infinite alternate;
-}
-
-/* === Shared Float Animations === */
-@keyframes floatY {
-  0% { transform: translateY(149px); }
-  100% { transform: translateY(-10px); }
-}
-
-@keyframes floatYReverse {
-  0% { transform: translateY(-80px); }
-  100% { transform: translateY(35px); }
-}
-
-/* Mobile Zoom Sync Animation */
-@keyframes floatZoom {
-  0% {
-    transform: translateX(-50%) scale(1.1); /* Zoom In */
-  }
-  100% {
-    transform: translateX(-50%) scale(0.9); /* Zoom Out */
+@media (max-width: 768px) {
+  body::before,
+  body::after {
+    display: none;
+    content: none;
   }
 }
+
+
+
+
+
+
+
 

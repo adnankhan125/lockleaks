@@ -1,0 +1,92 @@
+/* styles/CallToAction.css */
+
+.ctaContainer {
+  position: relative;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  background: url('/images/cta-bg.png') center/cover no-repeat;
+  border-radius: 24px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto 50px;
+  padding: 40px 60px;
+  display: flex;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.ctaContainer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding: 2px;
+  border-radius: 24px;
+  background: linear-gradient(to bottom, #D268C4, #4B414D);
+  z-index: -1;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+
+
+  
+  .ctaContent {
+    text-align: center;
+  }
+  
+  .lockIcon {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 20px;
+  }
+  
+  .ctaContent h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFCCF8;
+}
+  
+.ctaContent p {
+    margin-bottom: 32px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #a0a0a0;
+}
+  
+  .ctaButtons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .ctaButton {
+    background-color: #C52BAF;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: 1px solid #C52BAF; /* Border for the button */
+  }
+  
+  .ctaButton:hover {
+    background-color: #e62f91;
+  }
+  
+  .agencyButton {
+    background-color: transparent;
+    border: 2px solid #f238aa;
+    color: #ffffff;
+  }
+  
+  .agencyButton:hover {
+    background-color: #f238aa;
+    color: white;
+  }
+  

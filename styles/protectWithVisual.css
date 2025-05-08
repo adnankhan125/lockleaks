@@ -1,0 +1,116 @@
+/* Section styling */
+.protection-section {
+  position: relative;
+  background-color: #1d1d1f;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Right Container for image stack */
+.right-image-stack {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+/* Styling for images in right section */
+.right-positioned-img {
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+/* Detected Leaks Section */
+.detected-leaks-count {
+  text-align: center;
+  color: #fff;
+  background-color: #ce82c3;
+  padding: 8px 15px;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px 15px 0px 0px;
+}
+
+.detected-leaks-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.count {
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.percentage {
+  color: #000;
+  background-color: #f9b1ff;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  margin-top: 0;
+  padding: 1px;
+  font-size: 13px;
+}
+
+
+/* Positioning for the images in right section */
+.right-positioned-img.animation-left {
+    animation: 3s ease-in-out infinite alternate moveTopToBottomRight;
+    top: 35%;
+    left: 7%;
+}
+
+.right-positioned-img.animation-center {
+  top: 50%;
+  left: 45%;
+  animation: moveTopToBottomRight 3s ease-in-out infinite alternate;
+}
+
+.right-positioned-img.animation-right {
+  top: 65%;
+  left: 25%;
+  animation: moveBottomToTopRight 3s ease-in-out infinite alternate;
+}
+
+.right-positioned-img.animation-right2 {
+  top: 32%;
+  left: 75%;
+  animation: moveBottomToTopRight 3s ease-in-out infinite alternate;
+}
+
+.right-positioned-img.animation-right3 {
+  top: 70%;
+  left: 65%;
+  animation: moveBottomToTopRight 3s ease-in-out infinite alternate;
+}
+
+/* Top to Bottom Animation (Right Section) */
+@keyframes moveTopToBottomRight {
+  0% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Bottom to Top Animation (Right Section) */
+@keyframes moveBottomToTopRight {
+  0% {
+    transform: translateY(30px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+

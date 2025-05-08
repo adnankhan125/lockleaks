@@ -61,7 +61,7 @@ export default function AiAnonymitySection() {
             <div className="image-stack position-relative" style={{ width: '250px', height: '400px' }}>
               <Image src={face} alt="Face" className="positioned-img float1" width={180} />
               <Image src={phone} alt="Phone" className="positioned-img float2" width={100} />
-              <Image src={hand} alt="Hand" className="positioned-img float3" width={160} />
+              <Image src={hand} alt="Hand" className="positioned-img float3" width={200} />
             </div>
           </div>
 

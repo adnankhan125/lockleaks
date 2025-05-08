@@ -1,7 +1,7 @@
-// next.config.js
+// next.config.ts
 module.exports = {
-  reactStrictMode: true,
-  experimental: {
-    appDir: false, // Disable App Directory
-  },
-}
+  // Remove or comment out the appDir configuration
+  // experimental: {
+  //   appDir: true,
+  // },
+};
