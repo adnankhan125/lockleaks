@@ -1,4 +1,10 @@
 /* styles/footer.css */
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
 .custom-footer {
     background-color: transparent !important; /* Makes the footer background transparent */
     color: white; /* Ensures text remains white */

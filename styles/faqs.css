@@ -87,3 +87,10 @@
   right: 80px;
   top: 50%;
 }
+
+
+@media (max-width: 766.98px) {
+.faq-heading {
+    font-size: 30px;
+}
+}

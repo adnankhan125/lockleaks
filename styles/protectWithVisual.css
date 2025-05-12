@@ -114,3 +114,20 @@
   }
 }
 
+@media (max-width: 766.98px) {
+
+.detected-leaks-count {
+    top: 50%;
+    left: 45% !important;
+}
+.right-positioned-img.animation-left {
+    left: -11% !important;
+}
+.right-positioned-img.animation-right{
+    left: 6% !important;
+}
+.right-positioned-img.animation-center {
+    top: 65% !important; 
+    left: 38% !important;
+}
+}

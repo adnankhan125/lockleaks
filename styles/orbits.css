@@ -14,6 +14,34 @@
 .orbit, .orbit-center-content {
   /* z-index: 2; */
 }
+/* Buttons */
+.btn-login-1 {
+  background-color: black;
+  color: white;
+  border: 1px solid #c52baf;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-login-1:hover {
+  background-color: #1a1a1a;
+}
+
+.btn-start-1 {
+  background-color: #c52baf;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-start-1:hover {
+  background-color: #c52baf;
+}
 
 .orbit-section {
   position: relative;
@@ -195,3 +223,31 @@
   color: rgba(255, 255, 255, 0.75);
   margin-top: 8px;
 }
+
+
+@media (max-width: 766.98px) {
+    .orbit-section {
+        height: 75vh !important;
+        padding-top: 185px !important;
+        padding-bottom: 0px !important;
+        overflow: hidden !important;
+    }
+    .orbit-top-banner {
+    left: 0% !important;
+    transform: translateX(-0%) !important;
+}
+ 
+  .orbit-1-p1,
+  .orbit-1-p2,
+  .orbit-2-p1,
+  .orbit-2-p2,
+  .orbit-3-p1,
+  .orbit-3-p2,
+  .orbit-3-p3 {
+    display: none !important;
+  }
+  .orbit {
+    display: none !important;
+}
+}
+

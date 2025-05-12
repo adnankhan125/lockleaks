@@ -12,7 +12,7 @@ import facebookIcon from '../public/icons/facebook.png';
 export default function Footer() {
   return (
     <footer className="custom-footer text-white pt-5 pb-3">
-      <div className="container">
+      <div className="footer container">
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
           {/* Logo and Social Icons */}
           <div className="text-center text-md-start mb-3 mb-md-0">

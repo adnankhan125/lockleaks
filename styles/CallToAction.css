@@ -89,4 +89,18 @@
     background-color: #f238aa;
     color: white;
   }
-  
+
+@media (max-width: 766.98px) {
+  .ctaContainer {
+  padding: 40px 30px !important;
+}
+.ctaContent h2 {
+    font-size: 18px !important;
+}
+.ctaContent p {
+    font-size: 17px !important;
+    line-height: 1.1em !important;
+}
+
+
+}

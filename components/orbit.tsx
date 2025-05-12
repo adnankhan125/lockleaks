@@ -69,9 +69,9 @@ export default function Home() {
       {/* Center Content */}
       <div className="orbit-center-content text-center">
         <Image src={centerkey} alt="Center Icon" className="center-icon" />
-        <div className="center-buttons mt-3">
-          <button className="btn-start me-2">Explore</button>
-          <button className="btn-login">Learn More</button>
+        <div className="center-buttons-orbit mt-3">
+          <button className="btn-start-1 me-2">Explore</button>
+          <button className="btn-login-1">Learn More</button>
         </div>
       </div>
     </section>

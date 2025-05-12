@@ -1,86 +1,100 @@
-// components/testimonial.js
-import { useState } from 'react';
+// components/testimonial.tsx
 import Image from 'next/image';
-import '../styles/testimonial.css';  // Import the global CSS file
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import '../styles/testimonial.css';
 
 const testimonials = [
   {
     name: "Lorem Ipsum One",
     role: "CEO",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/images/person.png", // Path to image, replace with actual image URL
+    image: "/images/person.png",
   },
   {
     name: "Lorem Ipsum Two",
     role: "CEO",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/images/person.png", // Path to image, replace with actual image URL
+    image: "/images/person.png",
   },
   {
     name: "Lorem Ipsum Three",
     role: "CEO",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/images/person.png", // Path to image, replace with actual image URL
+    image: "/images/person.png",
+  },
+  {
+    name: "Lorem Ipsum Four",
+    role: "CEO",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "/images/person.png",
   },
 ];
 
 const Testimonial = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
     <section className="testimonialSection">
       {/* Heading Section */}
-      <div className="heading">
+      <div className="testimonialHeading">
+        <h5>Testimonials</h5>
         <h2>Trusted by Creators</h2>
         <p>Real Stories, Real Protection</p>
       </div>
 
       {/* Customer Count Section */}
       <div className="customerCountSection">
-      <Image 
+        <div className="customerCount">
+          <Image 
             src="/images/people-icon.png" 
             alt="Happy customers" 
             width={315} 
             height={52} 
           />
+        </div>
       </div>
 
-      {/* Testimonial Slider */}
-      <div className="slider">
-        <div className="testimonialCard">
-          <p className="testimonialText">
-            "{testimonials[currentIndex].text}"
-          </p>
-          <div className="testimonialAuthor">
-            <Image
-              src={testimonials[currentIndex].image}
-              alt={testimonials[currentIndex].name}
-              width={50}
-              height={50}
-              className="authorImage"
-            />
-            <div className="authorInfo">
-              <h4>{testimonials[currentIndex].name}</h4>
-              <p>{testimonials[currentIndex].role}</p>
+      {/* Swiper Testimonial Slider */}
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        spaceBetween={-40}
+        slidesPerView={3}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
+        pagination={{ clickable: true }}
+        loop={true}
+        centeredSlides={true}
+        slideToClickedSlide={true}
+        className="mySwiper"
+      >
+        {testimonials.map((testimonial, index) => (
+          <SwiperSlide key={index}>
+            <div className="testimonialCard">
+              <p className="testimonialText">"{testimonial.text}"</p>
+              <div className="testimonialAuthor">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  width={50}
+                  height={50}
+                  className="authorImage"
+                />
+                <div className="authorInfo">
+                  <h4>{testimonial.name}</h4>
+                  <p>{testimonial.role}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </SwiperSlide>
+        ))}
 
         {/* Navigation Buttons */}
-        <div className="navigation">
-          <button onClick={prevTestimonial} className="navButton">←</button>
-          <button onClick={nextTestimonial} className="navButton">→</button>
-        </div>
-      </div>
-
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
+      </Swiper>
     </section>
   );
 };

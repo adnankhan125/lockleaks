@@ -14,6 +14,7 @@ import Testimonial from '@/components/testimonial';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/footer';
 import Faqs from '@/components/faqs';
+import DataPrivacySection from '@/components/DataPrivacySection';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Animationsec/>
       <Animation />
       <Animationthird />
+      <DataPrivacySection />
       <Faqs />
       <Testimonial />
       <CallToAction />

@@ -167,9 +167,11 @@ h1, h2, h3, h4, h5, h6, a {
     font-size: 16px;
     margin: 5px 0;
   }
-}
+  body::before,
+  body::after {
+    display: none;
+  }
 
-@media (min-width: 768px) {
   .mobile-hamburger {
     display: none !important;
   }
@@ -177,6 +179,37 @@ h1, h2, h3, h4, h5, h6, a {
   .mobile-nav {
     display: none !important;
   }
+  .info-boxes {
+    opacity: 0;
+    transition: all .5s ease-out;
+    transform: translateY(100px);
+    margin-top: 65px;
+}
+.bubble3 {
+    top: 240px;
+    left: 36px;
+}
+.bubble2 {
+    top: 85px !important;
+    left: 63px !important;
+}
+.arrow1 {
+    display: none;
+}
+.arrow2 {
+    display: none;
+
+}
+.gradient-heading
+ {
+    font-size: 35px !important;
+    line-height: 40px !important;
+}
+.description {
+    color: #fff;
+    margin: 20px 0;
+    font-size: 16px !important;
+}
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
