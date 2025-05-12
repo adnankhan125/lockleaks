@@ -10,9 +10,11 @@ export default function ProtectionSection() {
   const [hovering, setHovering] = useState(false);
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
 
+  // Mousemove icon effect
   useEffect(() => {
     const icons = document.querySelectorAll('.right-positioned-img');
     const container = document.querySelector('.image-stack');
+
     if (!container) return;
 
     const handler = (e: MouseEvent) => {
@@ -25,12 +27,12 @@ export default function ProtectionSection() {
       });
     };
 
-    container.addEventListener('mousemove', handler);
-    return () => container.removeEventListener('mousemove', handler);
   }, []);
 
+  // Animated count increase
   useEffect(() => {
-    let interval: NodeJS.Timer;
+    let interval: ReturnType<typeof setInterval>;
+
     if (hovering && count < 135000) {
       interval = setInterval(() => {
         setCount((prev) => {
@@ -40,6 +42,7 @@ export default function ProtectionSection() {
         });
       }, 80);
     }
+
     return () => clearInterval(interval);
   }, [hovering, count]);
 
@@ -78,11 +81,10 @@ export default function ProtectionSection() {
             </div>
           </div>
 
-          {/* Right Animated Visual */}
+          {/* Right Visual */}
           <div className="col-lg-5 d-flex justify-content-center mt-4 mt-lg-0">
             <div className="right-image-stack position-relative image-stack" style={{ width: '400px', height: '400px' }}>
 
-              {/* G Icon */}
               <Image
                 src={hoveredIcon === 'g' ? "/images/hover-google.svg" : "/images/googleeee.svg"}
                 alt="G Icon"
@@ -93,7 +95,6 @@ export default function ProtectionSection() {
                 onMouseLeave={() => setHoveredIcon(null)}
               />
 
-              {/* Broken Heart */}
               <Image
                 src={hoveredIcon === 'bh' ? "/images/hover-brokenheart.svg" : "/images/brokenheart.svg"}
                 alt="Broken Heart"
@@ -104,7 +105,6 @@ export default function ProtectionSection() {
                 onMouseLeave={() => setHoveredIcon(null)}
               />
 
-              {/* Heart */}
               <Image
                 src={hoveredIcon === 'h' ? "/images/hover-heart.svg" : "/images/heart.svg"}
                 alt="Heart"
@@ -115,7 +115,6 @@ export default function ProtectionSection() {
                 onMouseLeave={() => setHoveredIcon(null)}
               />
 
-              {/* Triangle */}
               <Image
                 src={hoveredIcon === 't' ? "/images/hover-alert.svg" : "/images/alert.svg"}
                 alt="Triangle"
@@ -126,7 +125,6 @@ export default function ProtectionSection() {
                 onMouseLeave={() => setHoveredIcon(null)}
               />
 
-              {/* B Icon */}
               <Image
                 src={hoveredIcon === 'b' ? "/images/hover-b.svg" : "/images/Component 6.svg"}
                 alt="B Icon"
@@ -137,7 +135,7 @@ export default function ProtectionSection() {
                 onMouseLeave={() => setHoveredIcon(null)}
               />
 
-              {/* Count Section */}
+              {/* Leak Counter */}
               <div
                 className="detected-leaks-count"
                 onMouseEnter={() => setHovering(true)}
@@ -153,7 +151,6 @@ export default function ProtectionSection() {
 
             </div>
           </div>
-
         </div>
       </div>
     </section>
