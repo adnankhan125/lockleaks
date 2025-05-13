@@ -24,12 +24,12 @@
 }
 
 .testimonialHeading h5 {
-  border: 1px solid #e62f91;
-  border-radius: 50px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 12px 20px;
+    border: 1px solid #F33BC0;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .testimonialHeading p {
@@ -38,22 +38,22 @@
 }
 
 .testimonialCard {
-  background-color: #4b4b4b1a;
   text-align: justify;
+  opacity: 0.8;
+  background: linear-gradient(to right, #333236, #1F1D21, #333236);
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.8; /* Dim other cards */
-  transform: scale(0.8); /* Make other cards smaller */
+  transition: transform 0.3s, opacity 0.3s;
+  transform: scale(0.8);
+  box-shadow: 0 4px 10px #0000004d;
 }
 
 .swiper-slide-active .testimonialCard {
   z-index: 10;
-  background-color: #1b1b1b;
-  transform: scale(1.02); /* Make the active card larger */
-  opacity: 1; /* Make the active card fully visible */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Lift the active card */
+  opacity: 1;
+  background: linear-gradient(to right, #494949, #282828, #494949);
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px #00000080;
 }
 
 /* .swiper-button-prev, .swiper-button-next {
@@ -161,3 +161,7 @@
   margin-bottom: 30px;
 }
 
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #E46BD3;
+}

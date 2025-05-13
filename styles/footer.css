@@ -10,4 +10,15 @@
     color: white; /* Ensures text remains white */
     border: none; /* Removes any border if needed */
   }
-  
+  .btn-start-free {
+  background-color: #C52BAF;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-start-free:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #C52BAF;
+  color: #fff;
+}

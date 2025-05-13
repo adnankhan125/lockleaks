@@ -48,3 +48,10 @@
   90% { transform: translateY(-10%); }
   100% { transform: translateY(-10%); } /* Stop at the top for 10ms */
 }
+
+@media (max-width: 766.98px) {
+
+.animation-left {
+  
+    left: 180px !important;
+}}

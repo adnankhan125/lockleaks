@@ -55,10 +55,11 @@ export default function Footer() {
 
           {/* CTA Button */}
           <div className="text-center text-md-end">
-            <Link href="/start" className="btn btn-primary px-4" style={{ backgroundColor: '#c52baf', border: 'none' }}>
+            <Link href="/start" className="btn btn-start-free px-4">
               Start Free
             </Link>
           </div>
+
         </div>
 
         <hr className="border-secondary my-4" />
