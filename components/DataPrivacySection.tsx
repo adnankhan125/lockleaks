@@ -10,7 +10,7 @@ import instant from '../public/images/instant.svg';
 import takedown from '../public/images/takedown.svg';
 import curve1 from '../public/images/topcurved.svg';
 import curve2 from '../public/images/botomcurved.svg';
-import heart from '../public/images/heart.svg';
+import heart from '../public/images/bottom.svg';
 import question1 from '../public/images/question.svg';
 import question2 from '../public/images/question2.svg';
 import question3 from '../public/images/question3.svg';
@@ -57,24 +57,40 @@ export default function LockLeaksSection() {
 
             <div className="chat-bubbles">
               <div className="bubble bubble1">
-                <Image src={avatar1} alt="User" width={50} height={50} />
-                <p>Hello Lock Leaks, can you protect my content?<Image src={question1} alt="Heart" width={25} height={25} /></p>
+                <Image src={avatar1} alt="User" width={80} height={80} />
+                <p>Hello Lock Leaks, can you protect my content? <Image src={question1} alt="Heart" width={25} height={25} /></p>
               </div>
+
               <div className="arrow arrow1">
                 <Image src={curve1} alt="Arrow Curve 1" width={100} height={100} />
               </div>
+
               <div className="bubble bubble2">
-                <Image src={avatar2} alt="User" width={50} height={50} />
+                <Image src={avatar2} alt="User" width={80} height={80} />
                 <p>Thank you so much for your help! <Image src={question2} alt="Heart" width={25} height={25} /></p>
               </div>
+
               <div className="arrow arrow2">
                 <Image src={curve2} alt="Arrow Curve 2" width={120} height={120} />
               </div>
+
               <div className="bubble bubble3">
-                <Image src={avatar3} alt="User" width={50} height={50} />
+                <Image src={avatar3} alt="User" width={80} height={80} />
                 <p>Thank you so much for your help! <Image src={question3} alt="Heart" width={25} height={25} /></p>
               </div>
-            </div>
+
+      {/* Top-left hover image */}
+      <div className="hover-image-wrapper">
+        <Image
+          src={heart}
+          alt="Hover Icon"
+          width={20}
+          height={20}
+          className="hover-image"
+        />
+      </div>
+    </div>
+
           </div>
 
           {/* Right Boxes */}

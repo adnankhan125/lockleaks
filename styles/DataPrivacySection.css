@@ -36,15 +36,18 @@
 }
 
 .start-btn {
-  background-color: #d84dd3;
+  background-color: #C52BAF;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 30px;
   font-weight: bold;
   border-radius: 8px;
   margin-bottom: 30px;
 }
-
+.start-btn:hover {
+  background-color: #b13cad00;
+  border: 1px solid #d84dd3;
+}
 .chat-bubbles {
   position: relative;
   margin-top: 30px;
@@ -101,17 +104,23 @@
 }
 
 .bubble {
-    color: #fff;
-    background: linear-gradient(to right, #242426 0%, #1d1b22 50%, #ff52c254 100%);
+    color: #A8A7A8;
+    background: linear-gradient(to right, #242426 0%, #282127 50%, #ff52c254 100%);
     border-radius: 12px;
     align-items: center;
     width: 263px;
-    padding: 10px;
+    padding: 0px;
     font-size: 14px;
     display: flex;
     position: absolute;
     box-shadow: 0 0 10px #ffffff0d;
     border: 2px solid #393539;
+}
+    .chat-bubbles .bubble p {
+    margin-bottom: 5px;
+    line-height: 15px;
+    margin-top: 5px !important;
+    padding-right: 10px;
 }
 
 .bubble img {
@@ -121,10 +130,10 @@
 .bubble1 {
   top: -34;
   left: 0;
-  transform: rotate(-20deg);}
+  transform: rotate(-12deg);}
 
 .bubble2 {
-  top: 70px;
+  top: 85px;
   left: 270px;
   transform: rotate(10deg);
 }
@@ -132,7 +141,7 @@
 .bubble3 {
     top: 240px;
     left: 36px;
-    transform: rotate(-30deg);
+    transform: rotate(-22deg);
 }
 
 /* Arrow images between bubbles */
@@ -142,23 +151,24 @@
 }
 
 .arrow1 {
-  top: -46px;
-  left: 255px;
+    top: -27px;
+    left: 265px;
 }
 
-.arrow2
- {
-    top: 135px;
-    left: 281px;
-  }
+.arrow2 {
+    transition: all .5s;
+    top: 155px;
+    left: 290px;
+}
 
 
 .chat-bubbles:hover .arrow2 {
-  top: 155px;
-  left: 290px;
-  transform: rotate(-20deg);
-  transition: all 500ms ease;
+    transition: all .5s;
+    top: 157px;
+    left: 290px;
+    transform: rotate(-16deg);
 }
+
 
 .chat-bubbles .bubble {
   transition: all 500ms ease;
@@ -171,7 +181,7 @@
   transform: rotate(0deg);}
 
   .chat-bubbles:hover .bubble2 {
-    top: 70px;
+    top: 75px;
   left: 270px;
   transform: rotate(0deg);}
 
@@ -190,4 +200,22 @@
 .info-boxes.reveal {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+.chat-bubbles {
+  position: relative;
+}
+
+.hover-image-wrapper {
+    padding: 10px;
+    transition: all .5s;
+    position: absolute;
+    bottom: 57px;
+    right: 53px;
+}
+
+/* Animate image only when chat-bubbles is hovered */
+.chat-bubbles:hover .hover-image-wrapper {
+  transform: translateY(80%);
 }

@@ -38,6 +38,19 @@ body::after {
   z-index: -1;
   /* animation: moveCircle2 12s linear infinite; */
 }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #F7B9E5;
+  border-radius: 10px;
+}
 
 
 @keyframes moveCircle {

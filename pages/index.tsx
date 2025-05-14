@@ -7,8 +7,8 @@ import '../styles/faqs.css';
 // Components
 import Header from '@/components/header';
 import Orbit from '@/components/orbit';
-import Animation from '@/components/animation';
-import Animationsec from '@/components/protectWithVisual'
+// import Animation from '@/components/animation';
+import ProtectSection from '@/components/ProtectContentSection'
 import Animationthird from '@/components/animationthird';
 import Testimonial from '@/components/testimonial';
 import CallToAction from '@/components/CallToAction';
@@ -21,8 +21,8 @@ export default function Home() {
     <>
       <Header />
       <Orbit />
-      <Animationsec/>
-      <Animation />
+      {/* <Animationsec/> */}
+      <ProtectSection />
       <Animationthird />
       <DataPrivacySection />
       <Faqs />
