@@ -37,6 +37,7 @@
 
 .start-btn {
   background-color: #C52BAF;
+  border: 1px solid #d84dd3 !important;
   color: white;
   border: none;
   padding: 10px 30px;
@@ -128,7 +129,7 @@
     margin-left: 3px;
 }
 .bubble1 {
-  top: -34;
+  top: -34 !important;
   left: 0;
   transform: rotate(-12deg);}
 

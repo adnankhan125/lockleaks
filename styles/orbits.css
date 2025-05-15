@@ -23,6 +23,7 @@
 /* Start Free Button */
 .btn-start-1 {
   background-color: #c52baf;
+  border: 1px solid #c52baf !important;
   color: white;
   border: none;
   padding: 8px 40px;
@@ -283,10 +284,11 @@
     margin-top: 40px;
 }
 .piracy-heading {
-    font-size: 30px !important;
-}
+        font-size: 30px !important;
+        line-height: 32px;
+    }
 .piracy-subtext{
-    font-size: 18px !important;
+    font-size: 14px !important;
     margin-bottom: 10px !important;
 }
 }

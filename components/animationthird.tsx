@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import face from '../public/images/Face.png';
+import face from '../public/images/Face.svg';
 import phone from '../public/images/Mobile.png';
 import hand from '../public/images/hand.png';
 import icon from '../public/images/your-icon.png';
@@ -19,6 +19,7 @@ export default function FullFeaturesSection() {
   const [count, setCount] = useState(100000);
   const [hovering, setHovering] = useState(false);
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
+  const [isHovered, setIsHovered] = useState(false); // for animation pause + scale
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
@@ -54,7 +55,6 @@ export default function FullFeaturesSection() {
 
       {/* Overlap Section Container */}
       <div className="overlap-wrapper">
-
         {/* Section 1 */}
         <section className="ai-anonymity-section overlap-section">
           <div className="container">
@@ -88,29 +88,36 @@ export default function FullFeaturesSection() {
                 </div>
               </div>
               <div className="col-lg-5 d-flex justify-content-center mt-4 mt-lg-0">
-                <div className="right-image-stack position-relative image-stack" style={{ width: '400px', height: '400px' }}>
+                <div
+                  className={`right-image-stack position-relative image-stack ${isHovered ? 'pause-animations' : ''}`}
+                  style={{ width: '400px', height: '400px' }}
+                  onMouseEnter={() => {
+                    setIsHovered(true);
+                    setTimeout(() => setIsHovered(false), 1000);
+                  }}
+                >
                   <Image
                     src={hoveredIcon === 'g' ? '/images/hover-google.svg' : '/images/googleeee.svg'}
                     alt="G Icon"
-                    className="right-positioned-img animation-left"
+                    className={`right-positioned-img animation-left ${isHovered ? 'hover-expand' : ''}`}
                     width={100}
                     height={100}
                     onMouseEnter={() => setHoveredIcon('g')}
                     onMouseLeave={() => setHoveredIcon(null)}
                   />
                   <Image
-                    src={hoveredIcon === 'bh' ? '/images/hover-brokenheart.svg' : '/images/brokenheart.svg'}
+                    src={hoveredIcon === 'bh' ? '/images/hover-heart.svg' : '/images/heart.svg'}
                     alt="Broken Heart"
-                    className="right-positioned-img animation-center"
+                    className={`right-positioned-img animation-center ${isHovered ? 'hover-expand' : ''}`}
                     width={80}
                     height={80}
                     onMouseEnter={() => setHoveredIcon('bh')}
                     onMouseLeave={() => setHoveredIcon(null)}
                   />
                   <Image
-                    src={hoveredIcon === 'h' ? '/images/hover-heart.svg' : '/images/heart.svg'}
+                    src={hoveredIcon === 'h' ? '/images/hover-brokenheart.svg' : '/images/brokenheart.svg'}
                     alt="Heart"
-                    className="right-positioned-img animation-right"
+                    className={`right-positioned-img animation-right ${isHovered ? 'hover-expand' : ''}`}
                     width={100}
                     height={100}
                     onMouseEnter={() => setHoveredIcon('h')}
@@ -119,7 +126,7 @@ export default function FullFeaturesSection() {
                   <Image
                     src={hoveredIcon === 't' ? '/images/hover-alert.svg' : '/images/alert.svg'}
                     alt="Triangle"
-                    className="right-positioned-img animation-right2"
+                    className={`right-positioned-img animation-right2 ${isHovered ? 'hover-expand' : ''}`}
                     width={70}
                     height={70}
                     onMouseEnter={() => setHoveredIcon('t')}
@@ -128,12 +135,13 @@ export default function FullFeaturesSection() {
                   <Image
                     src={hoveredIcon === 'b' ? '/images/hover-b.svg' : '/images/Component 6.svg'}
                     alt="B Icon"
-                    className="right-positioned-img animation-right3"
+                    className={`right-positioned-img animation-right3 ${isHovered ? 'hover-expand' : ''}`}
                     width={90}
                     height={90}
                     onMouseEnter={() => setHoveredIcon('b')}
                     onMouseLeave={() => setHoveredIcon(null)}
                   />
+
                   <div
                     className="detected-leaks-count"
                     onMouseEnter={() => setHovering(true)}

@@ -9,7 +9,7 @@ import orbit2e from '../public/images/e.svg';
 import orbit3eye from '../public/images/dis.svg';
 import orbitrobo from '../public/images/robo.svg';
 import orbitgoogle from '../public/images/google.svg';
-import centerkey from '../public/images/key.png';
+import centerkey from '../public/images/key.svg';
 import starts from '../public/images/Vector.png';
 // import bg from '../public/images/bg.png';
 import 'bootstrap/dist/css/bootstrap.min.css';

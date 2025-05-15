@@ -12,6 +12,7 @@
   }
   .btn-start-free {
   background-color: #C52BAF;
+  border: 1px solid #C52BAF !important;
   border: none;
   color: #fff;
   transition: all 0.3s ease;

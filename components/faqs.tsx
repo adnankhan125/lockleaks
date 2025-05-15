@@ -21,8 +21,8 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="faq-section position-relative py-5">
-      {/* Stars */}
+    <>
+      {/* Fixed Stars Outside Section */}
       <Image
         src={starts}
         width={20}
@@ -38,39 +38,41 @@ export default function FaqSection() {
         className="star star-right"
       />
 
-      <div className="container">
-        <div className="d-flex justify-content-between align-items-center mb-4">
-          <h2 className="faq-heading">Frequency Asked Questions</h2>
-          <a href="#" className="read-all-link">Read all FAQs</a>
-        </div>
+      <section className="faq-section py-5">
+        <div className="container">
+          <div className="d-flex justify-content-between align-items-center mb-4">
+            <h2 className="faq-heading">Frequency Asked Questions</h2>
+            <a href="#" className="read-all-link">Read all FAQs</a>
+          </div>
 
-        <div className="faq-list">
-          {faqs.map((question, index) => (
-            <div
-              className="faq-item"
-              key={index}
-              onClick={() => toggleFaq(index)}
-            >
-              <div className="faq-question">
-                {question}
-                <span className="faq-icon">
-                  <Image
-                    src={openIndex === index ? minusIcon : plusIcon}
-                    alt="Toggle Icon"
-                    width={30}
-                    height={30}
-                  />
-                </span>
-              </div>
-              {openIndex === index && (
-                <div className="faq-answer">
-                  <p>This is a sample answer for: <strong>{question}</strong>. Replace this with real FAQ content.</p>
+          <div className="faq-list">
+            {faqs.map((question, index) => (
+              <div
+                className="faq-item"
+                key={index}
+                onClick={() => toggleFaq(index)}
+              >
+                <div className="faq-question">
+                  {question}
+                  <span className="faq-icon">
+                    <Image
+                      src={openIndex === index ? minusIcon : plusIcon}
+                      alt="Toggle Icon"
+                      width={30}
+                      height={30}
+                    />
+                  </span>
                 </div>
-              )}
-            </div>
-          ))}
+                {openIndex === index && (
+                  <div className="faq-answer">
+                    <p>This is a sample answer for: <strong>{question}</strong>. Replace this with real FAQ content.</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

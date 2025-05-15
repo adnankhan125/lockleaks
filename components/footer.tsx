@@ -2,12 +2,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import '../styles/footer.css';  // Import the CSS file
-import logo from '../public/images/lockleaks.png';
-import xIcon from '../public/icons/x.png';
-import instagramIcon from '../public/icons/instagram.png';
-import tiktokIcon from '../public/icons/tiktok.png';
-import redditIcon from '../public/icons/reddit.png';
-import facebookIcon from '../public/icons/facebook.png';
+import logo from '../public/images/lockleaks.svg';
+import xIcon from '../public/icons/twitter.svg';
+import instagramIcon from '../public/icons/instagram.svg';
+import tiktokIcon from '../public/icons/tiktok.svg';
+import redditIcon from '../public/icons/reddit.svg';
+import facebookIcon from '../public/icons/facebook.svg';
 
 export default function Footer() {
   return (

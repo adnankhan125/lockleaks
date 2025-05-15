@@ -47,7 +47,7 @@ const Testimonial = () => {
       <div className="customerCountSection">
         <div className="customerCount">
           <Image 
-            src="/images/people-icon.png" 
+            src="/images/people-icon.svg" 
             alt="Happy customers" 
             width={315} 
             height={52} 
