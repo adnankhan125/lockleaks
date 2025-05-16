@@ -1,6 +1,34 @@
 
 /* Start orbit Section */
 
+.orbit-section::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: #2A102A;
+  filter: blur(30px);
+  z-index: -1;
+}
+
+.orbit-section::after {
+  content: "";
+  position: absolute;
+  top: 56%;
+  left: 53%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #2A102A;
+  filter: blur(30px);
+  z-index: -1;
+}
+
+
+
 .orbit-bg-image {
   position: absolute;
   top: 0;

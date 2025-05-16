@@ -46,11 +46,12 @@ export default function Footer() {
           {/* Menu Links */}
           <div className="text-center mb-3 mb-md-0">
             <ul className="list-unstyled d-flex gap-4 mb-0">
-              <li><Link href="/services" className="text-white text-decoration-none">Services</Link></li>
-              <li><Link href="/pricing" className="text-white text-decoration-none">Pricing</Link></li>
-              <li><Link href="/agencies" className="text-white text-decoration-none">Agencies</Link></li>
-              <li><Link href="/blog" className="text-white text-decoration-none">Blog</Link></li>
+              <li><Link href="/services" className="text-white text-decoration-none nav-link-custom">Services</Link></li>
+              <li><Link href="/pricing" className="text-white text-decoration-none nav-link-custom">Pricing</Link></li>
+              <li><Link href="/agencies" className="text-white text-decoration-none nav-link-custom">Agencies</Link></li>
+              <li><Link href="/blog" className="text-white text-decoration-none nav-link-custom">Blog</Link></li>
             </ul>
+
           </div>
 
           {/* CTA Button */}

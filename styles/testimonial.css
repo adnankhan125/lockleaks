@@ -165,3 +165,30 @@
 .swiper-button-next:hover {
   background-color: #E46BD3;
 }
+
+
+@media (max-width: 766.98px) {
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: var(--swiper-pagination-bottom, 8px);
+    top: var(--swiper-pagination-top, auto);
+    width: 100%;
+    left: 0;
+    display: none;
+}
+.swiper-button-prev {
+    left: 36%;
+}
+.swiper-button-next {
+    right: 36%;
+}
+.testimonialHeading h2 {
+    font-size: 28px;
+}
+.testimonialHeading p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.testimonialSection {
+    padding: 10px 10px;
+}
+}

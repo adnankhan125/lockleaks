@@ -101,4 +101,12 @@
   .faq-heading {
     font-size: 30px;
   }
+  .faq-question {
+    justify-content: left;
+    align-items: left;
+    font-size: 18px;
+    display: flex;
+    text-align: left;
+    line-height: 1.4em;
+}
 }

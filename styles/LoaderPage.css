@@ -49,11 +49,9 @@
 .sprinkle {
   position: absolute;
   top: -20px;
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 15px;
   background-color: #864380;
-  border-radius: 50%;
-  opacity: 0.8;
   animation-name: sprinkleFall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;

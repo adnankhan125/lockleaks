@@ -147,6 +147,18 @@
  {
     right: -47px !important;
 }
+ .overlap-section {
+        margin-top: -5px;
+    }
+    .overlap-section {
+  position: inherit !important;
+
+}
+.arrow-icon-img:after {
+    height: 120px !important;
+ 
+}
+
 }
 .overlap-wrapper {
   position: relative;
@@ -174,8 +186,4 @@
   z-index: 4;
 }
 
-@media (max-width: 768px) {
-  .overlap-section {
-    margin-top: -120px;
-  }
-}
+   

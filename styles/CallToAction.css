@@ -113,7 +113,7 @@ background: linear-gradient(to bottom, #5c1a4e 15%, #5c1a4e 85%, #2C1029 100%);
     line-height: 1.1em !important;
   }
 
-  .ctaButton {
-    padding: 8px 35px !important;
-  }
+      .ctaButton {
+        padding: 8px 32px !important;
+    }
 }
