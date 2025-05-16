@@ -10,7 +10,7 @@
 }
 
 .animation-left {
-  animation: moveTopToBottom 2s ease-in-out infinite alternate;
+  animation: moveTopToBottom 1s ease-in-out infinite alternate;
   z-index: 2;
   top: 38%;
   left: 200px;
@@ -24,29 +24,58 @@
 }
 
 .animation-right {
-  animation: moveBottomToTop 2s ease-in-out infinite alternate;
+  animation: moveBottomToTop 1s ease-in-out infinite alternate;
   z-index: 2;
   top: 38%;
   left: -50px;
 }
 
-/* Add pause effect at the top/bottom */
 @keyframes moveTopToBottom {
-  0% { transform: translateY(-10%); }
-  90% { transform: translateY(0%); }
-  100% { transform: translateY(0%); } /* Stop at the bottom for 10ms */
+  0%   { transform: translateY(-20%); }
+  80%  { transform: translateY(0%); }
+  100% { transform: translateY(0%); } /* Pause 1s at bottom */
 }
 
 @keyframes moveCenterVertical {
-  0% { transform: translateY(-5%); }
-  90% { transform: translateY(5%); }
-  100% { transform: translateY(5%); } /* Stop at the top/bottom for 10ms */
+  0%   { transform: translateY(-5%); }   /* Top pause starts */
+  16.66% { transform: translateY(-5%); } /* Top pause ends */
+  50%  { transform: translateY(5%); }    /* Reached bottom */
+  66.66% { transform: translateY(5%); }  /* Bottom pause ends */
+  100% { transform: translateY(-5%); }   /* Back to top */
 }
 
+
 @keyframes moveBottomToTop {
-  0% { transform: translateY(0%); }
-  90% { transform: translateY(-10%); }
-  100% { transform: translateY(-10%); } /* Stop at the top for 10ms */
+  0%   { transform: translateY(0%); }
+  80%  { transform: translateY(-20%); }
+  100% { transform: translateY(-20%); } /* Pause 1s at top */
+}
+.animation-top {
+  animation: moveTopToBottom 5s ease-in-out infinite;
+}
+
+.animation-center {
+  animation: moveCenterVertical 6s ease-in-out infinite;
+}
+
+
+.animation-bottom {
+  animation: moveBottomToTop 5s ease-in-out infinite;
+}
+
+/* Smoothly move from bottom to top with pause */
+@keyframes moveBottomToTop {
+  0% {
+    transform: translateY(0%);
+    animation-timing-function: ease-in-out;
+  }
+  90% {
+    transform: translateY(-20%);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateY(-20%); /* Pause at top */
+  }
 }
 
 @media (max-width: 766.98px) {
@@ -55,3 +84,4 @@
   
     left: 180px !important;
 }}
+

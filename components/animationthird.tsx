@@ -6,9 +6,9 @@ import phone from '../public/images/Mobile.png';
 import hand from '../public/images/hand.png';
 import icon from '../public/images/your-icon.png';
 import checkIcon from '../public/images/check-icon.png';
-import link from '../public/images/link.png';
-import data from '../public/images/DATA.png';
-import arch from '../public/images/archive.png';
+import link from '../public/images/link.svg';
+import data from '../public/images/DATA.svg';
+import arch from '../public/images/archive.svg';
 import starts from '../public/images/Vector.png';
 
 import '../styles/animated.css';
