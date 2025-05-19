@@ -129,7 +129,7 @@
     margin-left: 3px;
 }
 .bubble1 {
-  top: -34;
+  top: -34px;
   left: 0;
   transform: rotate(-12deg);}
 
@@ -177,7 +177,7 @@
 
 
 .chat-bubbles:hover  .bubble1 {
-  top: -34;
+  top: -34px;
   left: 0;
   transform: rotate(0deg);}
 
