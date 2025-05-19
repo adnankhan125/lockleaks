@@ -134,6 +134,7 @@ export default function PricingSection() {
           <br /> Upgrade for full protection whenever you're ready.
         </p>
 
+        {/* Toggle Button */}
         <div className="custom-toggle-switch mb-5 d-flex justify-content-center align-items-center gap-3">
           <span className={!isYearly ? 'active-toggle' : ''}>Billed Monthly</span>
           <label className="switch">
@@ -147,7 +148,8 @@ export default function PricingSection() {
           <span className={isYearly ? 'active-toggle' : ''}>Billed Yearly</span>
         </div>
 
-        <div className="row">
+        {/* Plans Grid */}
+        <div className="row justify-content-center">
           {plansToShow.map((plan, idx) => (
             <div key={idx} className="col-lg-3 col-md-6 col-sm-12 mb-4 d-flex">
               <div className="card plan-card text-start w-100 d-flex flex-column">

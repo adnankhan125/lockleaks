@@ -5,7 +5,7 @@
   border-radius: 24px;
   justify-content: center;
   align-items: center;
-  max-width: 1080px;
+  max-width: 1350px;
   margin: 0 auto 50px;
   padding: 40px 60px;
   display: flex;
@@ -49,7 +49,7 @@
 .ctaContent h2 .highlight-1 {
     filter: blur(0.5px);
     color: inherit;
-background: linear-gradient(to bottom, #5c1a4e 15%, #5c1a4e 85%, #2C1029 100%);
+    background: linear-gradient(to bottom, #5c1a4e 15%, #5c1a4e 85%, #2C1029 100%);
     border-radius: 4px 4px 0px 0px;
     padding: 10px 2px 6px 2px;
     display: inline-block;
