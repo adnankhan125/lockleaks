@@ -1,10 +1,25 @@
 'use client';
+
 import React, { useState } from 'react';
 import '../styles/PricingSection.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Monthly Plans
-const monthlyPlans = [
+type Feature = {
+  text: string;
+  icon: string;
+};
+
+type Plan = {
+  title: string;
+  description: string;
+  extraNote?: string;
+  price: string;
+  badge?: string;
+  features: Feature[];
+  button: string;
+};
+
+const monthlyPlans: Plan[] = [
   {
     title: 'Free Scan',
     description: 'Discover how your content is exposed online.',
@@ -61,8 +76,7 @@ const monthlyPlans = [
   },
 ];
 
-// Yearly Plans from image
-const yearlyPlans = [
+const yearlyPlans: Plan[] = [
   {
     title: 'Starter',
     description: 'Essential protection for new and small creators.',
@@ -116,10 +130,10 @@ export default function PricingSection() {
       <div className="container text-center">
         <h2 className="section-title">Pricing</h2>
         <p className="section-subtitle">
-          Start free.<br /> Upgrade for full protection whenever you're ready.
+          Start free.
+          <br /> Upgrade for full protection whenever you're ready.
         </p>
 
-        {/* Custom Toggle Switch */}
         <div className="custom-toggle-switch mb-5 d-flex justify-content-center align-items-center gap-3">
           <span className={!isYearly ? 'active-toggle' : ''}>Billed Monthly</span>
           <label className="switch">
@@ -148,7 +162,9 @@ export default function PricingSection() {
 
                   <div className="d-flex justify-content-between align-items-center mb-2">
                     <h6 className="card-price">{plan.price}</h6>
-                    {plan.badge && <span className="plan-badge">{plan.badge}</span>}
+                    {plan.badge && (
+                      <span className="plan-badge">{plan.badge}</span>
+                    )}
                   </div>
 
                   <ul className="plan-features">
