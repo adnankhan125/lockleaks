@@ -1,9 +1,10 @@
+
 .leak-removal-section-outer {
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 20px;
+    display: flex;
+    margin-bottom: 100px;
 }
 
 .leak-removal-row {
