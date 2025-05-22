@@ -102,6 +102,7 @@ export default function FastLeakRemovalSection() {
                   type="text"
                   placeholder={feature.title}
                   className="leak-input"
+                  disabled
                 />
               </div>
 
