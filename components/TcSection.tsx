@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/TcSection.css';
-import { Play } from 'lucide-react';
 
 const features = [
   {
@@ -21,9 +20,15 @@ const features = [
 ];
 
 export default function TcSection() {
+  const [showVideo, setShowVideo] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false); // ⬅️ Dropdown toggle
+
+  const handlePlay = () => {
+    setShowVideo(true);
+  };
+
   return (
     <section className="tc-section terms-wrapper">
-      {/* 🔵 New Decorative Circles */}
       <div className="service-circle-left" />
       <div className="service-circle-right" />
 
@@ -33,10 +38,64 @@ export default function TcSection() {
       <button className="start-btn">Start Free</button>
 
       <div className="video-box">
-        <button>
-          <Play size={16} />
-          Play Video
-        </button>
+        <div className="top-bar-inside">
+          <div className="top-bar-left">
+            <img src="/images/apple.svg" alt="Apple" className="top-icon" />
+            <span>Finder</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Go</span>
+            <span>Window</span>
+            <span>Help</span>
+          </div>
+          <div className="top-bar-right">
+            <img
+              src="/images/locck.svg"
+              alt="Dropdown Trigger"
+              className="top-icon"
+              style={{ cursor: 'pointer' }}
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+            />
+            <img src="/images/wifi.svg" alt="Wi-Fi" className="top-icon" />
+            <img src="/images/battery.svg" alt="Battery" className="top-icon" />
+            <img src="/images/settings.svg" alt="Settings" className="top-icon" />
+            <span>Fri 2:55 PM</span>
+          </div>
+        </div>
+
+        {dropdownOpen && (
+          <div className="wifi-dropdown">
+            <input type="text" placeholder="Search" className="wifi-search" />
+            <div className="dropdown-section">
+              <div className="section-title">FAVORITES</div>
+              <div className="dropdown-item"><img src="/icons/stg.svg" /> STG Cluster</div>
+              <div className="dropdown-item"><img src="/icons/prod.svg" /> Prod Cluster</div>
+              <div className="dropdown-item"><img src="/icons/elastic.svg" /> Elastic</div>
+              <div className="dropdown-item"><img src="/icons/gitlab.svg" /> Gitlab</div>
+              <div className="dropdown-item"><img src="/icons/jira.svg" /> Jira</div>
+            </div>
+            <div className="dropdown-section">
+              <div className="dropdown-item faded">Other Resources</div>
+              <div className="dropdown-item faded">Sign Out</div>
+            </div>
+          </div>
+        )}
+
+        {showVideo ? (
+          <video
+            src="/videos/lock.mp4"
+            controls
+            autoPlay
+            style={{ width: '100%', borderRadius: '0 0 16px 16px' }}
+          />
+        ) : (
+          <img
+            src="/images/Component 1.svg"
+            alt="Play"
+            onClick={handlePlay}
+            className="custom-play-icon"
+          />
+        )}
       </div>
 
       <div className="features">
