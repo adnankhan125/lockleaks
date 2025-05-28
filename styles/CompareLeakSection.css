@@ -18,9 +18,8 @@
 }
 
 .tab-header {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
+  margin-bottom: .25rem;
+  font-size: 16px;
 }
 
 .tab-sub {
@@ -30,10 +29,10 @@
 }
 
 .tab-body {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    display: flex;
 }
 
 .pill {
@@ -47,9 +46,29 @@
   width: fit-content;
 }
 
+
 .pill.highlight {
-  background-color: #d64fb2;
-  color: #fff;
+  background: linear-gradient(to right, #441342 0%, #441342 50%, #681A61 100%);
+  border-radius: 50px;
+  padding: 15px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #FB6EFB 0%, #C932A2 50%, #F33AC0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.pill-icon {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
 }
 
 .circle-card {
@@ -58,9 +77,10 @@
 }
 
 .pill-image {
-  height: auto;
-  display: inline-block;
-  margin: 0 auto;
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+    display: inline-block;
 }
 
 .vs-line-img {
@@ -78,4 +98,12 @@
   .pill-image {
     max-width: 80px;
   }
+}
+
+.text-pinkss {
+  font-size: 38px;
+  font-weight: 500;
+  background: linear-gradient(to right, #B6B3B7 30%, #A0558E 60%, #9F2A81 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
