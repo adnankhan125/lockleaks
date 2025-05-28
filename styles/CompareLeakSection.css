@@ -96,8 +96,15 @@
   }
 
   .pill-image {
-    max-width: 80px;
-  }
+        width: 100% !important;
+    }
+    .tab-card {
+    border-radius: 16px;
+    padding: 0px;
+}
+.pill, .pill.highlight {
+    font-size: 12px;
+}
 }
 
 .text-pinkss {
