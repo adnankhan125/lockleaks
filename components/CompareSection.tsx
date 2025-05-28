@@ -1,4 +1,3 @@
-// components/CompareSection.js
 'use client';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -41,8 +40,8 @@ export default function CompareSection() {
                 'No urgency, no care — you’re ticket #347 in a bloated CRM.'
               ].map((text, i) => (
                 <li key={i} className="bullet-item">
-                  <div className="bullet-content">
-                    <span className="icon">✘</span>
+                  <div className="bullet-content d-flex align-items-start">
+                    <img src="/icons/flash.svg" alt="Cross Icon" className="icon me-2" />
                     <p>{text}</p>
                   </div>
                   <div className="divider left-divider" />
@@ -59,8 +58,8 @@ export default function CompareSection() {
                 'You’re not a number. You’re the mission.'
               ].map((text, i) => (
                 <li key={i} className="bullet-item">
-                  <div className="bullet-content">
-                    <span className="flash">⚡</span>
+                  <div className="bullet-content d-flex align-items-start">
+                    <img src="/icons/cross.svg" alt="Flash Icon" className="icon me-2" />
                     <p>{text}</p>
                   </div>
                   <div className="divider right-divider" />

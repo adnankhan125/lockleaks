@@ -24,63 +24,96 @@
 }
 
 .left-box {
+  position: relative;
   text-align: left;
-  background: repeating-linear-gradient(
-    138deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.05) 1px,
-    rgba(0, 0, 0, 0) 0px,
-    rgba(0, 0, 0, 0) 20px
-  );
-  padding: 25px;
+  background: repeating-linear-gradient(135deg, #7d7d7d, #7d7d7d 1px, #0000 2px 8px);
+  border-bottom: 1px solid #0e122e;
+  border-left: 1px solid #0e122e;
+  border-right: 1px solid #0e122e;
   min-height: 100%;
+  z-index: 0;
 }
 
+/* Overlay to darken background for better contrast */
+.left-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0); /* adjust darkness */
+  z-index: 1;
+}
+
+/* Ensure content appears above the overlay */
+.left-box .bullet-content,
+.left-box p,
+.left-box .icon {
+  position: relative;
+  z-index: 2;
+}
+
+/* RIGHT BOX STYLING */
 .right-box {
-  background-color: #a83294;
-  padding: 24px;
+  background: linear-gradient(90deg, #612274 10%, #691a62 30%);
   min-height: 100%;
   text-align: left;
 }
 
+/* BULLET ITEMS */
 .bullet-item {
-  padding: 14px 0;
+  padding: 26px 0;
+  border-right: 1px solid #0E122E;
+  border-top: 1px solid #0E122E;
+  border-radius: 0px 8px 8px 8px;
 }
 
 .bullet-content {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
   text-align: left;
+  gap: 10px;
+  padding-left: 33px;
+  padding-right: 40px;
 }
 
 .bullet-content p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 16px;
   line-height: 1.5;
+  color: #A7ADBE;
 }
 
+/* ICONS FOR BOTH COLUMNS */
 .icon,
 .flash {
-  font-weight: bold;
-  color: #fff;
-  font-size: 1.1rem;
+  width: 20px;
+  height: 20px;
   margin-top: 2px;
   flex-shrink: 0;
 }
 
+/* CTA BUTTON */
 .start-btn {
   background-color: #c42da8;
   border: none;
   font-weight: 500;
   font-size: 1rem;
   border-radius: 8px;
+  color: white;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Divider Styles */
+.start-btn:hover {
+  background-color: #b01d94;
+}
+
+/* DIVIDERS */
 .divider {
   height: 1px;
   width: 100%;
+  display: none; /* Enable if needed */
   margin-top: 12px;
 }
 
