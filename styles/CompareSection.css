@@ -9,9 +9,23 @@
 }
 
 .other-title {
-  font-weight: 300;
-  font-size: 2rem;
+  font-size: 38px;
+  font-weight: 500;
+  background: linear-gradient(to right, #B6B3B7 30%, #A0558E 60%, #9F2A81 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+.compare-section .text-muted,
+.compare-section small {
+  color: #B6B5B8 !important;
+}
+
+.compare-section .text-muted-2,
+.compare-section small {
+  color: #B6B5B8 !important;
+}
+
 
 .companies {
   color: #c42da8;
@@ -96,8 +110,8 @@
 
 /* CTA BUTTON */
 .start-btn {
-  background-color: #c42da8;
-  border: none;
+  background-color: #A02490;
+  border: 1px solid #E236B6;
   font-weight: 500;
   font-size: 1rem;
   border-radius: 8px;
@@ -106,7 +120,9 @@
 }
 
 .start-btn:hover {
-  background-color: #b01d94;
+  background-color: rgba(176, 29, 149, 0);
+    border: 1px solid #E236B6;
+
 }
 
 /* DIVIDERS */
@@ -123,4 +139,94 @@
 
 .right-divider {
   background-color: #ffffff;
+}
+@media (max-width: 767px) {
+  /* .lock-leaks {
+    position: relative;
+    top: 395%;
+  } */
+  .right-box {
+    margin-top: 150px;
+}
+/* .compare-section .text-muted-2,
+.compare-section small {
+    position: relative;
+    top: 400%;
+} */
+
+.left-box {
+    margin-top: -135px;
+}
+
+}
+
+@media (min-width: 664px) and (max-width: 767px) {
+  .compare-section .text-muted-2, .compare-section small {
+        position: relative;
+        top: 300%;
+    }
+        .lock-leaks {
+        position: relative;
+        top: 300%;
+    }
+
+}
+
+@media (min-width: 579px) and (max-width: 663px) {
+
+  .compare-section .text-muted-2, .compare-section small {
+        position: relative;
+        top: 315%;
+    }
+        .lock-leaks {
+        position: relative;
+        top: 315%;
+    }
+  }
+
+
+@media (min-width: 525px) and (max-width: 576px) {
+ .compare-section .text-muted-2, .compare-section small {
+        position: relative;
+        top: 330%;
+    }
+        .lock-leaks {
+        position: relative;
+        top: 330%;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 524.999px) {
+
+ .compare-section .text-muted-2, .compare-section small {
+        position: relative;
+        top: 370%;
+    }
+        .lock-leaks {
+        position: relative;
+        top: 370%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 449.88px) {
+
+ .compare-section .text-muted-2, .compare-section small {
+        position: relative;
+        top: 390%;
+    }
+        .lock-leaks {
+        position: relative;
+        top: 390%;
+    }
+}
+@media (min-width: 350px) and (max-width: 399.99px) {
+
+ .compare-section .text-muted-2, .compare-section small {
+        position: relative;
+        top: 400%;
+    }
+        .lock-leaks {
+        position: relative;
+        top: 400%;
+    }
 }

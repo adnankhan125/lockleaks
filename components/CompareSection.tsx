@@ -11,7 +11,7 @@ export default function CompareSection() {
         <div className="row mb-4">
           <div className="col-md-6">
             <h2 className="other-title">
-              Other <span className="companies">Companies</span>
+              Other Companies
             </h2>
             <p className="text-muted">
               They Watch.
@@ -20,8 +20,8 @@ export default function CompareSection() {
             </p>
           </div>
           <div className="col-md-6">
-            <h2 className="lock-leaks">Lock Leaks</h2>
-            <p className="text-muted">
+            <h2 className="lock-leaks"><img src="/images/lockcompany.svg" /></h2>
+            <p className="text-muted-2">
               We Act.
               <br />
               <small>We Track. We Delete.</small>
