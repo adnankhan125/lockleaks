@@ -20,7 +20,7 @@ const AgenciesVideo: React.FC = () => {
           poster="https://via.placeholder.com/850x450"
           controls={isPlaying}
         >
-          <source src="/videos/LLeaks.mp4" type="video/mp4" />
+          <source src="/videos/lock.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 

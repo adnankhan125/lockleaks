@@ -11,6 +11,7 @@ import AgenciesVideo from '@/components/AgenciesVideo';
 import HowItWorks from '@/components/HowItWorks';
 import Faqs from '@/components/faqs';
 import Footer from '@/components/footer';
+import SimpleComparison from '@/components/SimpleComparison';
 
 
 export default function Contact() {
@@ -20,6 +21,7 @@ export default function Contact() {
       <AgenciesSection />
       <AgenciesVideo/>
       <HowItWorks/>
+      <SimpleComparison/>
       <Faqs />
       <Footer />
       
