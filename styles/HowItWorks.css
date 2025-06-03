@@ -1,5 +1,4 @@
 .how-it-works-section {
-  background: #0c0b12;
   color: #fff;
   padding: 60px 20px;
   max-width: 1300px;
@@ -182,7 +181,7 @@
   padding-left: 0; /* This ensures no left spacing */
 }
 /* Responsive styles for mobile */
-@media (max-width: 768px) {
+@media (max-width: 767.99px) {
   .offer-box {
     padding: 10px;
 }

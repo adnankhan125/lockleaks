@@ -1,6 +1,6 @@
 .comparison-section {
   text-align: center;
-  background-color: #0a0a0a;
+  /* background-color: #0a0a0a; */
   padding: 60px 20px;
   color: white;
 }
@@ -68,12 +68,12 @@
 }
 
 .card-header h3 {
-    color: #fff;
-    text-align: left;
-    flex: 1;
-    margin: 0 10px;
-    font-size: 20px;
-    font-weight: 600;
+  color: #fff;
+  text-align: left;
+  flex: 1;
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .icon-right {
@@ -82,10 +82,10 @@
   object-fit: contain;
 }
 
-.icon-left{
-    object-fit: contain;
-    width: 17%;
-    height: auto;
+.icon-left {
+  object-fit: contain;
+  width: 17%;
+  height: auto;
 }
 
 .comparison-card p {
@@ -98,7 +98,6 @@
 .comparison-card ul {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 10px;
   padding: 0;
   list-style: none;
@@ -106,12 +105,19 @@
 }
 
 .comparison-card li {
+  display: flex;
+  justify-content: space-between;
   font-size: 14px;
+  color: #ccc;
 }
 
 .comparison-card li strong {
+  flex-shrink: 0;
+  margin-right: 10px;
   color: white;
+  min-width: 90px;
 }
+
 /* Force 2 boxes per row below 1000px */
 @media (max-width: 1000px) {
   .comparison-card {
@@ -128,5 +134,5 @@
   }
   .comparison-cards {
     gap: 0px;
-}
+  }
 }
