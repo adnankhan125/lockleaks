@@ -9,7 +9,9 @@ import TrafficRecoverySection from '@/components/TrafficRecovery';
 import CompareSection from '@/components/CompareSection';
 import Footer from '@/components/footer';
 import CompareLeakSection from '@/components/CompareLeakSection';
+import dynamic from "next/dynamic";
 
+const ProtectPopup = dynamic(() => import("@/components/ProtectPopup"), { ssr: false });
 export default function ServicesPage() {
   return (
     <>
@@ -18,6 +20,7 @@ export default function ServicesPage() {
       <TrafficRecoverySection/>
       <CompareLeakSection/>
       <CompareSection/>
+      <ProtectPopup/>
       <Footer/>
     </>
   );
