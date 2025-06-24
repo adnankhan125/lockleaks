@@ -7,22 +7,16 @@ import proimg from '../public/images/pro.png';
 import identify from '../public/images/identify.png';
 import photoid from '../public/images/photoid.svg';
 import Facial from '../public/images/Facial.svg';
-import NationalIcon from '../public/icons/NATIONAL id.svg';
-import PassportIcon from '../public/icons/PassportIcon.svg';
-import LicenseIcon from '../public/icons/License.svg';
-import CheckmarkIcon from '../public/icons/Checkmark.svg';
 import IDcard from '../public/icons/ID card.svg';
 import cnicimg from '../public/images/cnic.png';
+import facialImage from '../public/images/facial-recognition.png'; // New image for step 6
 
-
-
-IDcard
 const ProtectPopup = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [show, setShow] = useState(false);
 
   const handleNext = () => {
-    if (currentStep < 5) setCurrentStep(currentStep + 1);
+    if (currentStep < 7) setCurrentStep(currentStep + 1);
     else setShow(false);
   };
 
@@ -74,7 +68,7 @@ const ProtectPopup = () => {
                 </button>
               </div>
               <h5 className="profile-preview-heading text-center">How It Should Look on Your Profile:</h5>
-              <Image src={proimg}  alt="Example Preview" className="popup-image mb-3 d-block mx-auto" />
+              <Image src={proimg} alt="Example Preview" className="popup-image mb-3 d-block mx-auto" />
             </div>
 
             {/* Step 2 */}
@@ -84,35 +78,31 @@ const ProtectPopup = () => {
               <Image src={identify} width={200} height={120} alt="Verification" className="popup-image my-4 d-block mx-auto" />
               <div className="identity-box mx-auto p-4" style={{ opacity: 0.95 }}>
                 <p className="text-white mb-3">We accept the following documents:</p>
-                 <ul className="list-unstyled text-start text-white ps-3">
+                <ul className="list-unstyled text-start text-white ps-3">
                   <li className="d-flex justify-content-between align-items-center mb-2">
                     <div className="d-flex align-items-center">
-                      <Image src={NationalIcon} alt="National ID" width={20} height={20} className="me-2" />
+                      <Image src={IDcard} alt="National ID" width={20} height={20} className="me-2" />
                       National ID card
                     </div>
-                    <Image src={CheckmarkIcon} alt="Done" width={16} height={16} />
+                    <Image src="/icons/Checkmark.svg" alt="Done" width={16} height={16} />
                   </li>
                   <hr className="border-secondary my-2" />
-
                   <li className="d-flex justify-content-between align-items-center mb-2">
                     <div className="d-flex align-items-center">
-                      <Image src={PassportIcon} alt="Passport" width={20} height={20} className="me-2" />
+                      <Image src="/icons/PassportIcon.svg" alt="Passport" width={20} height={20} className="me-2" />
                       Passport
                     </div>
-                    <Image src={CheckmarkIcon} alt="Done" width={16} height={16} />
+                    <Image src="/icons/Checkmark.svg" alt="Done" width={16} height={16} />
                   </li>
                   <hr className="border-secondary my-2" />
-
                   <li className="d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
-                      <Image src={LicenseIcon} alt="License" width={20} height={20} className="me-2" />
+                      <Image src="/icons/License.svg" alt="License" width={20} height={20} className="me-2" />
                       Driver’s license
                     </div>
-                    <Image src={CheckmarkIcon} alt="Done" width={16} height={16} />
+                    <Image src="/icons/Checkmark.svg" alt="Done" width={16} height={16} />
                   </li>
                 </ul>
-
-
               </div>
               <div className="text-center mt-4">
                 <button className="btn text-white" style={{ backgroundColor: "#CF3CA6" }} onClick={handleNext}>
@@ -134,7 +124,7 @@ const ProtectPopup = () => {
                   </div>
                 </div>
                 <div className="d-flex align-items-start mb-3">
-                  <Image src={Facial } width={40} height={40} className="me-3" alt="Facial" />
+                  <Image src={Facial} width={40} height={40} className="me-3" alt="Facial" />
                   <div>
                     <strong>Facial recognition</strong>
                     <div className="text-white-50 small">Confirm that the portrait matches the picture on the identification document.</div>
@@ -148,7 +138,7 @@ const ProtectPopup = () => {
               </div>
             </div>
 
-         {/* Step 4 */}
+            {/* Step 4 */}
             <div className={`step step-verification-checklist ${currentStep === 4 ? "active" : ""}`}>
               <h3 className="step4-heading fw-bold mb-4">Before upload your passport photo, please make sure that</h3>
               <ul className="text-white mb-4 checklist-points">
@@ -169,14 +159,8 @@ const ProtectPopup = () => {
 
             {/* Step 5 */}
             <div className={`step ${currentStep === 5 ? "active" : ""}`}>
-            <Image
-              src={cnicimg}
-              alt="ID Preview"
-              width={360}
-              height={200}
-              className="cnic-preview-image"
-            />              
-            <h5 className="text-white text-start mb-3" style={{ maxWidth: '500px', margin: '0 auto' }}>ID Upload Guidelines</h5>
+              <Image src={cnicimg} alt="ID Preview" width={360} height={200} className="cnic-preview-image" />
+              <h5 className="text-white text-start mb-3" style={{ maxWidth: '500px', margin: '0 auto' }}>ID Upload Guidelines</h5>
               <ul className="text-white-50 mb-4 checklist-points text-start mx-auto">
                 <li><i className="bi bi-check-circle-fill text-success me-2"></i> Readable, clear and not blurry</li>
                 <li><i className="bi bi-check-circle-fill text-success me-2"></i> Well-lit, not reflective, not too dark</li>
@@ -191,7 +175,59 @@ const ProtectPopup = () => {
                 <button className="btn btn-outline-light px-4" onClick={() => setCurrentStep(4)}>Back</button>
               </div>
             </div>
+              {/* Step 6 */}
+              <div className={`step ${currentStep === 6 ? "active" : ""}`}>
+                <h3 className="text-center fw-bold mb-3">Facial Recognition</h3>
 
+                {/* Centered Facial Image */}
+                <div className="text-center mb-4">
+                  <Image src={facialImage} width={150} height={150} alt="Facial Recognition" className="rounded-circle" />
+                </div>
+
+                <p className="text-center mb-4">In order to improve the success rate of face recognition,<br/>please follow these requirements below:</p>
+
+                <div className="d-flex justify-content-between mx-auto" style={{ maxWidth: '500px' }}>
+                  <div className="text-center">
+                    <Image src="/icons/phone-up-right.svg" width={50} height={50} alt="Hold phone upright" />
+                    <p className="text-custom">Hold phone upright</p>
+                  </div>
+                  <div className="text-center">
+                    <Image src="/icons/well-lit.svg" width={50} height={50} alt="Well-lit" />
+                    <p className="text-custom">Well-lit</p>
+                  </div>
+                  <div className="text-center">
+                    <Image src="/icons/no-occlusion.svg" width={50} height={50} alt="Don’t occlude face" />
+                    <p className="text-custom">Don’t occlude face</p>
+                  </div>
+                </div>
+
+                <div className="text-center mt-4">
+                  <button className="btn text-white" style={{ backgroundColor: "#CF3CA6" }} onClick={handleNext}>Upload Selfie</button>
+                </div>
+              </div>
+
+                {/* Step 7 */}
+                <div className={`step ${currentStep === 7 ? "active" : ""}`}>
+                  <h3 className="text-center fw-bold mb-3">Identity Verified</h3>
+
+                  {/* Image for Confirmation */}
+                  <div className="text-center mb-4">
+                  <Image src="/icons/verified1122.svg" alt="Verified" width={150} height={150} />
+                  </div>
+
+                  <p className="text-center">
+                    You now have full access to all LockLeaks features,<br /> 
+                    priority enforcement, and elevated protection limits.<br /> 
+                    Thank you for completing the verification process.
+                  </p>
+
+                  {/* Button for further action */}
+                  <div className="text-center mt-4">
+                    <button className="btn text-white" style={{ backgroundColor: "#CF3CA6" }} onClick={handleNext}>
+                      Proceed
+                    </button>
+                  </div>
+                </div>
 
             <div className="popup-footer">
               {currentStep === 1 && <p className="mb-0">Content protected and enforced by lockleaks.com.</p>}

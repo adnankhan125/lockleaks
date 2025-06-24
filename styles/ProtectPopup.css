@@ -6,13 +6,13 @@
   background-color: #2F2F2F;
   color: white;
   padding: 40px;
-  height: 100vh;
+  height: 80vh;
 }
 
 .right-col {
   background: linear-gradient(to bottom, white, #CE3FA6);
   padding: 40px;
-  height: 100vh;
+  height: 80vh;
 }
 
 .popup-overlay {
@@ -163,4 +163,58 @@
   margin-bottom: 1.5rem;
   border-radius: 8px;
   max-width: 100%;
+}
+
+
+.step6-icons .text-center {
+  width: 30%;
+}
+/* Centering the Facial Image */
+.step6-facial-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+/* Custom Class for Text Styling */
+.text-custom {
+  color: #C6C6C6 !important; /* Apply the text color */
+  font-weight: 500; /* Optional - adjust as needed */
+}
+
+/* Styling for the Text Center and Spacing */
+.step6-icons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.step6-icons .text-center {
+  width: 30%;
+}
+
+
+@media only screen and (max-width: 540px) {
+
+  .popup-content {
+    height: 630px;
+    padding: 40px 20px;
+}
+  .step4-heading {
+      font-size: 22px;
+  }
+  .cnic-preview-image {
+    margin-left: 0px;
+    max-width: 98%;
+}
+.right-col {
+    height: 20vh;
+    padding: 40px;
+}
+.left-col {
+    height: 20vh;
+    padding: 40px;
+}
 }
