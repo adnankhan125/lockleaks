@@ -1,14 +1,12 @@
 /* styles/SpotlightScroller.module.css */
 
-/* :root {
+.containerSpotlight {
   --spotlight-bg: rgba(20, 22, 23, 0.9);
   --spotlight-border: rgba(156, 122, 255, 0.3);
   --text-outside: rgba(255, 255, 255, 0.3);
   --text-inside: rgba(255, 255, 255, 0.9);
   --highlight-color: rgb(197, 50, 157);
-} */
-
-.containerSpotlight {
+  
   position: relative;
   width: 100%;
   max-width: 1200px;
