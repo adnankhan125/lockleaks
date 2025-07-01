@@ -5,10 +5,8 @@
   --spotlight-border: rgba(156, 122, 255, 0.3);
   --text-outside: rgba(255, 255, 255, 0.3);
   --text-inside: rgba(255, 255, 255, 0.9);
-  --highlight-color: rgba(156, 122, 255, 0.9);
+  --highlight-color: rgb(197, 50, 157);
 }
-
-
 
 .containerSpotlight {
   position: relative;
@@ -27,7 +25,7 @@
 
 .contentScroll {
   display: flex;
-  animation: scroll 25s linear infinite;
+  animation: smoothScroll 25s linear infinite;
   white-space: nowrap;
   width: max-content;
 }
@@ -87,7 +85,7 @@
   color: var(--highlight-color);
 }
 
-@keyframes scroll {
+@keyframes smoothScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }

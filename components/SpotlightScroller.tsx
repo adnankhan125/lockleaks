@@ -1,78 +1,109 @@
 import { useEffect } from "react";
 import styles from "../styles/SpotlightScroller.module.css";
-import "../styles/SpotlightScroller.module.css";
+import Script from "next/script";
 
 const SpotlightScroller = () => {
   useEffect(() => {
-    // Dynamically load Bootstrap JS and Font Awesome on the client-side
     if (typeof window !== "undefined") {
-      // Load Font Awesome
-      const faScript = document.createElement("script");
-      faScript.src = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js";
-      faScript.integrity = "sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==";
-      faScript.crossOrigin = "anonymous";
-      document.head.appendChild(faScript);
+      const initSpotlight = () => {
+        const highlightedItems = document.querySelectorAll(
+          `.${styles.contentItem}.${styles.highlight}`
+        );
+        const contentModalElement = document.getElementById("contentModal");
+        
+        if (!contentModalElement) {
+          console.error("Modal element not found");
+          return;
+        }
+        
+        const contentModal = new window.bootstrap.Modal(contentModalElement);
 
-      // Load Bootstrap
-      import("bootstrap/dist/js/bootstrap.bundle.min.js")
-        .then((bootstrap) => {
-          const highlightedItems = document.querySelectorAll(
-            `.${styles.contentItem}.${styles.highlight}`
-          );
-          const contentModal = new bootstrap.Modal(
-            document.getElementById("contentModal")
-          );
+        highlightedItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            contentModal.show();
+          });
+        });
 
-          highlightedItems.forEach((item) => {
-            item.addEventListener("click", function () {
-              contentModal.show();
-            });
+        const container = document.querySelector(`.${styles.containerSpotlight}`);
+        const contentItems = document.querySelectorAll(`.${styles.contentItem}`);
+        const spotlight = document.querySelector(`.${styles.spotlight}`);
+
+        const checkSpotlight = () => {
+          if (!spotlight) return;
+
+          const spotlightRect = spotlight.getBoundingClientRect();
+
+          contentItems.forEach((item) => {
+            const itemRect = item.getBoundingClientRect();
+            const itemCenterX = itemRect.left + itemRect.width / 2;
+            const itemCenterY = itemRect.top + itemRect.height / 2;
+
+            const distance = Math.sqrt(
+              Math.pow(itemCenterX - (spotlightRect.left + spotlightRect.width / 2), 2) +
+              Math.pow(itemCenterY - (spotlightRect.top + spotlightRect.height / 2), 2)
+            );
+
+            if (distance < spotlightRect.width / 2) {
+              item.classList.add(styles.inSpotlight);
+            } else {
+              item.classList.remove(styles.inSpotlight);
+            }
           });
 
-          const container = document.querySelector(`.${styles.containerSpotlight}`);
-          const contentItems = document.querySelectorAll(`.${styles.contentItem}`);
-          const spotlight = document.querySelector(`.${styles.spotlight}`) as HTMLElement;
+          requestAnimationFrame(checkSpotlight);
+        };
 
-          const checkSpotlight = () => {
-            if (!spotlight) return;
+        checkSpotlight();
+      };
 
-            const spotlightRect = spotlight.getBoundingClientRect();
-
-            contentItems.forEach((item) => {
-              const itemRect = item.getBoundingClientRect();
-              const itemCenterX = itemRect.left + itemRect.width / 2;
-              const itemCenterY = itemRect.top + itemRect.height / 2;
-
-              const distance = Math.sqrt(
-                Math.pow(itemCenterX - (spotlightRect.left + spotlightRect.width / 2), 2) +
-                Math.pow(itemCenterY - (spotlightRect.top + spotlightRect.height / 2), 2)
-              );
-
-              if (distance < spotlightRect.width / 2) {
-                item.classList.add(styles.inSpotlight);
-              } else {
-                item.classList.remove(styles.inSpotlight);
-              }
-            });
-
-            requestAnimationFrame(checkSpotlight);
-          };
-
-          checkSpotlight();
-        })
-        .catch((error) => {
-          console.error("Error loading Bootstrap:", error);
-        });
+      if (window.bootstrap) {
+        initSpotlight();
+      } else {
+        const checkBootstrap = setInterval(() => {
+          if (window.bootstrap) {
+            clearInterval(checkBootstrap);
+            initSpotlight();
+          }
+        }, 100);
+      }
     }
   }, []);
 
   return (
     <div className={styles.containerSpotlight}>
+      <Script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+        strategy="lazyOnload"
+        integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+        crossOrigin="anonymous"
+      />
+      
       <div className={styles.spotlight}></div>
 
       {/* First Row - Emails */}
       <div className={styles.contentRow}>
         <div className={styles.contentScroll}>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            admin@autoco.com
+          </div>
+          <div className={styles.contentItem}>tech.support@autoco.net</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            hr.department@autoco.org
+          </div>
+          <div className={styles.contentItem}>dev.team@autoco.dev</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            security@autoco.sec
+          </div>
+          <div className={styles.contentItem}>network.admin@autoco.net</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            admin@autoco.com
+          </div>
+          <div className={styles.contentItem}>tech.support@autoco.net</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            hr.department@autoco.org
+          </div>
+          <div className={styles.contentItem}>dev.team@autoco.dev</div>
+          {/* Duplicate for seamless loop */}
           <div className={`${styles.contentItem} ${styles.highlight}`}>
             admin@autoco.com
           </div>
@@ -109,6 +140,17 @@ const SpotlightScroller = () => {
           <div className={`${styles.contentItem} ${styles.highlight}`}>10.0.0.1</div>
           <div className={styles.contentItem}>172.16.0.1</div>
           <div className={styles.contentItem}>192.168.0.100</div>
+          {/* Duplicate for seamless loop */}
+          <div className={styles.contentItem}>192.168.1.1</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>10.0.0.1</div>
+          <div className={styles.contentItem}>172.16.0.1</div>
+          <div className={styles.contentItem}>192.168.0.100</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>10.10.10.1</div>
+          <div className={styles.contentItem}>172.31.255.254</div>
+          <div className={styles.contentItem}>192.168.1.1</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>10.0.0.1</div>
+          <div className={styles.contentItem}>172.16.0.1</div>
+          <div className={styles.contentItem}>192.168.0.100</div>
         </div>
       </div>
 
@@ -133,12 +175,48 @@ const SpotlightScroller = () => {
           <div className={`${styles.contentItem} ${styles.highlight}`}>
             Lenovo ThinkPad X1
           </div>
+          {/* Duplicate for seamless loop */}
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            Dell Precision 3560
+          </div>
+          <div className={styles.contentItem}>Apple MacBook Pro M2</div>
+          <div className={styles.contentItem}>HP EliteBook 840</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            Lenovo ThinkPad X1
+          </div>
+          <div className={styles.contentItem}>Microsoft Surface Laptop</div>
+          <div className={styles.contentItem}>Asus ZenBook Pro</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            Dell Precision 3560
+          </div>
+          <div className={styles.contentItem}>Apple MacBook Pro M2</div>
+          <div className={styles.contentItem}>HP EliteBook 840</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            Lenovo ThinkPad X1
+          </div>
         </div>
       </div>
 
       {/* Fourth Row - Technologies */}
       <div className={styles.contentRow} style={{ animationDuration: "40s" }}>
         <div className={styles.contentScroll}>
+          <div className={styles.contentItem}>Kubernetes Cluster</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            Docker Swarm
+          </div>
+          <div className={styles.contentItem}>VMware ESXi</div>
+          <div className={styles.contentItem}>Microsoft Hyper-V</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            AWS EC2
+          </div>
+          <div className={styles.contentItem}>Azure VM</div>
+          <div className={styles.contentItem}>Kubernetes Cluster</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>
+            Docker Swarm
+          </div>
+          <div className={styles.contentItem}>VMware ESXi</div>
+          <div className={styles.contentItem}>Microsoft Hyper-V</div>
+          {/* Duplicate for seamless loop */}
           <div className={styles.contentItem}>Kubernetes Cluster</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
             Docker Swarm
