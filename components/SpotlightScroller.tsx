@@ -1,15 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styles from "../styles/SpotlightScroller.module.css";
 import Script from "next/script";
 
+declare global {
+  interface Window {
+    bootstrap?: any;
+  }
+}
+
 const SpotlightScroller = () => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const initSpotlight = () => {
         const highlightedItems = document.querySelectorAll(
           `.${styles.contentItem}.${styles.highlight}`
         );
-        const contentModalElement = document.getElementById("contentModal");
+        
+        const contentModalElement = modalRef.current;
         
         if (!contentModalElement) {
           console.error("Modal element not found");
@@ -19,7 +28,7 @@ const SpotlightScroller = () => {
         const contentModal = new window.bootstrap.Modal(contentModalElement);
 
         highlightedItems.forEach((item) => {
-          item.addEventListener("click", function () {
+          item.addEventListener("click", () => {
             contentModal.show();
           });
         });
@@ -59,12 +68,16 @@ const SpotlightScroller = () => {
       if (window.bootstrap) {
         initSpotlight();
       } else {
-        const checkBootstrap = setInterval(() => {
-          if (window.bootstrap) {
-            clearInterval(checkBootstrap);
-            initSpotlight();
-          }
-        }, 100);
+        const bootstrapScript = document.createElement("script");
+        bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js";
+        bootstrapScript.integrity = "sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz";
+        bootstrapScript.crossOrigin = "anonymous";
+        bootstrapScript.onload = initSpotlight;
+        document.body.appendChild(bootstrapScript);
+
+        return () => {
+          document.body.removeChild(bootstrapScript);
+        };
       }
     }
   }, []);
@@ -237,12 +250,18 @@ const SpotlightScroller = () => {
       </div>
 
       {/* Modal */}
-      <div className="modal fade" id="contentModal" tabIndex={-1} aria-hidden="true">
+      <div 
+        className="modal fade" 
+        id="contentModal" 
+        ref={modalRef}
+        tabIndex={-1} 
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content bg-dark text-white">
             <div
               className="modal-header"
-              style={{ backgroundColor: "rgba(156, 122, 255, 0.9)", borderBottom: "none" }}
+              style={{ backgroundColor: "rgba(197, 50, 157, 0.9)", borderBottom: "none" }}
             >
               <h5 className="modal-title">User Authorized</h5>
               <button
@@ -257,7 +276,7 @@ const SpotlightScroller = () => {
               <p>admin@autoco.com</p>
               <div
                 className="badge"
-                style={{ backgroundColor: "rgba(156, 122, 255, 0.9)", color: "white" }}
+                style={{ backgroundColor: "rgba(197, 50, 157, 0.9)", color: "white" }}
               >
                 <i className="fas fa-check-circle me-2"></i>
                 <span>Authorized User</span>
