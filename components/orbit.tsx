@@ -35,14 +35,14 @@ export default function Home() {
         </div>
 
         {/* Stars - Left */}
-        <Image src={starts} className="star star-left-1" alt="star" />
+        {/* <Image src={starts} className="star star-left-1" alt="star" />
         <Image src={starts} className="star star-left-2" alt="star" />
-        <Image src={starts} className="star star-left-3" alt="star" />
+        <Image src={starts} className="star star-left-3" alt="star" /> */}
 
         {/* Stars - Right */}
-        <Image src={starts} className="star star-right-1" alt="star" />
+        {/* <Image src={starts} className="star star-right-1" alt="star" />
         <Image src={starts} className="star star-right-2" alt="star" />
-        <Image src={starts} className="star star-right-3" alt="star" />
+        <Image src={starts} className="star star-right-3" alt="star" /> */}
 
         {/* Orbit 1 */}
         <div className="orbit orbit-1">

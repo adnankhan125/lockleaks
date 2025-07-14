@@ -8,17 +8,19 @@ import '../styles/faqs.css';
 import Header from '@/components/header';
 import Orbit from '@/components/orbit';
 // import Animation from '@/components/animation';
-import ProtectSection from '@/components/ProtectContentSection'
+import ProtectSection from '@/components/ProtectContentSection';
 import Animationthird from '@/components/animationthird';
 import Testimonial from '@/components/testimonial';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/footer';
 import Faqs from '@/components/faqs';
 import DataPrivacySection from '@/components/DataPrivacySection';
+import ParticlesBackground from '@/components/particlesbackground'; // ✅ ADD THIS
 
 export default function Home() {
   return (
     <>
+      <ParticlesBackground /> {/* ✅ ADD THIS */}
       <Header />
       <Orbit />
       {/* <Animationsec/> */}

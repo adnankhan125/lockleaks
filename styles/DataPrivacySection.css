@@ -151,9 +151,18 @@
   z-index: 0;
 }
 
+.chat-bubbles:hover .arrow1 {
+  transition: all .5s;
+  transform: rotate(0deg);
+  /* top: -27px;
+  left: 270px; */
+}
+
 .arrow1 {
-    top: -27px;
-    left: 265px;
+  transition: all .5s;
+  transform: rotate(-16deg);
+  top: -27px;
+  left: 270px;
 }
 
 .arrow2 {
@@ -161,8 +170,6 @@
     top: 155px;
     left: 290px;
 }
-
-
 .chat-bubbles:hover .arrow2 {
     transition: all .5s;
     top: 157px;
@@ -210,10 +217,10 @@
 
 .hover-image-wrapper {
     padding: 10px;
-    transition: all .5s;
+    transition: 0.5s;
     position: absolute;
-    bottom: 57px;
-    right: 53px;
+    bottom: 63px;
+    right: 54px;
 }
 
 /* Animate image only when chat-bubbles is hovered */

@@ -1,15 +1,38 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import '../styles/footer.css';  // Import the CSS file
+import '../styles/footer.css';
 import logo from '../public/images/lockleaks.svg';
 import xIcon from '../public/icons/twitter.svg';
 import instagramIcon from '../public/icons/instagram.svg';
 import tiktokIcon from '../public/icons/tiktok.svg';
 import redditIcon from '../public/icons/reddit.svg';
-import facebookIcon from '../public/icons/facebook.svg';
 
 export default function Footer() {
+  // Icon and link pairs
+  const socialLinks = [
+    {
+      icon: xIcon,
+      alt: 'Twitter',
+      url: 'https://x.com/lock_leaks',
+    },
+    {
+      icon: tiktokIcon,
+      alt: 'TikTok',
+      url: 'https://www.tiktok.com/@lockleaks',
+    },
+    {
+      icon: instagramIcon,
+      alt: 'Instagram',
+      url: 'https://www.instagram.com/lockleaks/',
+    },
+    {
+      icon: redditIcon,
+      alt: 'Threads', // Assuming it's for Threads
+      url: 'https://www.threads.com/@lockleaks',
+    },
+  ];
+
   return (
     <footer className="custom-footer text-white pt-5 pb-3">
       <div className="footer container">
@@ -20,23 +43,18 @@ export default function Footer() {
               <Image src={logo} alt="Logo" width={185} height={50} />
             </Link>
             <div className="d-flex align-items-center mt-3">
-              {/* <Image src={sparkle} alt="Sparkle" width={16} className="me-2" /> */}
-              {/* <div className="d-flex gap-2">
-                <Image src={xIcon} alt="X" width={16} />
-                <Image src={instagramIcon} alt="Instagram" width={16} />
-                <Image src={tiktokIcon} alt="TikTok" width={16} />
-                <Image src={redditIcon} alt="Reddit" width={16} />
-                <Image src={facebookIcon} alt="Facebook" width={16} />
-              </div> */}
               <div className="d-flex gap-2">
-                {[xIcon, instagramIcon, tiktokIcon, redditIcon, facebookIcon].map((icon, index) => (
-                  <div
+                {socialLinks.map(({ icon, alt, url }, index) => (
+                  <a
                     key={index}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-white d-flex align-items-center justify-content-center"
                     style={{ width: '32px', height: '32px', borderRadius: '4px' }}
                   >
-                    <Image src={icon} alt="icon" width={16} height={16} />
-                  </div>
+                    <Image src={icon} alt={alt} width={20} height={20} />
+                  </a>
                 ))}
               </div>
             </div>
@@ -50,7 +68,6 @@ export default function Footer() {
               <li><Link href="/agencies" className="text-white text-decoration-none nav-link-custom">Agencies</Link></li>
               <li><Link href="/blog" className="text-white text-decoration-none nav-link-custom">Blog</Link></li>
             </ul>
-
           </div>
 
           {/* CTA Button */}
@@ -59,7 +76,6 @@ export default function Footer() {
               Start Free
             </Link>
           </div>
-
         </div>
 
         <hr className="border-secondary my-4" />

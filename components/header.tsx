@@ -1,12 +1,62 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../public/images/lockleaks.svg';
-import icon from '../public/images/megaphone-icon.svg'; // Replace with your bell icon path
+import bellIcon from '../public/icons/Animated GIF BG.gif';
+import trafficIcon from '../public/images/megaphone-icon.svg'; // Your second icon
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const messages = [
+    {
+      icon: bellIcon,
+      width: 50,
+      height: 30,
+      content: (
+        <>
+          <strong>Get 20% OFF:</strong>{' '}
+          <span className="top-bar-underline">
+            Follow us on Twitter(X) (
+            <a
+              href="https://twitter.com/lock_leaks"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'white', textDecoration: 'none' }}
+            >
+              @lock_leaks
+            </a>
+            ) and leave a review — get 20% discount on your next service.
+          </span>
+        </>
+      ),
+    },
+    {
+      icon: trafficIcon,
+      width: 20,
+      height: 30,
+      content: (
+        <>
+          <strong>Game-Changer:</strong>{' '}
+          <span className="top-bar-underline">
+            <Link href="/services" style={{ color: 'white', textDecoration: 'none' }}>
+              Boost Your Traffic – Recover Lost Subscribers from Pirated Sites!
+            </Link>
+          </span>
+        </>
+      ),
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % messages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [messages.length]);
 
   return (
     <>
@@ -14,17 +64,14 @@ export default function Header() {
       <div className="top-bar-custom">
         <div className="top-bar-content">
           <Image
-            src={icon}
-            alt="bell icon"
-            width={20}
-            height={20}
-            className="top-bar-icon bell-animate"
+            src={messages[currentIndex].icon}
+            alt="notification icon"
+            width={messages[currentIndex].width}
+            height={messages[currentIndex].height}
+            className={`top-bar-icon ${currentIndex !== 0 ? 'bell-animate' : ''}`}
           />
           <div className="top-bar-text-wrap">
-            <strong>Game-Changer:</strong>{' '}
-            <span className="top-bar-underline">
-              Boost Your Traffic – Recover Lost Subscribers from Pirated Sites!
-            </span>
+            {messages[currentIndex].content}
           </div>
         </div>
       </div>

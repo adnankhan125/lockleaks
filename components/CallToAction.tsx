@@ -15,7 +15,7 @@ const CallToAction = () => {
         </h2>
         <p>Try our free scan and see the difference Lock Leaks can make!</p>
         <div className="ctaButtons">
-          <Link href="/start" className="ctaButton">Start Free</Link>
+          <Link href="/start" className="ctaButton ">Start Free</Link>
           <Link href="/agencies" className="ctaButton agencyButton">For Agencies</Link>
         </div>
       </div>

@@ -5,11 +5,13 @@ import face from '../public/images/Face.svg';
 import phone from '../public/images/Mobile.png';
 import hand from '../public/images/hand.png';
 import icon from '../public/images/your-icon.png';
+import Anonymity from '../public/images/AI & Anonymity.png';
+import Detailed from '../public/images/Detailed Reports.png';
 import checkIcon from '../public/images/check-icon.png';
 import link from '../public/images/link.svg';
 import data from '../public/images/DATA.svg';
 import arch from '../public/images/archive.svg';
-import starts from '../public/images/Vector.png';
+// import starts from '../public/images/Vector.png';
 
 import '../styles/animated.css';
 import '../styles/animatedthird.css';
@@ -169,9 +171,9 @@ export default function FullFeaturesSection() {
                 <div className="ai-text">
                   <h2 className="ai-heading d-flex align-items-start position-relative">
                     <span className="arrow-icon-img me-2 position-relative">
-                      <Image src={icon} alt="Icon" width={50} height={50} />
+                      <Image src={Anonymity} alt="Icon" width={50} height={50} />
                     </span>
-                    <span className="highlight">AI & Anonymity</span>
+                    <span className="highlight-12">AI & Anonymity</span>
                   </h2>
                   <p className="subtitle ms-5">
                     Advanced AI tools detect violations while ensuring your personal information remains private and secure.
@@ -203,9 +205,9 @@ export default function FullFeaturesSection() {
                 <div className="ai-text">
                   <h2 className="ai-heading d-flex align-items-start position-relative">
                     <span className="arrow-icon-img me-2 position-relative">
-                      <Image src={icon} alt="Icon" width={50} height={50} />
+                      <Image src={Detailed} alt="Icon" width={50} height={50} />
                     </span>
-                    <span className="highlight">Detailed Reports</span>
+                    <span className="highlight-2">Detailed Reports</span>
                   </h2>
                   <p className="subtitle ms-5">
                     Your Privacy, Our Priority – Transparent & Regular Updates.
@@ -227,8 +229,8 @@ export default function FullFeaturesSection() {
               </div>
             </div>
           </div>
-          <Image src={starts} className="star star-left-2" alt="star" />
-          <Image src={starts} className="star star-right-1" alt="star" />
+          {/* <Image src={starts} className="star star-left-2" alt="star" />
+          <Image src={starts} className="star star-right-1" alt="star" /> */}
         </section>
 
       </div>

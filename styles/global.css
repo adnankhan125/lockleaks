@@ -91,15 +91,22 @@ body {
 
 h1, h2, h3, h4, h5, h6, a {
   font-family: 'Poppins', sans-serif; /* Apply Poppins font globally */
-
 }
+body {
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+
+
 
 /* 🔔 Top Bar */
 .top-bar-custom {
-  background: linear-gradient(to right, #C65FB7, #86347A, #44113D);
+background-color: #AD4A9C;
   color: white;
   text-align: center;
-  padding: 8px 15px;
+  padding: 5px 15px;
   font-size: 15px;
   font-weight: 400;
 }

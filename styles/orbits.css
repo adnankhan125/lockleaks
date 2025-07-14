@@ -180,7 +180,7 @@
 
 
 /* Star styles */
-.star {
+/* .star {
   position: absolute;
   width: 15px;
   height: 15px;
@@ -188,17 +188,17 @@
   z-index: 1;
   opacity: 0.8;
   animation: blink 2.5s infinite ease-in-out;
-}
+} */
 
 /* Left stars */
-.star-left-1 { top: 12%; left: 8%; }
+/* .star-left-1 { top: 12%; left: 8%; }
 .star-left-2 { top: 42%; left: 3%; }
-.star-left-3 { bottom: 15%; left: 10%; }
+.star-left-3 { bottom: 15%; left: 10%; } */
 
 /* Right stars */
-.star-right-1 { top: 10%; right: 10%; }
+/* .star-right-1 { top: 10%; right: 10%; }
 .star-right-2 { top: 20%; right: 23%; }
-.star-right-3 { bottom: 18%; right: 6%; }
+.star-right-3 { bottom: 18%; right: 6%; } */
 
 /* Blinking animation */
 @keyframes blink {
