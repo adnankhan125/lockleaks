@@ -13,6 +13,12 @@ import HowItWorks from '@/components/HowItWorks';
 import Footer from '@/components/footer';
 import SimpleComparison from '@/components/SimpleComparison';
 import TestiScrol from '@/components/TestiScrol';
+import BeforeAfterSection from '@/components/BeforeAfterSection';
+
+
+
+
+
 
 
 export default function Contact() {
@@ -23,6 +29,31 @@ export default function Contact() {
       <AgenciesVideo/>
       <HowItWorks/>
       <SimpleComparison/>
+      {/* First Section */}
+      <BeforeAfterSection
+        beforeImage="/images/beforeimg1.webp"
+        afterImage="/images/afterimg1.webp"
+        headingPart1="Impersonator"
+        headingPart2="Profiles Removal"
+      />
+      
+      {/* Second Section */}
+      <BeforeAfterSection
+        beforeImage="/images/beforeimg2.webp"
+        afterImage="/images/aftereimg2.webp"
+        headingPart1="Fake Account"
+        headingPart2="Elimination"
+      />
+      
+      {/* Third Section */}
+      <BeforeAfterSection
+        beforeImage="/images/beforeimg3.webp"
+        afterImage="/images/afterimg3.webp"
+        headingPart1="Online Identity"
+        headingPart2="Protection"
+      />
+
+ 
       <TestiScrol/>
       {/* <Faqs /> */}
       <Footer />

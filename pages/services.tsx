@@ -10,6 +10,7 @@ import CompareSection from '@/components/CompareSection';
 import Footer from '@/components/footer';
 import CompareLeakSection from '@/components/CompareLeakSection';
 import dynamic from "next/dynamic";
+import SpotlightScroller from '@/components/SpotlightScroller';
 
 const ProtectPopup = dynamic(() => import("@/components/ProtectPopup"), { ssr: false });
 export default function ServicesPage() {
@@ -19,6 +20,8 @@ export default function ServicesPage() {
       <TcSection />
       <TrafficRecoverySection/>
       <CompareLeakSection/>
+      <SpotlightScroller/>
+      
       <CompareSection/>
       <ProtectPopup/>
       <Footer/>
