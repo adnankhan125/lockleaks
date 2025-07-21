@@ -53,8 +53,8 @@ export default function TcSection() {
               src="/images/locck.svg"
               alt="Dropdown Trigger"
               className="top-icon"
-              style={{ cursor: 'pointer' }}
-              onClick={() => setDropdownOpen(!dropdownOpen)}
+              // style={{ cursor: 'pointer' }}
+              // onClick={() => setDropdownOpen(!dropdownOpen)}
             />
             <img src="/images/wifi.svg" alt="Wi-Fi" className="top-icon" />
             <img src="/images/battery.svg" alt="Battery" className="top-icon" />
@@ -63,7 +63,7 @@ export default function TcSection() {
           </div>
         </div>
 
-        {dropdownOpen && (
+        {/* {dropdownOpen && (
           <div className="wifi-dropdown">
             <input type="text" placeholder="Search" className="wifi-search" />
             <div className="dropdown-section">
@@ -79,7 +79,7 @@ export default function TcSection() {
               <div className="dropdown-item faded">Sign Out</div>
             </div>
           </div>
-        )}
+        )} */}
 
         {showVideo ? (
           <video

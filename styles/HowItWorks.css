@@ -83,6 +83,7 @@
     font-size: 16px;
     line-height: 1.6;
 }
+
 .offer-box {
   display: flex;
   flex-wrap: wrap;
@@ -92,6 +93,68 @@
   gap: 30px;
   align-items: flex-start;
 }
+
+
+
+
+
+
+.offer-box {
+  position: relative; /* Required for absolute blobs */
+  display: flex;
+  flex-wrap: wrap;
+  background: #3C3C3C;
+  border-radius: 20px;
+  padding: 60px;
+  gap: 30px;
+  align-items: flex-start;
+  overflow: hidden; /* Hide blob overflow */
+}
+
+/* Common blob style */
+.offer-box::before,
+.offer-box::after,
+.offer-box .blob-center {
+  content: "";
+  position: absolute;
+  background-color: #C12BAA;
+  opacity: 1;
+  filter: blur(100px);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  z-index: 01;
+}
+
+/* Top right blob */
+.offer-box::before {
+  top: -80px;
+  right: -80px;
+}
+
+/* Bottom left blob */
+.offer-box::after {
+  bottom: -80px;
+  left: -80px;
+}
+
+/* Center blob (extra div required) */
+.offer-box .blob-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .offer-left {
     flex: 2;

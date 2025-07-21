@@ -1,36 +1,22 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import starts from '../public/images/Vector.png';
 import plusIcon from '../public/images/plus.png';
 import minusIcon from '../public/images/minus.png';
 import '../styles/faqs.css';
 
-export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+type FAQ = {
+  question: string;
+  answer: string;
+};
 
-  const faqs = [
-    {
-      question: "Are removals guaranteed?",
-      answer:
-        "We combine advanced cybersecurity, specialized monitoring, and thorough takedown strategies for a superior success rate. While no service can promise 100% removal, we go well beyond basic DMCA methods, delivering unmatched results.",
-    },
-    {
-      question: "How fast do you remove content?",
-      answer:
-        "Our real-time scanning and 24/7 team identify and address leaks quickly—often within hours. Actual removal times vary by platform, but we push for the fastest resolution possible.",
-    },
-    {
-      question: "What about re-uploads or repeat infringers?",
-      answer:
-        "Our advanced AI flags duplicates and partial matches, so if removed content reappears, we spot it quickly. We stay ahead of persistent infringers using continuous monitoring and specialized cybersecurity tactics.",
-    },
-    {
-      question: "Will my personal details be exposed during the takedown process?",
-      answer:
-        "No. Our company submits every notice in our own name, ensuring your identity remains confidential and shielding you from retaliation.",
-    },
-  ];
+interface FaqSectionProps {
+  faqs: FAQ[];
+  heading?: string; // Optional heading
+}
+
+export default function FaqSection({ faqs, heading = "Frequently Asked Questions" }: FaqSectionProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -40,8 +26,7 @@ export default function FaqSection() {
     <section className="faq-section py-5">
       <div className="container">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <h2 className="faq-heading">Frequently Asked Questions</h2>
-          {/* <a href="#" className="read-all-link">Read all FAQs</a> */}
+          <h2 className="faq-heading">{heading}</h2>
         </div>
 
         <div className="faq-list">

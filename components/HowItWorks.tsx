@@ -38,6 +38,8 @@ const HowItWorks: React.FC = () => {
       </div>
 
       <div className="offer-box">
+          <div className="blob-center"></div>
+
         <div className="offer-left">
             <span className="offer-timer">
               <img src="/icons/timer1.svg" alt="Timer Icon" className="timer-icon" />
