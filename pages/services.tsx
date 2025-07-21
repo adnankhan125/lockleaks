@@ -10,16 +10,40 @@ import Footer from '@/components/footer';
 import TrafficRecoverySection from '@/components/TrafficRecovery';
 import BeforeAfterSection from '@/components/BeforeAfterSection';
 import CallToAction from '@/components/CallToAction';
-
+import FaqSection from '@/components/faqs';
 
 const ProtectPopup = dynamic(() => import("@/components/ProtectPopup"), { ssr: false });
+
 export default function ServicesPage() {
+  const serviceFaqs = [
+    {
+      question: "What is Lock Leaks and how can it help me?",
+      answer:
+        "Lock Leaks is a digital protection service that detects and removes unauthorized content leaks, redirects lost traffic to your verified profile, and offers 24/7 monitoring to prevent impersonation or content abuse.",
+    },
+    {
+      question: "How does traffic recovery work?",
+      answer:
+        "By intercepting traffic from leak sites that post your content without permission, Lock Leaks redirects it to your official profile — turning stolen views into paying subscribers.",
+    },
+    {
+      question: "What types of content can be protected?",
+      answer:
+        "Lock Leaks protects images, videos, and other media, especially content shared on social platforms, leak sites, or any high-risk sources of piracy.",
+    },
+    {
+      question: "How fast does Lock Leaks respond?",
+      answer:
+        "The system uses AI for automatic detection and rapid takedowns, with real-time alerts. You won’t wait days for a response — every action is tracked, logged, and executed immediately.",
+    },
+  ];
+
   return (
     <>
       <Header />
       <TcSection />
-      <TrafficRecoverySection/>
-       {/* First Section */}
+      <TrafficRecoverySection />
+      
       <BeforeAfterSection
         beforeImage="/images/beforeimg1.webp"
         afterImage="/images/afterimg1.webp"
@@ -27,7 +51,6 @@ export default function ServicesPage() {
         headingPart2="Profiles Removal"
       />
       
-      {/* Second Section */}
       <BeforeAfterSection
         beforeImage="/images/beforeimg2.webp"
         afterImage="/images/aftereimg2.webp"
@@ -35,16 +58,17 @@ export default function ServicesPage() {
         headingPart2="Elimination"
       />
       
-      {/* Third Section */}
       <BeforeAfterSection
         beforeImage="/images/beforeimg3.webp"
         afterImage="/images/afterimg3.webp"
         headingPart1="Online Identity"
         headingPart2="Protection"
       />
-      <ProtectPopup/>
-      <CallToAction/>
-      <Footer/>
+
+      <ProtectPopup />
+      <FaqSection faqs={serviceFaqs} heading="Frequently Asked Questions" />
+      <CallToAction />
+      <Footer />
     </>
   );
 }

@@ -2,23 +2,22 @@
 
 import React, { useState } from 'react';
 import '../styles/PricingFaqs.css';
-
 const faqs = [
   {
-    question: ' What’s included in all plans?',
-    answer: 'A packaging designer researches the product and audience, then creates structural and visual packaging concepts from sketch to final production.',
+    question: "What's included in all plans?",
+    answer: 'All plans include AI-powered leak detection, search engine monitoring, pirated site takedowns, social media content removal, and anonymous leak reports.',
   },
   {
     question: 'Can I upgrade my plan later?',
-    answer: 'Charges vary depending on complexity and experience, typically ranging from $200 to $2000 per project or hourly rates.',
+    answer: 'Yes, you can upgrade your plan at any time directly from your account with no service interruption.',
   },
   {
-    question: ' Is there a free scan available before purchasing?',
-    answer: 'You can hire packaging designers through freelance platforms, design agencies, or referrals based on portfolios and experience.',
+    question: 'Is there a free scan available before purchasing?',
+    answer: 'Yes, we offer a free scan to show you where and how your content may be exposed online.',
   },
   {
     question: 'How fast will leaks be detected and removed?',
-    answer: 'The time required can range from a few days to a few weeks depending on the project scope and number of revisions.',
+    answer: 'Detection and removal speed depends on your plan—higher-tier plans offer faster and more frequent scans and takedowns.',
   }
 ];
 

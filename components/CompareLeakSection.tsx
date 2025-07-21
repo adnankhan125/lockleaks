@@ -19,7 +19,7 @@ export default function CompareLeakSection() {
                 <div className="text-center text-pink fw-bold mb-2">YOU</div>
                 <div className="tab-sub text-center ">You Chase Leaks.</div>
                 <div className="text-center">
-                  <img src="/images/pill.svg" alt="Wasting time" className="pill-image" />
+                  <img src="/images/manual.png" alt="Wasting time" className="pill-image" />
                 </div>
               </div>
             </div>

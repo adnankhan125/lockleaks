@@ -53,8 +53,7 @@ export default function TcSection() {
               src="/images/locck.svg"
               alt="Dropdown Trigger"
               className="top-icon"
-              // style={{ cursor: 'pointer' }}
-              // onClick={() => setDropdownOpen(!dropdownOpen)}
+
             />
             <img src="/images/wifi.svg" alt="Wi-Fi" className="top-icon" />
             <img src="/images/battery.svg" alt="Battery" className="top-icon" />
@@ -63,23 +62,7 @@ export default function TcSection() {
           </div>
         </div>
 
-        {/* {dropdownOpen && (
-          <div className="wifi-dropdown">
-            <input type="text" placeholder="Search" className="wifi-search" />
-            <div className="dropdown-section">
-              <div className="section-title">FAVORITES</div>
-              <div className="dropdown-item"><img src="/icons/stg.svg" /> STG Cluster</div>
-              <div className="dropdown-item"><img src="/icons/prod.svg" /> Prod Cluster</div>
-              <div className="dropdown-item"><img src="/icons/elastic.svg" /> Elastic</div>
-              <div className="dropdown-item"><img src="/icons/gitlab.svg" /> Gitlab</div>
-              <div className="dropdown-item"><img src="/icons/jira.svg" /> Jira</div>
-            </div>
-            <div className="dropdown-section">
-              <div className="dropdown-item faded">Other Resources</div>
-              <div className="dropdown-item faded">Sign Out</div>
-            </div>
-          </div>
-        )} */}
+    
 
         {showVideo ? (
           <video

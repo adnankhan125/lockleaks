@@ -16,30 +16,32 @@ import TestiScrol from '@/components/TestiScrol';
 import CompareSection from '@/components/CompareSection';
 import CompareLeakSection from '@/components/CompareLeakSection';
 import SpotlightScroller from '@/components/SpotlightScroller';
+import CallToAction from '@/components/CallToAction';
 
 export default function Contact() {
-  const agencyFaqs = [
-    {
-      question: "What is Lock Leaks and how can it help me?",
-      answer:
-        "Lock Leaks is a digital protection service that detects and removes unauthorized content leaks, redirects lost traffic to your verified profile, and offers 24/7 monitoring to prevent impersonation or content abuse.",
-    },
-    {
-      question: "How does traffic recovery work?",
-      answer:
-        "By intercepting traffic from leak sites that post your content without permission, Lock Leaks redirects it to your official profile — turning stolen views into paying subscribers.",
-    },
-    {
-      question: "What types of content can be protected?",
-      answer:
-        "Lock Leaks protects images, videos, and other media, especially content shared on social platforms, leak sites, or any high-risk sources of piracy.",
-    },
-    {
-      question: "How fast does Lock Leaks respond?",
-      answer:
-        "The system uses AI for automatic detection and rapid takedowns, with real-time alerts. You won’t wait days for a response — every action is tracked, logged, and executed immediately.",
-    },
-  ];
+ const agencyFaqs = [
+  {
+    question: "How many creators can I manage under one agency account?",
+    answer:
+      "There’s no limit. You can protect and monitor as many creators as needed from a single dashboard.",
+  },
+  {
+    question: "How fast are leaks detected and removed?",
+    answer:
+      "Our system scans 24/7. Most leaks are detected within minutes and takedown requests are initiated automatically.",
+  },
+  {
+    question: "Can I track results and traffic recovery for each model?",
+    answer:
+      "Yes. You’ll get detailed reports per creator, including takedown history, traffic redirection, and recovery impact.",
+  },
+  {
+    question: "Do you offer onboarding or support for agencies?",
+    answer:
+      "Absolutely. Agencies receive priority onboarding, live support, and a dedicated success manager to help you scale.",
+  },
+];
+
 
   return (
     <>
@@ -52,7 +54,9 @@ export default function Contact() {
       <SpotlightScroller />
       <CompareSection />
       <TestiScrol />
-      <FaqSection faqs={agencyFaqs} heading="Frequently Asked Questions" />
+      <FaqSection faqs={agencyFaqs} heading="Frequently Asked Questions" /> 
+      <CallToAction/>
+
       <Footer />
     </>
   );
