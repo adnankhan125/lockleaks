@@ -8,16 +8,37 @@
 }
 
 .grid-background {
-    background-image: linear-gradient(#0000 51px, #555454 52px), linear-gradient(90deg, #000000d9 51px, #555454 52px);
-    background-size: 52px 52px;
-    border: 1px solid #313131;
-    border-radius: 0;
-    width: 100%;
-    max-width: 1145px;
-    height: 469px;
-    position: relative;
-    overflow: hidden;
+  background-image: linear-gradient(#0000 51px, #555454 52px), linear-gradient(90deg, #000000d9 51px, #555454 52px);
+  background-size: 52px 52px;
+  border: 1px solid #313131;
+  width: 100%;
+  max-width: 1145px;
+  height: 469px;
+  position: relative;
+  overflow: hidden;
 }
+
+.scrolling-sites {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  animation: scrollLeft 40s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
 .site-box {
   text-align: center;
@@ -29,7 +50,7 @@
   padding: 10px 7px;
   font-size: 14px;
   transition: transform 0.3s;
-  position: absolute;
+  position: relative;
   height: 22%;
   box-shadow: none;
 }
@@ -45,11 +66,19 @@
 .status-label {
   font-size: 12px;
   margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+  color: #8C7189;
 }
 
 .status-reason {
-  font-size: 11px;
-  color: #bbb;
+  font-size: 12px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+  color: #817180;
 }
 
 .site-title {
@@ -69,36 +98,15 @@
   backdrop-filter: blur(1px);
   color: #919191 !important;
 }
-.status-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 6px;
-  font-size: 12px;
-  padding-left: 2px;
-  padding-right: 2px;
-  color: #8C7189;
-}
 
-
-.status-reason {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  padding-left: 2px;
-  padding-right: 2px;
-  color: #817180;
-  margin-top: 4px;
-}
 /* Pink Blurred Circles */
 .circle-3k {
-     filter: blur(60px);
-    z-index: 0;
-    pointer-events: none;
-    background: #501b4a57;
-    border-radius: 50%;
-    position: absolute;
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+  background: #501b4a57;
+  border-radius: 50%;
+  position: absolute;
 }
 
 .circle-1 {
@@ -118,11 +126,11 @@
 }
 
 .circle-3 {
-    width: 250px;
-    height: 250px;
-    top: 60%;
-    left: 78%;
-    transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  top: 60%;
+  left: 78%;
+  transform: translate(-50%, -50%);
 }
 
 .traffic-title {
@@ -146,14 +154,16 @@
 }
 
 @media (max-width: 767px) {
-.traffic-title {
+  .traffic-title {
     font-size: 28px;
   }
-.traffic-subtitle {
+
+  .traffic-subtitle {
     margin-top: 5px;
     font-size: 16px;
   }
-.traffic-desc {
+
+  .traffic-desc {
     margin-top: 0.5px;
     font-size: 15px;
   }

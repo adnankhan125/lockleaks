@@ -3,6 +3,7 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.css';
 import '../styles/faqs.css';
+
 import Header from '@/components/header';
 import Orbit from '@/components/orbit';
 import ProtectSection from '@/components/ProtectContentSection';
@@ -13,6 +14,7 @@ import Footer from '@/components/footer';
 import FaqSection from '@/components/faqs';
 import DataPrivacySection from '@/components/DataPrivacySection';
 import ParticlesBackground from '@/components/particlesbackground';
+import DiscountBanner from '@/components/DiscountBanner';
 
 export default function Home() {
   const homeFaqs = [
@@ -46,6 +48,7 @@ export default function Home() {
       <ProtectSection />
       <Animationthird />
       <DataPrivacySection />
+      <DiscountBanner/>
       <FaqSection faqs={homeFaqs} heading="Frequently Asked Questions" />
       <Testimonial />
       <CallToAction />
