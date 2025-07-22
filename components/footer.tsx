@@ -66,7 +66,7 @@ export default function Footer() {
               <li><Link href="/services" className="text-white text-decoration-none nav-link-custom">Services</Link></li>
               <li><Link href="/pricing" className="text-white text-decoration-none nav-link-custom">Pricing</Link></li>
               <li><Link href="/agencies" className="text-white text-decoration-none nav-link-custom">Agencies</Link></li>
-              <li><Link href="/blog" className="text-white text-decoration-none nav-link-custom">Blog</Link></li>
+              <li><Link href="/blogs" className="text-white text-decoration-none nav-link-custom">Blog</Link></li>
             </ul>
           </div>
 

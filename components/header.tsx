@@ -94,7 +94,7 @@ export default function Header() {
               <Link href="/services" className="nav-link-custom">Services</Link>
               <Link href="/pricing" className="nav-link-custom">Pricing</Link>
               <Link href="/agencies" className="nav-link-custom">Agencies</Link>
-              <Link href="/blog" className="nav-link-custom">Blog</Link>
+              <Link href="/blogs" className="nav-link-custom">Blog</Link>
             </div>
 
             {/* Buttons + Hamburger */}
