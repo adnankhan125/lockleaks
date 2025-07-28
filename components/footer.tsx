@@ -7,6 +7,8 @@ import xIcon from '../public/icons/twitter.svg';
 import instagramIcon from '../public/icons/instagram.svg';
 import tiktokIcon from '../public/icons/tiktok.svg';
 import redditIcon from '../public/icons/reddit.svg';
+import youtube from '../public/icons/youtube.svg';
+
 
 export default function Footer() {
   // Icon and link pairs
@@ -30,6 +32,11 @@ export default function Footer() {
       icon: redditIcon,
       alt: 'Threads', // Assuming it's for Threads
       url: 'https://www.threads.com/@lockleaks',
+    },
+    {
+      icon: youtube,
+      alt: 'Youtube', // Assuming it's for Threads
+      url: 'https://www.youtube.com/@lockleaks',
     },
   ];
 

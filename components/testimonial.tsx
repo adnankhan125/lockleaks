@@ -1,4 +1,3 @@
-// components/testimonial.tsx
 import Image from 'next/image';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -98,6 +97,17 @@ const Testimonial = () => {
                   <p>{testimonial.role}</p>
                 </div>
               </div>
+
+              {/* Bottom Right SVG Icon */}
+              <div className="testimonialIcon">
+              <Image
+                src="/icons/top-right-arrow.svg"
+                alt="Arrow Icon"
+                width={24}
+                height={24}
+              />
+            </div>
+
             </div>
           </SwiperSlide>
         ))}

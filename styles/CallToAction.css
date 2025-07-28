@@ -53,13 +53,12 @@
 .highlight-1 {
   background: linear-gradient(to bottom, #5c1a4e 15%, #5c1a4e 85%, #2C1029 100%);
   color: #F4C4ED;
-  -webkit-text-fill-color: #F4C4ED; /* ✅ Override transparent from parent */
+  -webkit-text-fill-color: #F4C4ED; /* override transparent from parent */
   border-radius: 4px 4px 0 0;
   padding: 10px 2px 6px 2px;
   display: inline-block;
   box-shadow: 0 2px 12px #0006;
 }
-
 
 .ctaContent p {
   color: #A39EA4;
@@ -68,39 +67,45 @@
   font-weight: 800;
 }
 
-.ctaButtons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
 .ctaButton {
-  background-color: #C52BAF;
+  background-color: #c52baf; /* pink */
   color: white;
   padding: 8px 40px;
   text-decoration: none;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
-  border: 1px solid #C52BAF;
+  border: 2px solid #c52baf;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.ctaButton:hover {
-  background-color: #00000000;
-  border: 1px solid #C52BAF;
+.ctaButton.hovered {
+  background-color: #000000 !important;
+  border-color: 1px solid #c52baf !important;
+  color: white !important;
 }
 
 .agencyButton {
-  background-color: transparent;
-  border: 1px solid #C52BAF;
-  color: #ffffff;
+  background-color: #000000; /* black */
+  border-color: 1px solid #c52baf !important;
+  color: white;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.agencyButton:hover {
-  background-color: #C52BAF;
-  color: white;
+.agencyButton.hovered {
+  background-color: #c52baf !important;
+  border-color: 1px solid #c52baf !important;
+  color: white !important;
 }
+
+/* Disable default :hover effects */
+.ctaButton:hover,
+.agencyButton:hover {
+  /* background-color: inherit !important; */
+  border-color: 1px solid #c52baf !important;
+  color: inherit !important;
+}
+
 
 /* Responsive */
 @media (max-width: 766.98px) {
@@ -120,5 +125,10 @@
 
   .ctaButton {
     padding: 8px 32px !important;
+  }
+
+  .ctaButtons {
+    max-width: 100%;
+    gap: 12px;
   }
 }

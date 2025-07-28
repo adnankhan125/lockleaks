@@ -77,6 +77,19 @@ const monthlyPlans: Plan[] = [
 ];
 
 const yearlyPlans: Plan[] = [
+   {
+    title: 'Free Scan',
+    description: 'Discover how your content is exposed online.',
+    price: 'FREE',
+    features: [
+      { text: 'Scan Leak Sites', icon: '/icons/Scan Leak Sites.svg' },
+      { text: 'AI-Powered Detection', icon: '/icons/ai power.svg' },
+      { text: 'Search Engine Scans', icon: '/icons/ses.svg' },
+      { text: 'Full detailed report', icon: '/icons/report.svg' },
+      { text: 'Premium support', icon: '/icons/prim report.svg' },
+    ],
+    button: 'Start Free Scan',
+  },
   {
     title: 'Starter',
     description: 'Essential protection for new and small creators.',

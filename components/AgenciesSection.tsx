@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/AgenciesSection.css';
+import Link from 'next/link';
 
 const AgenciesSection = () => {
   return (
@@ -31,7 +32,10 @@ const AgenciesSection = () => {
 
         {/* CTA Button */}
         <div className="Agencies-a2-cta">
-          <button className="Agencies-a2-button">Talk to Us</button>
+
+          <Link href="/services">
+            <button className="Agencies-a2-button">Talk to Us</button>
+          </Link>
         </div>
 
         {/* Footer Text */}

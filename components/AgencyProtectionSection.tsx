@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
 import logo from '../public/images/your-logo.svg'; // replace with your actual logo path
@@ -19,7 +19,9 @@ export default function AgencyProtectionSection() {
           Advanced leak detection and content protection for agencies and studios.
         </p>
 
-        <button className="secure-btn">Secure Your Agency</button>
+        <Link href="/agencies">
+          <button className="secure-btn">Secure Your Agency</button>
+        </Link>
       </div>
     </section>
   );

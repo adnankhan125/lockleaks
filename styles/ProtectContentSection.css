@@ -46,11 +46,13 @@
   color: #FFFFFF;
 }
 
+
 .protect-desc {
-    color: #9e9da1;
+    color: #ccc;
+    text-align: justify;
     margin-bottom: 30px;
     font-size: 16px;
-    text-align: justify;
+    font-family: 'Poppins';
 }
 
 .start-btn {

@@ -18,8 +18,8 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 100%;
-  font-family: 'Montserrat';
-  background: linear-gradient(to bottom, #D268C4, #FCCDEF);
+  font-family: 'sans-serif, Montserrat';
+  background: linear-gradient(to bottom, #CB5FAD, #D0C3CC);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
