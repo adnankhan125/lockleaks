@@ -71,7 +71,7 @@ export default function CompareSection() {
 
         {/* CTA */}
         <div className="mt-5">
-          <button className="btn btn-primary px-4 py-2 start-btn">
+          <button className="btn px-4 py-2 start-btn">
             Start Free
           </button>
         </div>
