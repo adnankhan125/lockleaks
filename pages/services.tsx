@@ -59,7 +59,7 @@ export default function ServicesPage() {
       />
       
       <BeforeAfterSection
-        beforeImage="/images/beforeimg3.webp"
+        beforeImage="/images/before1122.png"
         afterImage="/images/afterimg3.webp"
         headingPart1="Online Identity"
         headingPart2="Protection"
