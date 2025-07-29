@@ -12,8 +12,10 @@ export default function AgencyProtectionSection() {
         <Image src={logo} alt="Logo" className="section-logo mb-4" width={100} height={100} />
 
         <h2 className="section-heading">
-          Protect Your Creators. Protect Your Business.
+          <span className="gradient-creators">Protect Your Creators.</span>{' '}
+          <span className="gradient-business">Protect Your Business.</span>
         </h2>
+
 
         <p className="section-description">
           Advanced leak detection and content protection for agencies and studios.
@@ -26,3 +28,4 @@ export default function AgencyProtectionSection() {
     </section>
   );
 }
+

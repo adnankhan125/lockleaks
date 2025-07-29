@@ -62,8 +62,9 @@ export default function ServicesPage() {
         beforeImage="/images/before1122.png"
         afterImage="/images/afterimg3.webp"
         headingPart1="Online Identity"
-        headingPart2="Protection"
+        headingPart2="Protection"    
       />
+      
 
       <ProtectPopup />
       <FaqSection faqs={serviceFaqs} heading="Frequently Asked Questions" />

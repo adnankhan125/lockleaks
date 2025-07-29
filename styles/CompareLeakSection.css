@@ -91,6 +91,30 @@
     top: 75px;
 }
 
+.compare-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem; 
+}
+
+.compare-button {
+  background-color: #D631BE !important;
+  color: white;
+  font-weight: 600;
+  padding: 8px 15px;
+  border: 1px solid #D631BE !important;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.compare-button:hover {
+  background-color: #000000;
+  border: 1px solid #D631BE !important;
+
+}
+
+
 @media (max-width: 767px) {
   .pill {
     font-size: 0.88rem;

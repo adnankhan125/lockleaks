@@ -152,6 +152,19 @@
   color: #A7A7A7;
   margin-bottom: 5px;
 }
+.custom-traffic-button {
+  background-color: #D631BE !important;
+  color: white !important;
+  font-weight: 600;
+  border: 1px solid #D631BE ;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-traffic-button:hover {
+  background-color: #00000000 !important;
+  border: 1px solid #D631BE !important;
+}
 
 @media (max-width: 767px) {
   .traffic-title {

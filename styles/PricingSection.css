@@ -8,7 +8,7 @@
 .section-title {
   font-weight: 600;
   margin-bottom: 10px;
-  font-size: 60px;
+  font-size: 60px !important;
   background: linear-gradient(to right, #F344C3 40%, #fd95e5 50%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

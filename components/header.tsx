@@ -4,11 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../public/images/lockleaks.svg';
 import bellIcon from '../public/icons/Animated GIF BG.gif';
-import trafficIcon from '../public/images/megaphone-icon.svg'; // Your second icon
+import trafficIcon from '../public/images/megaphone-icon.svg';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFixed, setIsFixed] = useState(false);
 
   const messages = [
     {
@@ -54,12 +55,28 @@ export default function Header() {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % messages.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, [messages.length]);
 
+  useEffect(() => {
+    const onScroll = () => {
+      setIsFixed(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', onScroll);
+
+    // Initial check on mount
+    onScroll();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
   return (
     <>
+      {/* Placeholder to prevent content jump when header becomes fixed */}
+      {isFixed && <div style={{ height: '70px' }} />}
+
       {/* Top Notification Bar */}
       <div className="top-bar-custom">
         <div className="top-bar-content">
@@ -70,14 +87,12 @@ export default function Header() {
             height={messages[currentIndex].height}
             className={`top-bar-icon ${currentIndex !== 0 ? 'bell-animate' : ''}`}
           />
-          <div className="top-bar-text-wrap">
-            {messages[currentIndex].content}
-          </div>
+          <div className="top-bar-text-wrap">{messages[currentIndex].content}</div>
         </div>
       </div>
 
       {/* Main Header */}
-      <header className="header-custom">
+      <header className={`header-custom ${isFixed ? 'fixed' : ''}`}>
         <div className="container">
           <div className="row align-items-center">
             {/* Logo */}
@@ -90,12 +105,20 @@ export default function Header() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="menu-wrapper d-none d-md-flex col-md-4 justify-content-center">
-              <Link href="/services" className="nav-link-custom">Services</Link>
-              <Link href="/pricing" className="nav-link-custom">Pricing</Link>
-              <Link href="/agencies" className="nav-link-custom">Agencies</Link>
-              <Link href="/blogs" className="nav-link-custom">Blog</Link>
-            </div>
+            <nav className="menu-wrapper d-none d-md-flex col-md-4 justify-content-center">
+              <Link href="/services" className="nav-link-custom">
+                Services
+              </Link>
+              <Link href="/pricing" className="nav-link-custom">
+                Pricing
+              </Link>
+              <Link href="/agencies" className="nav-link-custom">
+                Agencies
+              </Link>
+              <Link href="/blogs" className="nav-link-custom">
+                Blog
+              </Link>
+            </nav>
 
             {/* Buttons + Hamburger */}
             <div className="col-6 col-md-4 d-flex justify-content-end align-items-center gap-2">
@@ -118,10 +141,18 @@ export default function Header() {
           {/* Mobile Nav */}
           {mobileMenuOpen && (
             <div className="mobile-nav d-flex flex-column align-items-end pe-3 mt-2">
-              <Link href="/services" className="nav-link-custom mb-1">Services</Link>
-              <Link href="/pricing" className="nav-link-custom mb-1">Pricing</Link>
-              <Link href="/agencies" className="nav-link-custom mb-1">Agencies</Link>
-              <Link href="/blog" className="nav-link-custom">Blog</Link>
+              <Link href="/services" className="nav-link-custom mb-1">
+                Services
+              </Link>
+              <Link href="/pricing" className="nav-link-custom mb-1">
+                Pricing
+              </Link>
+              <Link href="/agencies" className="nav-link-custom mb-1">
+                Agencies
+              </Link>
+              <Link href="/blog" className="nav-link-custom">
+                Blog
+              </Link>
             </div>
           )}
         </div>

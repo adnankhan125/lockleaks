@@ -54,6 +54,11 @@ export default function TrafficRecoverySection() {
           ))}
         </div>
       </div>
+
+      {/* Button */}
+      <div className="text-center mt-5">
+        <button className="btn custom-traffic-button px-4 py-2">Get Started Now</button>
+      </div>
     </section>
   );
 }

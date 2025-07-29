@@ -7,9 +7,8 @@ export default function CompareLeakSection() {
   return (
     <section className="compare-leak-section py-5">
       <div className="container">
-        <div className="text-center mb-5">
+        <div className="text-center mb-3">
           <div className="row gy-4 align-items-center justify-content-center">
-            
             {/* LEFT SIDE */}
             <div className="col-md-5">
               <div className="circle-card">
@@ -32,9 +31,9 @@ export default function CompareLeakSection() {
             {/* RIGHT SIDE */}
             <div className="col-md-5">
               <div className="tab-card dark">
-                  <div className="text-center mb-2">
+                <div className="text-center mb-2">
                   <img src="/images/lockcompany.svg" alt="Lock Leaks Logo" className="lock-leaks-logo" />
-                </div>                
+                </div>
                 <div className="tab-header text-center text-white mb-4">AI Finds & Removes Instantly</div>
                 <div className="text-center text-pink fw-bold mb-2">LOCK LEAKS</div>
                 <div className="tab-sub text-center">We Delete Them.</div>
@@ -58,10 +57,13 @@ export default function CompareLeakSection() {
                 </div>
               </div>
             </div>
+          </div> 
+        </div> 
+        <div className="compare-button-wrapper">
+          <button className="compare-button">Try Lock Leaks Now</button>
+        </div>
 
-          </div> {/* end row */}
-        </div> {/* end text-center mb-5 */}
-      </div> {/* end container */}
+      </div> 
     </section>
   );
 }
