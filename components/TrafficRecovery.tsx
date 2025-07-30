@@ -5,16 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function TrafficRecoverySection() {
   const sites = [
-    { name: 'leakzone.com', status: 'Blocked', reason: 'Piracy', y: '25%' },
-    { name: 'linkedin.com', y: '50%' },
-    { name: 'gamezone.com', y: '88%' },
-    { name: 'sportbet360.com', status: 'Blocked', reason: 'Gambling', y: '60%' },
-    { name: 'reddit.com', y: '20%' },
-    { name: 'musicplus.com', y: '30%' },
-    { name: 'filestreams.cc', status: 'Blocked', reason: 'Copyright', y: '50%' },
-    { name: 'dailymail.com', y: '70%' },
-    { name: 'xvidtube.net', status: 'Blocked', reason: 'Adult Content', y: '35%' },
-    { name: 'quora.com', y: '60%' }
+    { name: 'leakzone.com', status: 'Traffic Recovered : +50 Visits', reason: 'New Subscribers : +3', y: '85%' },
+    { name: 'VerifiedProfile.com', y: '80%' },
+    { name: 'freeleaks.com', y: '55%', status: '+20 Subscribers Gained', reason: '$300 in Recovered Income' },
+    { name: 'PremiumProfile.com', y: '50%' },
+    { name: 'imposterpage.com', status: '+5 New Subscribers Gained', reason: '$120 in Lost Revenue Recovered', y: '30%' },
+    { name: 'YourRealBrand.com', y: '25%' },
+    { name: 'stolencontent.net', status: '+10 New Followers', reason: '+10 New Followers', y: '45%' },
+    { name: 'YourOnlyFans.com', y: '40%' },
+    { name: 'copycatpage.com', status: 'Traffic Redirected: +35 Views', reason: '+8 New Fans', y: '65%' },
+    { name: 'AuthenticBrand.com', y: '60%' }
   ];
 
   return (
@@ -41,11 +41,11 @@ export default function TrafficRecoverySection() {
               {site.status && (
                 <>
                   <div className="status-label">
-                    <span>Status</span>
+                    {/* <span>Status</span> */}
                     <span className="text-pink">{site.status}</span>
                   </div>
                   <div className="status-reason">
-                    <span>Condition</span>
+                    {/* <span>Condition</span> */}
                     <span>{site.reason}</span>
                   </div>
                 </>
