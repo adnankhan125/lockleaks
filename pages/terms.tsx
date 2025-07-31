@@ -5,12 +5,14 @@ import '../styles/footer.css';
 import '../styles/global.css';
 import '../styles/termsConditions.css';
 import Footer from '@/components/footer';
+import Newheader from '@/components/newheader';
 
 
 export default function Contact() {
   return (
     <> 
-      <Header /> 
+      {/* <Header />  */}
+      <Newheader/>
       <TermsContent />
       <Footer />
       

@@ -5,12 +5,14 @@ import '../styles/global.css';
 import Footer from '@/components/footer';
 import CallToAction from '@/components/CallToAction';
 import PlatformSection from '@/components/PlatformSection';
+import Newheader from '@/components/newheader';
 
 export default function Home() {
   return (
         <>
 
-      <Header />
+      {/* <Header /> */}
+      <Newheader/>
       <Blogs />
       <PlatformSection/>
       <CallToAction/>

@@ -58,7 +58,9 @@ const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
             />
           </div>
         </div>
+    
       </div>
+      
     </section>
   );
 };

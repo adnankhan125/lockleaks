@@ -18,6 +18,7 @@ import CompareSection from '@/components/CompareSection';
 import CompareLeakSection from '@/components/CompareLeakSection';
 import SpotlightScroller from '@/components/SpotlightScroller';
 import CallToAction from '@/components/CallToAction';
+import Newheader from '@/components/newheader';
 
 export default function Contact() {
  const agencyFaqs = [
@@ -46,7 +47,8 @@ export default function Contact() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+    <Newheader/>
       <AgenciesSection />
       <AgenciesVideo />
       <HowItWorks />

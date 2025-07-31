@@ -14,14 +14,11 @@
 }
 
 .beforeafter img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  border-radius: 12px;
-  /* box-shadow: 0 5px 20px rgba(0,0,0,0.4); */
-  
+    border-radius: 12px;
+    width: 585px;
+    max-width: 648px;
+    height: auto;
 }
-
 
 /* styles/BeforeAfterSection.css */
 .arrow-image {

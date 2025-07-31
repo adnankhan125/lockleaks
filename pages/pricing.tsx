@@ -4,6 +4,7 @@ import '../styles/global.css';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import Newheader from '@/components/newheader';
 
 import '../styles/AgencyProtectionSection.css';
 import AgencyProtectionSection from '@/components/AgencyProtectionSection';
@@ -15,7 +16,9 @@ import '../styles/PricingFaqs.css';
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <Newheader/>
+      
       <PricingSection />
       <AgencyProtectionSection />
       <FastLeakRemovalSection />

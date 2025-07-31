@@ -11,6 +11,7 @@ import TrafficRecoverySection from '@/components/TrafficRecovery';
 import BeforeAfterSection from '@/components/BeforeAfterSection';
 import CallToAction from '@/components/CallToAction';
 import FaqSection from '@/components/faqs';
+import Newheader from '@/components/newheader';
 
 const ProtectPopup = dynamic(() => import("@/components/ProtectPopup"), { ssr: false });
 
@@ -40,7 +41,8 @@ export default function ServicesPage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+       <Newheader/>
       <TcSection />
       <TrafficRecoverySection />
       
@@ -63,7 +65,12 @@ export default function ServicesPage() {
         afterImage="/images/afterimg3.webp"
         headingPart1="Online Identity"
         headingPart2="Protection"    
+        
       />
+          <div className="d-none d-md-flex gap-2 text-center justify-content-center mb-5">
+                
+                <button className="btn-start">Start Free</button>
+              </div>
       
 
       <ProtectPopup />
