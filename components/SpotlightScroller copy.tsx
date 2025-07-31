@@ -83,6 +83,7 @@ const SpotlightScroller = () => {
   }, []);
 
   return (
+    
     <div className={styles.containerSpotlight}>
       <Script 
         src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
@@ -93,159 +94,159 @@ const SpotlightScroller = () => {
       
       <div className={styles.spotlight}></div>
 
-      {/* First Row - Fake to Verified Pages */}
+      {/* First Row - Emails */}
       <div className={styles.contentRow}>
         <div className={styles.contentScroll}>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Fake Fan Page
+            admin@autoco.com
           </div>
-          <div className={styles.contentItem}>fraudpage.org</div>
+          <div className={styles.contentItem}>tech.support@autoco.net</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            fakesite.com
+            hr.department@autoco.org
           </div>
-          <div className={styles.contentItem}>cloneprofile.xyz</div>
+          <div className={styles.contentItem}>dev.team@autoco.dev</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            imposterpage.com
+            security@autoco.sec
           </div>
-          <div className={styles.contentItem}>fakebrand.net</div>
+          <div className={styles.contentItem}>network.admin@autoco.net</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Fake Fan Page
+            admin@autoco.com
           </div>
-          <div className={styles.contentItem}>fraudpage.org</div>
+          <div className={styles.contentItem}>tech.support@autoco.net</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            fakesite.com
+            hr.department@autoco.org
           </div>
-          <div className={styles.contentItem}>cloneprofile.xyz</div>
+          <div className={styles.contentItem}>dev.team@autoco.dev</div>
           {/* Duplicate for seamless loop */}
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Fake Fan Page
+            admin@autoco.com
           </div>
-          <div className={styles.contentItem}>fraudpage.org</div>
+          <div className={styles.contentItem}>tech.support@autoco.net</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            fakesite.com
+            hr.department@autoco.org
           </div>
-          <div className={styles.contentItem}>cloneprofile.xyz</div>
+          <div className={styles.contentItem}>dev.team@autoco.dev</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            imposterpage.com
+            security@autoco.sec
           </div>
-          <div className={styles.contentItem}>fakebrand.net</div>
+          <div className={styles.contentItem}>network.admin@autoco.net</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Fake Fan Page
+            admin@autoco.com
           </div>
-          <div className={styles.contentItem}>fraudpage.org</div>
+          <div className={styles.contentItem}>tech.support@autoco.net</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            fakesite.com
+            hr.department@autoco.org
           </div>
-          <div className={styles.contentItem}>cloneprofile.xyz</div>
+          <div className={styles.contentItem}>dev.team@autoco.dev</div>
         </div>
       </div>
 
-      {/* Second Row - Recovered Stats */}
+      {/* Second Row - IP Addresses */}
       <div className={styles.contentRow} style={{ animationDuration: "30s" }}>
         <div className={styles.contentScroll}>
-          <div className={styles.contentItem}>+10 Real Fans</div>
-          <div className={`${styles.contentItem} ${styles.highlight}`}>+500 Visits</div>
-          <div className={styles.contentItem}>+15 Real Fans</div>
-          <div className={styles.contentItem}>+25 Subscribers</div>
-          <div className={`${styles.contentItem} ${styles.highlight}`}>$500 Income</div>
-          <div className={styles.contentItem}>+30 Engagements</div>
-          <div className={styles.contentItem}>+10 Real Fans</div>
-          <div className={`${styles.contentItem} ${styles.highlight}`}>+500 Visits</div>
-          <div className={styles.contentItem}>+15 Real Fans</div>
-          <div className={styles.contentItem}>+25 Subscribers</div>
+          <div className={styles.contentItem}>192.168.1.1</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>10.0.0.1</div>
+          <div className={styles.contentItem}>172.16.0.1</div>
+          <div className={styles.contentItem}>192.168.0.100</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>10.10.10.1</div>
+          <div className={styles.contentItem}>172.31.255.254</div>
+          <div className={styles.contentItem}>192.168.1.1</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>10.0.0.1</div>
+          <div className={styles.contentItem}>172.16.0.1</div>
+          <div className={styles.contentItem}>192.168.0.100</div>
           {/* Duplicate for seamless loop */}
-          <div className={styles.contentItem}>+10 Real Fans</div>
-          <div className={`${styles.contentItem} ${styles.highlight}`}>+500 Visits</div>
-          <div className={styles.contentItem}>+15 Real Fans</div>
-          <div className={styles.contentItem}>+25 Subscribers</div>
-          <div className={`${styles.contentItem} ${styles.highlight}`}>$500 Income</div>
-          <div className={styles.contentItem}>+30 Engagements</div>
-          <div className={styles.contentItem}>+10 Real Fans</div>
-          <div className={`${styles.contentItem} ${styles.highlight}`}>+500 Visits</div>
-          <div className={styles.contentItem}>+15 Real Fans</div>
-          <div className={styles.contentItem}>+25 Subscribers</div>
+          <div className={styles.contentItem}>192.168.1.1</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>10.0.0.1</div>
+          <div className={styles.contentItem}>172.16.0.1</div>
+          <div className={styles.contentItem}>192.168.0.100</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>10.10.10.1</div>
+          <div className={styles.contentItem}>172.31.255.254</div>
+          <div className={styles.contentItem}>192.168.1.1</div>
+          <div className={`${styles.contentItem} ${styles.highlight}`}>10.0.0.1</div>
+          <div className={styles.contentItem}>172.16.0.1</div>
+          <div className={styles.contentItem}>192.168.0.100</div>
         </div>
       </div>
 
-      {/* Third Row - Verified Pages */}
+      {/* Third Row - Devices */}
       <div className={styles.contentRow} style={{ animationDuration: "35s" }}>
         <div className={styles.contentScroll}>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Verified Creator
+            Dell Precision 3560
           </div>
-          <div className={styles.contentItem}>YourOfficial.com</div>
-          <div className={styles.contentItem}>RealBrand.com</div>
+          <div className={styles.contentItem}>Apple MacBook Pro M2</div>
+          <div className={styles.contentItem}>HP EliteBook 840</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            RealCreator.com
+            Lenovo ThinkPad X1
           </div>
-          <div className={styles.contentItem}>YourRealFans.com</div>
-          <div className={styles.contentItem}>OfficialPage.net</div>
+          <div className={styles.contentItem}>Microsoft Surface Laptop</div>
+          <div className={styles.contentItem}>Asus ZenBook Pro</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Verified Creator
+            Dell Precision 3560
           </div>
-          <div className={styles.contentItem}>YourOfficial.com</div>
-          <div className={styles.contentItem}>RealBrand.com</div>
+          <div className={styles.contentItem}>Apple MacBook Pro M2</div>
+          <div className={styles.contentItem}>HP EliteBook 840</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            RealCreator.com
+            Lenovo ThinkPad X1
           </div>
           {/* Duplicate for seamless loop */}
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Verified Creator
+            Dell Precision 3560
           </div>
-          <div className={styles.contentItem}>YourOfficial.com</div>
-          <div className={styles.contentItem}>RealBrand.com</div>
+          <div className={styles.contentItem}>Apple MacBook Pro M2</div>
+          <div className={styles.contentItem}>HP EliteBook 840</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            RealCreator.com
+            Lenovo ThinkPad X1
           </div>
-          <div className={styles.contentItem}>YourRealFans.com</div>
-          <div className={styles.contentItem}>OfficialPage.net</div>
+          <div className={styles.contentItem}>Microsoft Surface Laptop</div>
+          <div className={styles.contentItem}>Asus ZenBook Pro</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Verified Creator
+            Dell Precision 3560
           </div>
-          <div className={styles.contentItem}>YourOfficial.com</div>
-          <div className={styles.contentItem}>RealBrand.com</div>
+          <div className={styles.contentItem}>Apple MacBook Pro M2</div>
+          <div className={styles.contentItem}>HP EliteBook 840</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            RealCreator.com
+            Lenovo ThinkPad X1
           </div>
         </div>
       </div>
 
-      {/* Fourth Row - Transformation Effects */}
+      {/* Fourth Row - Technologies */}
       <div className={styles.contentRow} style={{ animationDuration: "40s" }}>
         <div className={styles.contentScroll}>
-          <div className={styles.contentItem}>Breaking Apart</div>
+          <div className={styles.contentItem}>Kubernetes Cluster</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Smooth Zoom
+            Docker Swarm
           </div>
-          <div className={styles.contentItem}>Glitch Effect</div>
-          <div className={styles.contentItem}>Flashy Reward</div>
+          <div className={styles.contentItem}>VMware ESXi</div>
+          <div className={styles.contentItem}>Microsoft Hyper-V</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Crumbling Away
+            AWS EC2
           </div>
-          <div className={styles.contentItem}>Traffic Shift</div>
-          <div className={styles.contentItem}>Breaking Apart</div>
+          <div className={styles.contentItem}>Azure VM</div>
+          <div className={styles.contentItem}>Kubernetes Cluster</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Smooth Zoom
+            Docker Swarm
           </div>
-          <div className={styles.contentItem}>Glitch Effect</div>
-          <div className={styles.contentItem}>Flashy Reward</div>
+          <div className={styles.contentItem}>VMware ESXi</div>
+          <div className={styles.contentItem}>Microsoft Hyper-V</div>
           {/* Duplicate for seamless loop */}
-          <div className={styles.contentItem}>Breaking Apart</div>
+          <div className={styles.contentItem}>Kubernetes Cluster</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Smooth Zoom
+            Docker Swarm
           </div>
-          <div className={styles.contentItem}>Glitch Effect</div>
-          <div className={styles.contentItem}>Flashy Reward</div>
+          <div className={styles.contentItem}>VMware ESXi</div>
+          <div className={styles.contentItem}>Microsoft Hyper-V</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Crumbling Away
+            AWS EC2
           </div>
-          <div className={styles.contentItem}>Traffic Shift</div>
-          <div className={styles.contentItem}>Breaking Apart</div>
+          <div className={styles.contentItem}>Azure VM</div>
+          <div className={styles.contentItem}>Kubernetes Cluster</div>
           <div className={`${styles.contentItem} ${styles.highlight}`}>
-            Smooth Zoom
+            Docker Swarm
           </div>
-          <div className={styles.contentItem}>Glitch Effect</div>
-          <div className={styles.contentItem}>Flashy Reward</div>
+          <div className={styles.contentItem}>VMware ESXi</div>
+          <div className={styles.contentItem}>Microsoft Hyper-V</div>
         </div>
       </div>
 
@@ -263,7 +264,7 @@ const SpotlightScroller = () => {
               className="modal-header"
               style={{ backgroundColor: "rgba(197, 50, 157, 0.9)", borderBottom: "none" }}
             >
-              <h5 className="modal-title">Transformation Complete</h5>
+              <h5 className="modal-title">User Authorized</h5>
               <button
                 type="button"
                 className="btn-close btn-close-white"
@@ -272,14 +273,14 @@ const SpotlightScroller = () => {
               ></button>
             </div>
             <div className="modal-body">
-              <h4>Verified Profile</h4>
-              <p>RealBrand.com</p>
+              <h4>Admin User</h4>
+              <p>admin@autoco.com</p>
               <div
                 className="badge"
                 style={{ backgroundColor: "rgba(197, 50, 157, 0.9)", color: "white" }}
               >
                 <i className="fas fa-check-circle me-2"></i>
-                <span>Verified Account</span>
+                <span>Authorized User</span>
               </div>
             </div>
           </div>
