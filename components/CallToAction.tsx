@@ -21,7 +21,7 @@ const CallToAction = () => {
         <p>Try our free scan and see the difference Lock Leaks can make!</p>
         <div
           className="ctaButtons"
-          style={{ maxWidth: '38%', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '20px' }}
+          style={{ maxWidth: '90%', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '20px' }}
         >
           <Link
             href="/start"
