@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, a {
 body {
   position: relative;
   z-index: 1;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 /* Custom Scrollbar */
@@ -34,9 +34,7 @@ body {
   background-color: #7B4878;
   border-radius: 10px;
 }
-body {
-  overflow-x: hidden !important;
-}
+
 
 @keyframes moveCircle {
   0% {
@@ -152,6 +150,9 @@ body {
     transition: all .5s ease-out;
     transform: translateY(100px);
     margin-top: 65px;
+}
+html.body {
+  overflow-x: hidden !important;
 }
 .bubble3 {
     top: 240px;
