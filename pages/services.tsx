@@ -68,9 +68,8 @@ export default function ServicesPage() {
         
       />
           <div className="d-none d-md-flex gap-2 text-center justify-content-center mb-5">
-                
-                <button className="btn-start">Start Free</button>
-              </div>
+          <button className="btn-start">Start Free</button>
+          </div>
       
 
       <ProtectPopup />

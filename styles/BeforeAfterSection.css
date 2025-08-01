@@ -45,4 +45,9 @@
         height: auto !important;
         width: 60% !important;
   }
+  .beforeafter img {
+    width: 90%;
+    max-width: 648px;
+    height: auto;
+}
 }

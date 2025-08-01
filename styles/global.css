@@ -34,10 +34,9 @@ body {
   background-color: #7B4878;
   border-radius: 10px;
 }
-body{
-	overflow-x: hidden !important;
+body {
+  overflow-x: hidden !important;
 }
-
 
 @keyframes moveCircle {
   0% {

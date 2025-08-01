@@ -3,7 +3,9 @@
   padding: 100px 20px;
   text-align: center;
 }
-
+body {
+  overflow-x: hidden !important;
+}
 .tc-section h2 {
   font-size: 44px;
   font-weight: 500;
@@ -284,4 +286,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+@media (max-width: 767px) {
+ .service-circle-right {
+  right: 0%;
+  z-index: -1;
+}
+
 }
