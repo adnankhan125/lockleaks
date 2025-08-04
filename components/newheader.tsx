@@ -111,7 +111,8 @@ export default function Header() {
             {/* Buttons + Hamburger */}
             <div className="col-6 col-md-4 d-flex justify-content-end align-items-center gap-2">
               <div className="d-none d-md-flex gap-2">
-                <button className="btn-login">Log in</button>
+                
+  <Link href="/login" className="btn-login">Log in</Link>
                 <button className="btn-start">Start Free</button>
               </div>
               <div className="d-md-none">

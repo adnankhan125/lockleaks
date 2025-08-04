@@ -139,8 +139,9 @@
   border: 1px solid #c52baf;
   padding: 8px 30px;
   border-radius: 8px;
-  font-weight: 700;
+  font-weight: 700 !important;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-login:hover {
