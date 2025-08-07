@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import keyIcon from '../public/images/key.svg';
+import keyIcon from '../public/images/lock-icon.svg';
 
 export default function LoaderPage() {
   return (

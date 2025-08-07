@@ -4,15 +4,17 @@ import React from 'react';
 import '../styles/PlatformSection.css';
 
 const platforms = [
-  { name: 'TikTok', description: 'Complete Protection for OnlyFans Creators', src: '/icons/TikTokblog.svg' },
-  { name: 'Instagram', description: 'Secure your profile and content 24/7', src: '/icons/instagramblog.svg' },
-  { name: 'Fansly', description: 'Protection for monetized content', src: '/icons/Fansly.svg' },
-  { name: 'Twitter', description: 'Prevent unauthorized reposting', src: '/icons/Twitterlog.svg' },
-  { name: 'Snapchat', description: 'AI monitoring for stolen content', src: '/icons/snapchatblog.svg' },
-  { name: 'Reddit', description: 'Safeguard against leaks and misuse', src: '/icons/Redditblog.svg' },
-  { name: 'Telegram', description: 'Shield your stories and snaps', src: '/icons/Telegramblog.svg' },
-  { name: 'OnlyFans', description: 'Core protection with priority detection', src: '/images/only.svg' }
+  { name: 'TikTok', description: 'Complete leak protection', src: '/icons/TikTokblog.svg' },
+  { name: 'Instagram', description: '24/7 content security', src: '/icons/instagramblog.svg' },
+  { name: 'Fansly', description: 'Monetized content protection', src: '/icons/Fansly.svg' },
+  { name: 'Twitter', description: 'Stop unauthorized reposts', src: '/icons/Twitterlog.svg' },
+  { name: 'Snapchat', description: 'AI stolen content detection', src: '/icons/snapchatblog.svg' },
+  { name: 'Reddit', description: 'Leak and misuse prevention', src: '/icons/Redditblog.svg' },
+  { name: 'Telegram', description: 'Story and snap protection', src: '/icons/Telegramblog.svg' },
+  { name: 'OnlyFans', description: 'Priority DMCA takedown', src: '/images/only.svg' },
+  { name: 'Facebook', description: 'Comprehensive content protection', src: '/icons/Facebook.svg' } 
 ];
+
 
 const PlatformSection: React.FC = () => {
   return (
@@ -61,7 +63,7 @@ const PlatformSection: React.FC = () => {
 
         {/* Third Row */}
         <div className="platform-row">
-          {platforms.slice(6).map((platform, index) => (
+          {platforms.slice(6, 9).map((platform, index) => (
             <div className="platform-grid-item" key={index + 6}>
               <div className="platform-card">
                 <div className="platform-top">
