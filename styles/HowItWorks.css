@@ -117,7 +117,7 @@
 .offer-box .blob-center {
   content: "";
   position: absolute;
-  background-color: #C12BAA;
+  background-color: #c12baa6b;
   opacity: 1;
   filter: blur(100px);
   width: 250px;
