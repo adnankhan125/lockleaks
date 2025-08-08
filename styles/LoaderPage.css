@@ -32,7 +32,10 @@
   align-items: center;
   justify-content: center;
   transform: translateY(8px); /* Image slightly lower */
+  margin-top: 15px;
+
 }
+
 
 .image {
   width: 100%;
