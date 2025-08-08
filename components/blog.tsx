@@ -164,7 +164,7 @@ return (
           <div className="blog-item" key={idx}>
             <div className="blog-card">
               <img src={item.image} alt={item.title} className="blog-thumbnail" />
-              <a href="#" className="blog-arrow">↗</a>
+              <a href="/blogInner" className="blog-arrow">↗</a>
               <div className="blog-details">
                 <div className="blog-meta">
                   <span className={`blog-badge tag-${item.tag.toLowerCase()}`}>

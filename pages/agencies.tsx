@@ -5,8 +5,7 @@ import '../styles/termsConditions.css';
 import '../styles/AgenciesVideo.css';
 import '../styles/faqs.css';
 import '../styles/TcSection.css';
-
-import Header from '@/components/header';
+// import Header from '@/components/header';
 import AgenciesSection from '@/components/AgenciesSection';
 import AgenciesVideo from '@/components/AgenciesVideo';
 import HowItWorks from '@/components/HowItWorks';
