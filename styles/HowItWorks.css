@@ -147,10 +147,14 @@
 
 
 
-
-
-
-
+@media (max-width: 768px) {
+  .offer-box {
+  gap: 0px;
+}
+.offer-benefits {
+    margin-top: 18px;
+}
+}
 
 
 
