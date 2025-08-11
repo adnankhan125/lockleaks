@@ -113,8 +113,7 @@
 
 /* Common blob style */
 .offer-box::before,
-.offer-box::after,
-.offer-box .blob-center {
+.offer-box::after {
   content: "";
   position: absolute;
   background-color: #c12baa6b;
