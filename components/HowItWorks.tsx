@@ -43,10 +43,10 @@ const HowItWorks: React.FC = () => {
         <div className="offer-left">
             <span className="offer-timer">
               <img src="/icons/timer1.svg" alt="Timer Icon" className="timer-icon" />
-              OFFER ENDS IN 9:56
-            </span>
-          <h3><span className="highlight">Transform Your Video</span> Production Today</h3>
-          <p>Join founders who have already cut their video production costs by up to 80%. Don’t miss out on our exclusive member pricing – available for a limited time only.</p>
+              Limited slots for agency onboarding this month</span>
+          <h3><span className="highlight">Protect Your Creators, Boost</span>Agency Profits</h3>
+          <p>Join top agencies already protecting their talent with Lock Leaks. Automate leak detection, 
+            streamline takedowns, and turn lost traffic into profit - all from a single dashboard.</p>
           <div className="buttons">
             <button>Talk to Us</button>
             <button>Talk to Us</button>
@@ -58,22 +58,22 @@ const HowItWorks: React.FC = () => {
             <li>
               <img src="/icons/algorithm.svg" alt="Boost Icon" className="benefit-icon" />
               <div>
-                <strong>Break through the algorithm</strong><br />
-                Our approach focuses on volume and variety to get organic reach.
+                <strong>Recover Lost Revenue Instantly</strong><br />
+                Stop content theft before it damages your clients' brand or income stream.
               </div>
             </li>
             <li>
               <img src="/icons/time.svg" alt="Time Icon" className="benefit-icon" />
               <div>
-                <strong>Save countless hours</strong><br />
-                Create weeks of content in minutes without video editing skills.
+                <strong>Automate Protection at Scale</strong><br />
+                No more manual takedowns. Monitor and protect hundreds of models effortlessly.
               </div>
             </li>
             <li>
               <img src="/icons/chart.svg" alt="Chart Icon" className="benefit-icon" />
               <div>
-                <strong>Proven conversion formats</strong><br />
-                Templates designed specifically to stop the scroll and drive action.
+                <strong>Built for High-Performing Agencies</strong><br />
+                Every tool is optimized to secure your roster and streamline operations.
               </div>
             </li>
           </ul>
