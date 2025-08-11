@@ -67,7 +67,7 @@ export default function LockLeaksSection() {
 
               <div className="bubble bubble2">
                 <Image src={avatar2} alt="User" width={80} height={80} />
-                <p>Thank you so much for your help! <Image src={question2} alt="Heart" width={25} height={25} /></p>
+                <p>Yes, we provide content protection and enforcement. <Image src={question2} alt="Heart" width={25} height={25} /></p>
               </div>
 
               <div className="arrow arrow2">
