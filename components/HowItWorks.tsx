@@ -49,7 +49,7 @@ const HowItWorks: React.FC = () => {
             streamline takedowns, and turn lost traffic into profit - all from a single dashboard.</p>
           <div className="buttons">
             <button>Talk to Us</button>
-            <button>Talk to Us</button>
+            {/* <button>Talk to Us</button> */}
           </div>
         </div>
        <div className="offer-benefits">
