@@ -12,7 +12,7 @@ const platforms = [
   { name: 'Reddit', description: 'Leak and misuse prevention', src: '/icons/Redditblog.svg' },
   { name: 'Telegram', description: 'Story and snap protection', src: '/icons/Telegramblog.svg' },
   { name: 'OnlyFans', description: 'Priority DMCA takedown', src: '/images/only.svg' },
-  { name: 'Facebook', description: 'Comprehensive content protection', src: '/icons/Facebook.svg' } 
+  { name: 'Facebook', description: 'Comprehensive content protection', src: '/icons/Redditblog2.svg' } 
 ];
 
 
