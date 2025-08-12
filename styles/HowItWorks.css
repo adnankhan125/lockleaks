@@ -252,7 +252,7 @@
     padding: 10px;
 }
 .offer-left {
-    flex: 2;
+    flex: unset;
     max-width: 99%;
 }
 .offer-left h3 {
