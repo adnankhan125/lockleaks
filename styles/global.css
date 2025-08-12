@@ -125,9 +125,6 @@ body {
     display: none !important;
   }
 
-  .hamburger-btn {
-    display: block !important;
-  }
 
   .nav-link-custom {
     font-size: 16px;
@@ -138,13 +135,7 @@ body {
     display: none;
   }
 
-  .mobile-hamburger {
-    display: none !important;
-  }
 
-  .mobile-nav {
-    display: none !important;
-  }
   .info-boxes {
     opacity: 0;
     transition: all .5s ease-out;
