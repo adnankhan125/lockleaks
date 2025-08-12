@@ -44,7 +44,7 @@ const HowItWorks: React.FC = () => {
             <span className="offer-timer">
               <img src="/icons/timer1.svg" alt="Timer Icon" className="timer-icon" />
               Limited slots for agency onboarding this month</span>
-          <h3><span className="highlight">Protect Your Creators, Boost</span>Agency Profits</h3>
+          <h3 className="highlight">Protect Your Creators, <br/>Boost Agency Profits</h3>
           <p>Join top agencies already protecting their talent with Lock Leaks. Automate leak detection, 
             streamline takedowns, and turn lost traffic into profit - all from a single dashboard.</p>
           <div className="buttons">
