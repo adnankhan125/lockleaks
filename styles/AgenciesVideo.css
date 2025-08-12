@@ -42,7 +42,7 @@
   box-shadow: 0 0 20px 0 rgba(124, 58, 237, 0.2);
   flex-direction: column;
   overflow: hidden;
-  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .Agencies-video-player {
