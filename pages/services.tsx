@@ -72,7 +72,8 @@ export default function ServicesPage() {
           </div>
       
 
-      <ProtectPopup />
+      {/* <ProtectPopup /> */}
+
       <FaqSection faqs={serviceFaqs} heading="Frequently Asked Questions" />
       <CallToAction />
       <Footer />
