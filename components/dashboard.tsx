@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Daschboard.css';
 import PricingSection from './PricingSection'; // Make sure this path is correct
+import Link from 'next/link';
 
 const Dashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Dashboard');
@@ -16,9 +17,11 @@ const Dashboard: React.FC = () => {
 
           {/* Sidebar */}
           <div className="col-md-4 col-lg-2 lockdash-sidebar">
-            <div className="lockdash-logo">
-              <img src="images/lockleaks.svg" alt="Lock Leaks Logo" />
-            </div>
+          <div className="lockdash-logo">
+            <Link href="/">
+              <img src="/images/lockleaks.svg" alt="Lock Leaks Logo" />
+            </Link>
+          </div>
 
             <a
               href="#"

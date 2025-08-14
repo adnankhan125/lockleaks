@@ -71,7 +71,7 @@ export default function Home() {
           <Image src={centerkey} alt="Center Icon" className="center-icon" />
           <div className="center-buttons-orbit mt-3">
             <Link
-              href="/start"
+              href="/dashboard"
               className="btn-start-1"
               target="_blank"
               rel="noopener noreferrer"
