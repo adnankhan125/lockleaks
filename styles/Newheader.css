@@ -67,7 +67,7 @@
   position: sticky;
   /* width: 90%; */
   padding: 15px 0;
-  z-index: 99999 !important;
+  /* z-index: 9998 !important; */
   margin: 10px auto 0 !important;
   transition: all 0.9s cubic-bezier(0.33, 1, 0.68, 1);
   background-color: #00000000;
@@ -77,7 +77,7 @@
 /* ✅ SCROLLED HEADER – applied on scroll */
 .header-custom.scrolled {
   top: 7px;
-  z-index: 99999 !important;
+  z-index: 9998 !important;
   width: 75% !important;
   margin: 10px auto 0 !important;
   border-radius: 16px !important;
@@ -156,6 +156,7 @@
   padding: 8px 30px;
   border-radius: 8px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-start:hover {

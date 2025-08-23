@@ -1,0 +1,257 @@
+body {
+  background-color: #121212;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+.carousel-item h4,
+.carousel-item p {
+  color: #000 !important;
+}
+
+.dailogs-login-slider-section {
+  width: 90%;
+    background-color: #121212;
+
+  max-width: 1150px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 85vh;
+}
+
+.platform-login-box {
+  background-color: #2b2b2b;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-header {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.check-sub {
+    color: rgb(255, 255, 255);
+    background-color: #3c3137;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+
+.check-instruction {
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-account-box {
+  background-color: #444;
+  padding: 10px 15px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.add-account-box span {
+  color: white;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.dailogs-info-box {
+  background: linear-gradient(to bottom, #ffffff, #f1aced, #f33bc0cc);
+  padding: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.custom-popup {
+  background-color: #2b2b2b;
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+  height: 85vh;
+}
+
+.platform-section {
+  margin-bottom: 1.5rem;
+}
+
+.platform-heading {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.platform-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.platform-btn {
+  background-color: #444;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 14px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  border: 1px solid #444;
+}
+
+.platform-btn:hover {
+  border: 1px solid #f06ad3;
+  transform: scale(1.05);
+}
+
+.btn-pink {
+  background-color: #f1aced;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+
+.btn-pink:hover {
+  background-color: #f06ad3;
+  color: #000;
+}
+
+@media (max-width: 767.98px) {
+  .dailogs-login-slider-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .carousel-inner {
+    padding: 30px 15px;
+  }
+}
+.text-muted{
+  color: #fff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Step3Verify CSS */
+
+.step3-container {
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Headings */
+.step3-container h4,
+.step3-container h6 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Subheading and note */
+.step3-container p.text-muted {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Input row */
+.step3-container .d-flex.gap-3 {
+  margin-bottom: 1rem;
+}
+
+/* Input fields */
+.step3-container input.form-control {
+  border: 1px solid #585858;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #585858;
+}
+
+
+/* Error messages */
+.step3-container small.text-danger {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Radio buttons list */
+.step3-container .list-group {
+  margin-bottom: 1rem;
+}
+
+.step3-container .list-group-item {
+    cursor: pointer;
+    color: #fff;
+    background: #585858;
+    border: 1px solid #585858;
+    border-radius: 9px;
+    margin-bottom: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;     /* Center vertically */
+    width: 60%;
+    margin-left: auto;       /* Center the whole item in parent */
+    margin-right: auto;      /* Center the whole item in parent */
+}
+
+
+.step3-container .list-group-item input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #ff69b4; /* Pink highlight for selected radio */
+}
+
+/* WhatsApp input + Next button */
+.step3-container .d-flex.justify-content-between {
+  gap: 10px;
+}
+
+.step3-container .d-flex.justify-content-between input.form-control {
+  flex: 1;
+}
+
+.step3-container .btn-pink {
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.step3-container .btn-pink:hover {
+  background-color: #e0559c;
+}
