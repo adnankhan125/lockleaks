@@ -77,7 +77,7 @@ const monthlyPlans: Plan[] = [
 ];
 
 const yearlyPlans: Plan[] = [
-   {
+  {
     title: 'Free Scan',
     description: 'Discover how your content is exposed online.',
     price: 'FREE',
@@ -191,7 +191,10 @@ export default function PricingSection() {
                     ))}
                   </ul>
 
-                  <button className="custom-btn mt-3 w-100">{plan.button}</button>
+                  {/* Button with /start link */}
+                  <a href="/start" className="custom-btn mt-3 w-100 text-center d-inline-block">
+                    {plan.button}
+                  </a>
                 </div>
               </div>
             </div>
