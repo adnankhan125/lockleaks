@@ -223,250 +223,237 @@ const CheckPrivateContent: React.FC = () => {
     </>
   );
 
-const Step2Urls = () => (
-  <div>
-    <h6 className="platform-heading">Add your OnlyFans account</h6>
+  const Step2Urls = () => (
+    <div>
+      <div className="input-group mb-3">
+        <input
+          type="url"
+          className="form-control"
+          placeholder="https://onlyfans.com/@username"
+          value={accountUrls[0]}
+          onChange={(e) => updateUrl(0, e.target.value)}
+        />
+        <button
+          type="button"
+          className="btn btn-pink"
+          onClick={() => console.log("Save clicked")}
+        >
+          Save
+        </button>
+      </div>
 
-    {/* First input */}
-    <div className="input-group mb-3">
-      <input
-        type="url"
-        className="form-control"
-        placeholder="https://onlyfans.com/@username"
-        value={accountUrls[0]}
-        onChange={(e) => updateUrl(0, e.target.value)}
-      />
-      <button
-        type="button"
-        className="btn btn-pink"
-        onClick={() => console.log("Save clicked")}
-      >
-        Save
-      </button>
+      <div className="input-group mb-3">
+        <input
+          type="url"
+          className="form-control"
+          placeholder="https://onlyfans.com/@username"
+          value={accountUrls[1] || ""}
+          onChange={(e) => updateUrl(1, e.target.value)}
+        />
+        <button
+          type="button"
+          className="btn btn-pink"
+          onClick={() => console.log("Add clicked")}
+        >
+          Add
+        </button>
+      </div>
+
+      <div className="mt-3">
+        <button
+          type="button"
+          className="btn btn-link text-pink p-0"
+          onClick={addUrlField}
+        >
+          Add Account from Another Platform
+        </button>
+      </div>
     </div>
+  );
 
-    {/* Second input */}
-    <div className="input-group mb-3">
-      <input
-        type="url"
-        className="form-control"
-        placeholder="https://onlyfans.com/@username"
-        value={accountUrls[1] || ""}
-        onChange={(e) => updateUrl(1, e.target.value)}
-      />
-      <button
-        type="button"
-        className="btn btn-pink"
-        onClick={() => console.log("Add clicked")}
-      >
-        Add
-      </button>
-    </div>
+  const Step3Verify = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState({ email: "", password: "" });
 
-    {/* Add Account from Another Platform */}
-    <div className="mt-3">
-      <button
-        type="button"
-        className="btn btn-link text-pink p-0"
-        onClick={addUrlField}
-      >
-        Add Account from Another Platform
-      </button>
-    </div>
-  </div>
-);
+    const validate = () => {
+      const newErrors = { email: "", password: "" };
+      if (!email.includes("@")) newErrors.email = "Please enter a valid email address";
+      if (password.length < 6) newErrors.password = "Don't forget to set your password!";
+      setErrors(newErrors);
+      return !newErrors.email && !newErrors.password;
+    };
 
-const Step3Verify = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({ email: "", password: "" });
+    const handleNextStep = () => {
+      if (validate()) nextStep();
+    };
 
-  const validate = () => {
-    const newErrors = { email: "", password: "" };
-    if (!email.includes("@")) newErrors.email = "Please enter a valid email address";
-    if (password.length < 6) newErrors.password = "Don't forget to set your password!";
-    setErrors(newErrors);
-    return !newErrors.email && !newErrors.password;
+    return (
+      <div className="step3-container">
+        <p className="text-muted text-center mb-4">
+          Enter your email and set a password for your free scan account.
+        </p>
+
+        <div className="d-flex gap-3 mb-2">
+          <div className="flex-fill">
+            <label>Email Address</label>
+            <input
+              type="email"
+              className={`form-control ${errors.email ? "is-invalid" : ""}`}
+              placeholder="your@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {errors.email && <small className="text-danger">{errors.email}</small>}
+          </div>
+
+          <div className="flex-fill">
+            <label>Password</label>
+            <input
+              type="password"
+              className={`form-control ${errors.password ? "is-invalid" : ""}`}
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {errors.password && <small className="text-danger">{errors.password}</small>}
+          </div>
+        </div>
+
+        <p className="text-center text-muted mb-3">
+          Note: (Required for scan updates and account creation.)
+        </p>
+
+        <h6 className="text-center mb-2">Select Your Preferred Contact Method</h6>
+        <div className="list-group mb-3">
+          <label className="list-group-item">
+            <input
+              type="radio"
+              name="verify"
+              className="me-2"
+              checked={verificationMethod === "email"}
+              onChange={() => setVerificationMethod("email")}
+            />
+            Your WhatsApp Number
+          </label>
+          <label className="list-group-item">
+            <input
+              type="radio"
+              name="verify"
+              className="me-2"
+              checked={verificationMethod === "dns"}
+              onChange={() => setVerificationMethod("dns")}
+            />
+            Phone Number
+          </label>
+          <label className="list-group-item">
+            <input
+              type="radio"
+              name="verify"
+              className="me-2"
+              checked={verificationMethod === "file"}
+              onChange={() => setVerificationMethod("file")}
+            />
+            Live Chat
+          </label>
+          <label className="list-group-item">
+            <input
+              type="radio"
+              name="verify"
+              className="me-2"
+              checked={verificationMethod === "none"}
+              onChange={() => setVerificationMethod("none")}
+            />
+            Email Only
+          </label>
+        </div>
+      </div>
+    );
   };
 
-  const handleNextStep = () => {
-    if (validate()) {
-      nextStep(); // Uses the nextStep function from parent
-    }
+  const Step4Review = ({ selectedPlan = "Starter Plan" }) => {
+    const [agreed, setAgreed] = useState(false);
+
+    return (
+      <div className="step4-container">
+        <p className="selected-plan">You’ve selected the {selectedPlan}</p>
+        <p>By proceeding, you confirm your subscription to Lock Leaks Premium.</p>
+
+        <div className="step4-terms">
+          <label className="checkbox-label">
+            <input
+              type="checkbox"
+              checked={agreed}
+              onChange={() => setAgreed(!agreed)}
+            />
+            <span className="custom-check"></span>
+            You agree to our <a href="#">Terms and Conditions</a> and{" "}
+            <a href="#">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button className="step4-btn" disabled={!agreed}>
+          Buy {selectedPlan}
+        </button>
+      </div>
+    );
   };
+
+  const Step5Done = ({ selectedPlan = "Starter Plan" }) => {
+  const [agreed, setAgreed] = useState(false);
+  const [annualAccepted, setAnnualAccepted] = useState(false);
 
   return (
-    <div className="step3-container">
-      <h4 className="mb-2 text-center">Add your contact information</h4>
-      <p className="text-muted text-center mb-4">
-        Enter your email and set a password for your free scan account.
-      </p>
-
-      <div className="d-flex gap-3 mb-2">
-        <div className="flex-fill">
-          <label>Email Address</label>
+    <div className="step5-container text-center py-4">
+      {/* Step 5 main content */}    
+      <p className="selected-plan">You’ve selected the {selectedPlan}</p>
+      <p>By proceeding, you confirm your subscription to Lock Leaks Premium.</p>
+      <div className="step4-terms">
+        <label className="checkbox-label">
           <input
-            type="email"
-            className={`form-control ${errors.email ? "is-invalid" : ""}`}
-            placeholder="your@email.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="checkbox"
+            checked={agreed}
+            onChange={() => setAgreed(!agreed)}
           />
-          {errors.email && <small className="text-danger">{errors.email}</small>}
-        </div>
-
-        <div className="flex-fill">
-          <label>Password</label>
-          <input
-            type="password"
-            className={`form-control ${errors.password ? "is-invalid" : ""}`}
-            placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {errors.password && <small className="text-danger">{errors.password}</small>}
-        </div>
-      </div>
-
-      <p className="text-center text-muted mb-3">
-        Note: (Required for scan updates and account creation.)
-      </p>
-
-      <h6 className="text-center mb-2">Select Your Preferred Contact Method</h6>
-      <div className="list-group mb-3">
-        <label className="list-group-item">
-          <input
-            type="radio"
-            name="verify"
-            className="me-2"
-            checked={verificationMethod === "email"}
-            onChange={() => setVerificationMethod("email")}
-          />
-          Your WhatsApp Number
-        </label>
-        <label className="list-group-item">
-          <input
-            type="radio"
-            name="verify"
-            className="me-2"
-            checked={verificationMethod === "dns"}
-            onChange={() => setVerificationMethod("dns")}
-          />
-          Phone Number
-        </label>
-        <label className="list-group-item">
-          <input
-            type="radio"
-            name="verify"
-            className="me-2"
-            checked={verificationMethod === "file"}
-            onChange={() => setVerificationMethod("file")}
-          />
-          Live Chat
-        </label>
-        <label className="list-group-item">
-          <input
-            type="radio"
-            name="verify"
-            className="me-2"
-            checked={verificationMethod === "none"}
-            onChange={() => setVerificationMethod("none")}
-          />
-          Email Only
+          <span className="custom-check"></span>
+          You agree to our <a href="#">Terms and Conditions</a> and{" "}
+          <a href="#">Privacy Policy</a>.
         </label>
       </div>
 
-      {/* {verificationMethod === "email" && (
-        <div className="d-flex justify-content-between align-items-center gap-2">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="+1 234 567 890"
-          />
-          <button className="btn btn-pink" onClick={handleNextStep}>
-            Next
-          </button>
-        </div>
-      )} */}
+      {/* New Annual Subscription Terms checkbox */}
+      <div className="step4-terms mt-3">
+       <label className="checkbox-label">
+  <input
+    type="checkbox"
+    checked={annualAccepted}
+    onChange={() => setAnnualAccepted(!annualAccepted)}
+  />
+  <span className="custom-check"></span>
+  I accept the <a href="#">[Annual Subscription Terms]</a>, including Traffic Redirection and Content Use policies.
+</label>
+
+      </div>
+
+      <button
+        className="step4-btn mt-3"
+        disabled={!agreed || !annualAccepted} // button enabled only if both checkboxes are checked
+      >
+        Buy {selectedPlan}
+      </button>
     </div>
   );
 };
-
-
-  const Step4Review = () => (
-    <>
-      <h6 className="platform-heading">Review & Confirm</h6>
-      <div className="row g-3">
-        <div className="col-md-6">
-          <div className="card bg-transparent border-light h-100">
-            <div className="card-header border-light">Selected Platforms</div>
-            <div className="card-body">
-              {selectedPlatforms.size ? (
-                <ul className="m-0 ps-3">
-                  {[...selectedPlatforms].map((p) => (
-                    <li key={p}>{p}</li>
-                  ))}
-                </ul>
-              ) : (
-                <div className="text-muted">No platforms selected.</div>
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6">
-          <div className="card bg-transparent border-light h-100">
-            <div className="card-header border-light">Account URLs</div>
-            <div className="card-body">
-              {accountUrls.filter(Boolean).length ? (
-                <ul className="m-0 ps-3">
-                  {accountUrls.filter(Boolean).map((u, i) => (
-                    <li key={i}>{u}</li>
-                  ))}
-                </ul>
-              ) : (
-                <div className="text-muted">No URLs added.</div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="card bg-transparent border-light mt-3">
-        <div className="card-header border-light">Verification</div>
-        <div className="card-body">
-          Method: <strong className="text-white">{verificationMethod}</strong>
-        </div>
-      </div>
-    </>
-  );
-
-  const Step5Done = () => (
-    <>
-      <div className="text-center py-4">
-        <Images src="/images/card3.png" alt="done" width={240} height={150} />
-        <h5 className="mt-3">All Set!</h5>
-        <p className="opacity-75">
-          We’ll start scanning your selected platforms and URLs for potential
-          leaks. You’ll receive updates in real time.
-        </p>
-      </div>
-    </>
-  );
-
   return (
     <div className="d-flex justify-content-center align-items-center min-vh-100">
       <div className="dailogs-login-slider-section d-flex flex-md-row flex-column">
         {/* Left Column */}
         <div className="col-md-6 platform-login-box text-center">
-          <div className="check-header">
-            Check if your private content has been leaked
-          </div>
+          <div className="check-header">Check if your private content has been leaked</div>
           <div className="check-sub">Free & Secure</div>
           <p className="check-instruction">
-            Please provide the URLs of your primary accounts across all
-            platforms you use, even if they are{" "}
-            <strong>no longer active</strong>. This helps ensure comprehensive
-            protection.
+            Please provide the URLs of your primary accounts across all platforms you use, even if they are{" "}
+            <strong>no longer active</strong>. This helps ensure comprehensive protection.
           </p>
 
           <div
@@ -476,12 +463,7 @@ const Step3Verify = () => {
             onClick={resetWizard}
           >
             <span>Add Your Accounts</span>
-            <Images
-              src="/images/accountfinger.svg"
-              width={24}
-              height={24}
-              alt="account"
-            />
+            <Images src="/images/accountfinger.svg" width={24} height={24} alt="account" />
           </div>
         </div>
 
@@ -494,66 +476,25 @@ const Step3Verify = () => {
             data-bs-interval="2000"
           >
             <div className="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#dailogsCarousel"
-                data-bs-slide-to="0"
-                className="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#dailogsCarousel"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#dailogsCarousel"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
+              <button type="button" data-bs-target="#dailogsCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#dailogsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#dailogsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div className="carousel-inner h-100 d-flex align-items-center">
               <div className="carousel-item active text-center px-4">
                 <h4>Think You're Protected? Think Again.</h4>
                 <p>Competitors remove surface leaks. We eliminate them deep.</p>
-                <Images
-                  src="/images/card.png"
-                  className="img-fluid"
-                  style={{ maxWidth: "85%" }}
-                  width={500}
-                  height={300}
-                  alt="Slide 1"
-                />
+                <Images src="/images/card.png" className="img-fluid" style={{ maxWidth: "85%" }} width={500} height={300} alt="Slide 1" />
               </div>
               <div className="carousel-item text-center px-4">
                 <h4>Your Content Deserves the Best Protection.</h4>
-                <p>
-                  We’re not just a leak removal service. Lock Leaks is a
-                  cybersecurity powerhouse...
-                </p>
-                <Images
-                  src="/images/1card.png"
-                  className="img-fluid"
-                  style={{ maxWidth: "85%" }}
-                  width={500}
-                  height={300}
-                  alt="Slide 2"
-                />
+                <p>We’re not just a leak removal service. Lock Leaks is a cybersecurity powerhouse...</p>
+                <Images src="/images/1card.png" className="img-fluid" style={{ maxWidth: "85%" }} width={500} height={300} alt="Slide 2" />
               </div>
               <div className="carousel-item text-center px-4">
                 <h4>24/7 Protection</h4>
                 <p>Sleep easy knowing your brand is always guarded.</p>
-                <Images
-                  src="/images/card3.png"
-                  className="img-fluid"
-                  style={{ maxWidth: "85%" }}
-                  width={500}
-                  height={300}
-                  alt="Slide 3"
-                />
+                <Images src="/images/card3.png" className="img-fluid" style={{ maxWidth: "85%" }} width={500} height={300} alt="Slide 3" />
               </div>
             </div>
           </div>
@@ -561,25 +502,16 @@ const Step3Verify = () => {
       </div>
 
       {/* Platform Modal */}
-      <div
-        className="modal fade"
-        id="platformModal"
-        tabIndex={-1}
-        aria-labelledby="platformModalLabel"
-        aria-hidden="true"
-      >
+      <div className="modal fade" id="platformModal" tabIndex={-1} aria-labelledby="platformModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-lg">
           <div className="modal-content custom-popup text-white">
             <div className="modal-header border-0">
-              <h5
-                className="modal-title w-100 text-center"
-                id="platformModalLabel"
-              >
+              <h5 className="modal-title w-100 text-center" id="platformModalLabel">
                 {step === 1 && "Select your platform"}
-                {step === 2 && "Add your account URLs"}
-                {step === 3 && "Verify ownership"}
-                {step === 4 && "Review details"}
-                {step === 5 && "Ready to scan"}
+                {step === 2 && "Add your OnlyFans account"}
+                {step === 3 && "Add your contact information"}
+                {step === 4 && "Ready to Protect Your Content?"}
+                {step === 5 && "Ready to Protect Your Content?"}
               </h5>
               <button
                 id="closePlatformModalBtn"

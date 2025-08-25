@@ -85,7 +85,7 @@ body {
 }
 
 .custom-popup {
-  background-color: #2b2b2b;
+  background-color: #2b2b2b !important;
   border-radius: 16px;
   padding: 20px;
   color: #fff;
@@ -152,8 +152,6 @@ body {
 .text-muted{
   color: #fff !important;
 }
-
-
 
 
 
@@ -254,4 +252,153 @@ body {
 
 .step3-container .btn-pink:hover {
   background-color: #e0559c;
+}
+
+
+
+/* Checkbox + Terms */
+.step4-terms {
+  max-width: 500px;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: #d1d1d1;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hide the default checkbox */
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+/* Custom checkbox style */
+.custom-check {
+  width: 20px;
+  height: 20px;
+  background: #444;
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .custom-check {
+  background: #ff3ba7;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .custom-check::after {
+  content: "✅";
+  position: absolute;
+  top: 0;
+  left: 2px;
+  font-size: 16px;
+}
+
+/* Links inside terms */
+.step4-terms a {
+  color: #ff6ec4;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.step4-terms a:hover {
+  color: #ff3ba7;
+}
+
+/* Button */
+.step4-btn {
+  background: #ff3ba7;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(255, 59, 167, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.step4-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.step4-btn:hover:not(:disabled) {
+  background: #ff1f96;
+  box-shadow: 0 6px 14px rgba(255, 59, 167, 0.4);
+}
+/* Background aur card feel */
+.step4-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+  justify-content: flex-start; /* align items to top */
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: #f1f1f1;
+}
+/* Hide default checkbox */
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+/* Custom checkbox style */
+.custom-check {
+  width: 20px;
+  height: 20px;
+  background: #444; /* neutral background */
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Show only tick when checked, no background change */
+.checkbox-label input[type="checkbox"]:checked + .custom-check::after {
+  content: "✓"; /* simple tick */
+}
+/* Step5Done.css */
+
+.step5-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontal centering */
+  text-align: center;
+  padding: 2rem;
+}
+
+.step5-container .selected-plan,
+.step5-container p {
+  margin: 0.5rem 0;
+}
+
+.step5-container .step4-terms {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* checkbox label content aligned left inside container */
+  max-width: 680px;
+}
+
+.step5-container .step4-terms label {
+  cursor: pointer;
+}
+
+.step5-container .step4-btn {
+  margin-top: 1.5rem;
+}
+.modal-content{
+  background-color: 2b2b2b !important;
 }
