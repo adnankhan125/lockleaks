@@ -155,7 +155,7 @@ const Dashboard: React.FC = () => {
             {activeTab === 'Subscriptions' && (
               <>
                 <h4>Subscriptions</h4>
-                <PricingSection />
+                <PricingSection hideStartFree={true} />
               </>
             )}
 

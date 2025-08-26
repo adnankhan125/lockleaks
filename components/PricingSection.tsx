@@ -19,6 +19,10 @@ type Plan = {
   button: string;
 };
 
+type PricingSectionProps = {
+  hideStartFree?: boolean; // 👈 yeh prop add ki
+};
+
 const monthlyPlans: Plan[] = [
   {
     title: 'Free Scan',
@@ -134,7 +138,7 @@ const yearlyPlans: Plan[] = [
   },
 ];
 
-export default function PricingSection() {
+export default function PricingSection({ hideStartFree = false }: PricingSectionProps) {
   const [isYearly, setIsYearly] = useState(false);
   const plansToShow = isYearly ? yearlyPlans : monthlyPlans;
 
@@ -142,10 +146,13 @@ export default function PricingSection() {
     <section className="pricing-section">
       <div className="container text-center">
         <h2 className="section-title">Pricing</h2>
+
+        {/* Subtitle */}
         <p className="section-subtitle">
-          Start free.
-          <br /> Upgrade for full protection whenever you're ready.
+          {!hideStartFree && <>Start free.<br /></>}
+          Upgrade for full protection whenever you're ready.
         </p>
+
 
         {/* Toggle Button */}
         <div className="custom-toggle-switch mb-5 d-flex justify-content-center align-items-center gap-3">
