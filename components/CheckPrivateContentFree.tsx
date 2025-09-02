@@ -320,7 +320,7 @@ const CheckPrivateContent: React.FC = () => {
   const Step5Scanning = () => {
     const [progress, setProgress] = useState(0);
     const [iconIndex, setIconIndex] = useState(0);
-    const icons = ["/icons/folder.svg", "/icons/download.svg", "/icons/search.svg"]; // Replace with your actual icon paths
+    const icons = ["/icons/folder.svg", "/icons/1download.svg", "/icons/11search.svg"]; // Replace with your actual icon paths
 
     // Progress simulation
     useEffect(() => {
@@ -375,7 +375,7 @@ const CheckPrivateContent: React.FC = () => {
 
           <div className="add-account-box" data-bs-toggle="modal" data-bs-target="#platformModal" onClick={resetWizard}>
             <span>Add Your Accounts</span>
-            <Image src="/images/accountfinger.svg" width={24} height={24} alt="account" />
+            <Image src="/icons/accountfinger.svg" width={24} height={24} alt="account" />
           </div>
         </div>
 
