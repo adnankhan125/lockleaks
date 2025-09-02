@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/CheckPrivateContent.css";
 import "../styles/Newheader.css";
-import Images from "next/image";
+import Image from "next/image";
 import proimg from "../public/images/pro.png";
 
 type PlatformKey =
@@ -65,7 +65,7 @@ const socialPlatforms: PlatformKey[] = [
   "Facebook",
 ];
 
-const TOTAL_STEPS = 4; // updated to include Step 4
+const TOTAL_STEPS = 5; // Added Step 5
 
 const CheckPrivateContent: React.FC = () => {
   const [step, setStep] = useState<number>(1);
@@ -125,6 +125,7 @@ const CheckPrivateContent: React.FC = () => {
     </div>
   );
 
+  // --------------------- STEP 1 ----------------------
   const Step1Platforms = () => (
     <>
       <h6 className="platform-heading">Subscription Platforms</h6>
@@ -182,6 +183,7 @@ const CheckPrivateContent: React.FC = () => {
     </>
   );
 
+  // --------------------- STEP 2 ----------------------
   const Step2Urls = () => (
     <div>
       <div className="text-center my-3">
@@ -209,6 +211,7 @@ const CheckPrivateContent: React.FC = () => {
     </div>
   );
 
+  // --------------------- STEP 3 ----------------------
   const Step3Verify = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -287,6 +290,7 @@ const CheckPrivateContent: React.FC = () => {
     );
   };
 
+  // --------------------- STEP 4 ----------------------
   const Step4Protect = () => (
     <div className="step text-center">
       <h3 className="popup-heading">Protect Your Content</h3>
@@ -308,9 +312,55 @@ const CheckPrivateContent: React.FC = () => {
         </button>
       </div>
       <h5 className="profile-preview-heading">How It Should Look on Your Profile:</h5>
-      <Images src={proimg} alt="Example Preview" className="popup-image mb-3 d-block mx-auto" />
+      <Image src={proimg} alt="Example Preview" className="popup-image mb-3 d-block mx-auto" />
     </div>
   );
+
+  // --------------------- STEP 5 (NEW) ----------------------
+  const Step5Scanning = () => {
+    const [progress, setProgress] = useState(0);
+    const [iconIndex, setIconIndex] = useState(0);
+    const icons = ["/icons/folder.svg", "/icons/download.svg", "/icons/search.svg"]; // Replace with your actual icon paths
+
+    // Progress simulation
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setProgress((prev) => {
+          let newVal = prev + (Math.random() * 10 - 5);
+          if (newVal < 0) newVal = 0;
+          if (newVal > 100) newVal = 100;
+          return parseFloat(newVal.toFixed(2));
+        });
+      }, 800);
+      return () => clearInterval(interval);
+    }, []);
+
+    // Icon rotation
+    useEffect(() => {
+      const iconTimer = setInterval(() => {
+        setIconIndex((prev) => (prev + 1) % icons.length);
+      }, 1500);
+      return () => clearInterval(iconTimer);
+    }, []);
+
+    return (
+      <div className="step5-scanning text-center">
+        <h3 className="popup-heading mb-3">Scanning in Progress</h3>
+        <p className="popup-description">
+          Please note: The full scan and review may take between 12 to 24 hours. You will be contacted as soon as the results are ready.
+        </p>
+        <p className="popup-instruction mb-4">Stay tuned! We’ll send you updates as soon as your scan is ready.</p>
+
+        <div className="scanning-box">
+          <div className="scanning-text gradient-loading">Scanning...</div>
+          <div className="scan-progress">{progress.toFixed(2)}%</div>
+          <div className="scan-icons">
+            <Image src={icons[iconIndex]} width={50} height={50} alt="icon" />
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="d-flex justify-content-center align-items-center min-vh-100">
@@ -325,17 +375,15 @@ const CheckPrivateContent: React.FC = () => {
 
           <div className="add-account-box" data-bs-toggle="modal" data-bs-target="#platformModal" onClick={resetWizard}>
             <span>Add Your Accounts</span>
-            <Images src="/images/accountfinger.svg" width={24} height={24} alt="account" />
+            <Image src="/images/accountfinger.svg" width={24} height={24} alt="account" />
           </div>
         </div>
 
-        {/* Right Column with Slider */}
-        <div className="col-md-6 dailogs-info-box p-0">
-          {/* carousel remains unchanged */}
-        </div>
+        {/* Right Column */}
+        <div className="col-md-6 dailogs-info-box p-0">{/* carousel remains unchanged */}</div>
       </div>
 
-      {/* Platform Modal */}
+      {/* Modal */}
       <div className="modal fade" id="platformModal" tabIndex={-1} aria-labelledby="platformModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
           <div className="modal-content custom-popup text-white">
@@ -345,6 +393,7 @@ const CheckPrivateContent: React.FC = () => {
                 {step === 2 && "Add your OnlyFans account"}
                 {step === 3 && "Add your contact information"}
                 {step === 4 && "Protect Your Content"}
+                {step === 5 && "Scanning in Progress"}
               </h5>
               <button id="closePlatformModalBtn" type="button" className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -354,6 +403,7 @@ const CheckPrivateContent: React.FC = () => {
               {step === 2 && <Step2Urls />}
               {step === 3 && <Step3Verify />}
               {step === 4 && <Step4Protect />}
+              {step === 5 && <Step5Scanning />}
               <StepFooter />
             </div>
           </div>

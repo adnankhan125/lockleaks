@@ -451,3 +451,46 @@ body {
     /* margin-top: 30px; */
     margin-bottom: 10px;
 }
+
+
+
+
+/* Gradient Loading Text */
+.gradient-loading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #ff00cc, #3333ff, #ff00cc);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.scanning-box {
+  margin-top: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.scan-progress {
+  font-size: 2rem;
+  margin: 15px 0;
+  color: #fff;
+}
+
+.scan-icons img {
+  animation: iconFade 0.5s ease;
+}
+
+@keyframes iconFade {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
