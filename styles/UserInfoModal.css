@@ -1,0 +1,150 @@
+.user-info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 5, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  backdrop-filter: blur(5px);
+}
+
+.user-info-content {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  color: #e1b8ff;
+  border-radius: 20px;
+  width: 420px;
+  max-width: 95%;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(161, 99, 152, 0.2);
+}
+
+.user-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-info-header h5 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.close-btn {
+  background: linear-gradient(135deg, #C77ABC, #A9A9A9); /* Gradient background */
+  border: 1px solid transparent; /* Transparent border for shape */
+  border-radius: 50%; /* Makes it circular */
+  font-size: 22px;
+  color: rgb(0, 0, 0); /* Crox icon color */
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+
+.close-btn:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+.user-info-body {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Scrollbar styling */
+.user-info-body::-webkit-scrollbar {
+  width: 6px;
+}
+.user-info-body::-webkit-scrollbar-thumb {
+  background: #713f6a;
+  border-radius: 6px;
+}
+
+.user-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 25px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.edit-btn {
+  display: flex;
+  align-items: center;   /* vertical center */
+  justify-content: center; /* horizontal center */
+  background: linear-gradient(to bottom, #000000, #C77ABC);
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  line-height: 1.2; 
+  padding: 6px 12px 3px 12px;
+}
+
+.user-info-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.user-info-footer .secondary {
+  background: #2b2b2b;
+  padding: 6px 15px;
+  border-radius: 10px;
+  color: #d1aaff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.user-info-footer .secondary:hover {
+  background: #3a3a3a;
+}
+
+.send-btn {
+  background: linear-gradient(to bottom, #000000, #C77ABC);
+  border: 1px solid #fff;
+  padding: 6px 12px 3px 12px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+
+  display: block;      /* button ko block element banaya */
+  margin: 0 auto;      /* horizontally center kiya */
+}
+
+/* ======================
+   EDIT MODE EXTRA STYLES
+====================== */
+.edit-input {
+  width: 60%;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+}
+

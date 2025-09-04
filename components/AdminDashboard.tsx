@@ -1,14 +1,57 @@
 "use client";
 import React, { useState } from "react";
 import "../styles/AdminDashboard.css";
+import "../styles/UserInfoModal.css";
 import Link from "next/link";
 
 const AdminDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Search Engines");
+  const [selectedUser, setSelectedUser] = useState<any>(null);
+  const [editField, setEditField] = useState<string | null>(null); // user info edit field
+  const [formData, setFormData] = useState<any>({}); // editable values
+  const [showPdfModal, setShowPdfModal] = useState(false);
+  const [pdfData, setPdfData] = useState({
+    totalLinks: "",
+    viewImages: "",
+    removedUrls: "",
+  });
+  const [pdfEditField, setPdfEditField] = useState<string | null>(null); // separate edit field for PDF
 
-  const handleTabClick = (tab: string) => {
-    setActiveTab(tab);
+  const handleTabClick = (tab: string) => setActiveTab(tab);
+
+  const handleSelect = (user: any) => {
+    setSelectedUser(user);
+    setFormData(user);
+    setEditField(null);
   };
+
+  const handleSave = (field: string) => {
+    setSelectedUser((prev: any) => ({ ...prev, [field]: formData[field] }));
+    setEditField(null);
+  };
+
+  const users = [
+    {
+      id: 1,
+      username: "@usman4u",
+      sendMode: "Auto",
+      previousSent: "19.03.2025",
+      currentSent: "In 2 Days",
+      status: "Sent",
+      subscription: "Active",
+      expire: "26.04.2025",
+    },
+    {
+      id: 2,
+      username: "@banditaa",
+      sendMode: "Manual",
+      previousSent: "19.03.2025",
+      currentSent: "In 2 Days",
+      status: "Inactive",
+      subscription: "Inactive",
+      expire: "Expired",
+    },
+  ];
 
   return (
     <div className="admin-dashboard-body">
@@ -22,133 +65,45 @@ const AdminDashboard: React.FC = () => {
               </Link>
             </div>
 
-            <a
-              href="#"
-              className={`admin-dashboard-nav-button ${
-                activeTab === "Search Engines" ? "admin-dashboard-active" : ""
-              }`}
-              onClick={() => handleTabClick("Search Engines")}
-            >
-              <i className="fa fa-search"></i> Search Engines
-            </a>
-            <a
-              href="#"
-              className={`admin-dashboard-nav-button ${
-                activeTab === "Leak Sites" ? "admin-dashboard-active" : ""
-              }`}
-              onClick={() => handleTabClick("Leak Sites")}
-            >
-              <i className="fa fa-exclamation-triangle"></i> Leak Sites
-            </a>
-            <a
-              href="#"
-              className={`admin-dashboard-nav-button ${
-                activeTab === "Scraping" ? "admin-dashboard-active" : ""
-              }`}
-              onClick={() => handleTabClick("Scraping")}
-            >
-              <i className="fa fa-robot"></i> Scraping
-            </a>
-            <a
-              href="#"
-              className={`admin-dashboard-nav-button ${
-                activeTab === "Users" ? "admin-dashboard-active" : ""
-              }`}
-              onClick={() => handleTabClick("Users")}
-            >
-              <i className="fa fa-users"></i> Users
-            </a>
-            <a
-              href="#"
-              className={`admin-dashboard-nav-button ${
-                activeTab === "Keywords" ? "admin-dashboard-active" : ""
-              }`}
-              onClick={() => handleTabClick("Keywords")}
-            >
-              <i className="fa fa-key"></i> Keywords
-            </a>
-            <a
-              href="#"
-              className={`admin-dashboard-nav-button ${
-                activeTab === "Send PDF" ? "admin-dashboard-active" : ""
-              }`}
-              onClick={() => handleTabClick("Send PDF")}
-            >
-              <i className="fa fa-file-pdf"></i> Send PDF
-            </a>
-            <a
-              href="#"
-              className={`admin-dashboard-nav-button ${
-                activeTab === "Whitelist" ? "admin-dashboard-active" : ""
-              }`}
-              onClick={() => handleTabClick("Whitelist")}
-            >
-              <i className="fa fa-check-circle"></i> Whitelist
-            </a>
+            {/* Sidebar Nav Buttons */}
+            {[
+              { name: "Search Engines", icon: "fa-search" },
+              { name: "Leak Sites", icon: "fa-exclamation-triangle" },
+              { name: "Scraping", icon: "fa-robot" },
+              { name: "Users", icon: "fa-users" },
+              { name: "Keywords", icon: "fa-key" },
+              { name: "Send PDF", icon: "fa-file-pdf" },
+              { name: "Whitelist", icon: "fa-check-circle" },
+            ].map((tab) => (
+              <a
+                key={tab.name}
+                href="#"
+                className={`admin-dashboard-nav-button ${
+                  activeTab === tab.name ? "admin-dashboard-active" : ""
+                }`}
+                onClick={() => handleTabClick(tab.name)}
+              >
+                <i className={`fa ${tab.icon}`}></i> {tab.name}
+              </a>
+            ))}
           </div>
 
           {/* Main Content */}
-          <div className="col-md-8 col-lg-10 p-4">
-            {/* Top Bar */}
+          <div className="col-md-8 col-lg-10">
             <div className="admin-dashboard-top-bar">
               <div className="admin-dashboard-user-info">
                 <img src="icons/X_AE_A-13b.svg" alt="Avatar" />
-                <span className="admin-dashboard-text-gradient">X_AE_A-13b</span>
+                <span className="admin-dashboard-text-gradient">
+                  X_AE_A-13b
+                </span>
               </div>
               <i className="fa fa-sign-out-alt admin-dashboard-logout-icon"></i>
             </div>
 
-            {/* Conditional Rendering for Tabs */}
-            {activeTab === "Search Engines" && <h4>Search Engines Content</h4>}
-            {activeTab === "Leak Sites" && <h4>Leak Sites Content</h4>}
-            {activeTab === "Scraping" && <h4>Scraping Content</h4>}
-            {activeTab === "Users" && <h4>Users Content</h4>}
-            {activeTab === "Keywords" && <h4>Keywords Content</h4>}
-
-            {/* SEND PDF TAB */}
             {activeTab === "Send PDF" && (
               <div className="send-pdf-tab">
-                {/* Top Stats Boxes */}
-            <div className="row mb-4">
-              <div className="col-md-4">
-                <div className="send-pdf-card send-pdf-card-row">
-                  <h6>Manual Pending:</h6>
-                  <span className="send-pdf-value">982</span>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="send-pdf-card send-pdf-card-row">
-                  <h6>Auto Pending:</h6>
-                  <span className="send-pdf-value">982</span>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="send-pdf-card send-pdf-card-row">
-                  <h6>Sent:</h6>
-                  <span className="send-pdf-value">982</span>
-                </div>
-              </div>
-            </div>
-
-               {/* Search Input with Icon Image */}
-              <div className="send-pdf-search mb-3 position-relative">
-              <input
-                type="text"
-                className="form-control ps-3 pe-5" // padding-left for text, padding-right for icon
-                placeholder="Search PDF..."
-              />
-              {/* Icon Image inside input */}
-              <img
-                src="/icons/search-icon-place.svg" // path to your icon image
-                alt="search"
-                className="search-icon"
-              />
-            </div>
-
-
-                {/* Table */}
                 <div className="table-responsive">
-                  <table className="table table-dark table-striped">
+                  <table className="table table-dark text-center">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -163,54 +118,168 @@ const AdminDashboard: React.FC = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>0</td>
-                        <td>@usman4u</td>
-                        <td>Auto</td>
-                        <td>19.03.2025</td>
-                        <td>In 2 Days</td>
-                        <td>Sent</td>
-                        <td>Active</td>
-                        <td>26.04.2025</td>
-                        <td>
-                          <button className="btn btn-sm btn-primary">
-                            Select
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>@banditaa</td>
-                        <td>Manual</td>
-                        <td>19.03.2025</td>
-                        <td>In 2 Days</td>
-                        <td>Inactive</td>
-                        <td>Inactive</td>
-                        <td>Expired</td>
-                        <td>
-                          <button className="btn btn-sm btn-primary">
-                            Select
-                          </button>
-                        </td>
-                      </tr>
+                      {users.map((u) => (
+                        <tr key={u.id}>
+                          <td>{u.id}</td>
+                          <td>{u.username}</td>
+                          <td>{u.sendMode}</td>
+                          <td>{u.previousSent}</td>
+                          <td>{u.currentSent}</td>
+                          <td>{u.status}</td>
+                          <td>{u.subscription}</td>
+                          <td>{u.expire}</td>
+                          <td>
+                            <button
+                              className="btn btn-sm btn-primary"
+                              onClick={() => handleSelect(u)}
+                            >
+                              Select
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
-
-                {/* Pagination */}
-                <div className="send-pdf-pagination text-center">
-                  <button className="btn btn-sm btn-outline-light">1</button>
-                  <button className="btn btn-sm btn-outline-light">2</button>
-                  <button className="btn btn-sm btn-outline-light">...</button>
-                  <button className="btn btn-sm btn-outline-light">12</button>
-                </div>
               </div>
             )}
-
-            {activeTab === "Whitelist" && <h4>Whitelist Content</h4>}
           </div>
         </div>
       </div>
+
+      {/* User Info Modal */}
+      {selectedUser && (
+        <div className="user-info-modal">
+          <div className="user-info-content">
+            <div className="user-info-header">
+              <h5>User Information</h5>
+              <button
+                className="close-btn"
+                onClick={() => setSelectedUser(null)}
+              >
+                ×
+              </button>
+            </div>
+            <div className="user-info-body">
+              {[
+                "id",
+                "username",
+                "sendMode",
+                "previousSent",
+                "currentSent",
+                "status",
+                "subscription",
+                "expire",
+              ].map((field) => (
+                <div className="user-info-row" key={field}>
+                  {editField === field ? (
+                    <>
+                      <input
+                        type="text"
+                        value={formData[field]}
+                        onChange={(e) =>
+                          setFormData({ ...formData, [field]: e.target.value })
+                        }
+                        className="edit-input"
+                      />
+                      <button
+                        className="edit-btn"
+                        onClick={() => handleSave(field)}
+                      >
+                        Save
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <span>
+                        {field.charAt(0).toUpperCase() + field.slice(1)}:{" "}
+                        {formData[field]}
+                      </span>
+                      <button
+                        className="edit-btn"
+                        onClick={() => setEditField(field)}
+                      >
+                        EDIT
+                      </button>
+                    </>
+                  )}
+                </div>
+              ))}
+
+              <div className="user-info-row">
+                <span>PDF Info</span>
+                <button
+                  className="edit-btn"
+                  onClick={() => setShowPdfModal(true)}
+                >
+                  EDIT
+                </button>
+              </div>
+            </div>
+
+            <div className="user-info-footer">
+              <button className="send-btn">Send</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Nested PDF Edit Modal */}
+      {showPdfModal && (
+        <div className="user-info-modal">
+          <div className="user-info-content">
+            <div className="user-info-header">
+              <h5>Edit PDF Info</h5>
+              <button
+                className="close-btn"
+                onClick={() => setShowPdfModal(false)}
+              >
+                ×
+              </button>
+            </div>
+            <div className="user-info-body">
+              {[
+                { label: "Total Reported Links", key: "totalLinks" },
+                { label: "View Images", key: "viewImages" },
+                { label: "Removed URLs", key: "removedUrls" },
+              ].map((field) => (
+                <div className="user-info-row" key={field.key}>
+                  {pdfEditField === field.key ? (
+                    <>
+                      <input
+                        type="text"
+                        value={pdfData[field.key]}
+                        onChange={(e) =>
+                          setPdfData({ ...pdfData, [field.key]: e.target.value })
+                        }
+                        className="edit-input"
+                      />
+                      <button
+                        className="edit-btn"
+                        onClick={() => setPdfEditField(null)}
+                      >
+                        Save
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <span>
+                        {field.label}: {pdfData[field.key]}
+                      </span>
+                      <button
+                        className="edit-btn"
+                        onClick={() => setPdfEditField(field.key)}
+                      >
+                        EDIT
+                      </button>
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
