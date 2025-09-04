@@ -97,7 +97,7 @@ const Dashboard: React.FC = () => {
                   <div className="col-md-4">
                     <div className="send-pdf-card send-pdf-card-row">
                       <h6>Scanned:</h6>
-                      <span className="send-pdf-value">982</span>
+                      <span className="send-pdf-value">983</span>
                     </div>
                   </div>
                   <div className="col-md-4">
