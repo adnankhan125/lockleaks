@@ -125,8 +125,46 @@ const AdminDashboard: React.FC = () => {
               <i className="fa fa-sign-out-alt admin-dashboard-logout-icon"></i>
             </div>
 
+            {/* SEND PDF TAB */}
             {activeTab === "Send PDF" && (
               <div className="send-pdf-tab">
+                {/* Top Stats Boxes */}
+                <div className="row mb-4">
+                  <div className="col-md-4">
+                    <div className="send-pdf-card send-pdf-card-row">
+                      <h6>Manual Pending:</h6>
+                      <span className="send-pdf-value">982</span>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="send-pdf-card send-pdf-card-row">
+                      <h6>Auto Pending:</h6>
+                      <span className="send-pdf-value">542</span>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="send-pdf-card send-pdf-card-row">
+                      <h6>Sent:</h6>
+                      <span className="send-pdf-value">1300</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Search Input with Icon */}
+                <div className="send-pdf-search mb-3 position-relative">
+                  <input
+                    type="text"
+                    className="form-control ps-3 pe-5"
+                    placeholder="Search PDF..."
+                  />
+                  <img
+                    src="/icons/search-icon-place.svg"
+                    alt="search"
+                    className="search-icon"
+                  />
+                </div>
+
+                {/* Table */}
                 <div className="table-responsive">
                   <table className="table table-dark text-center">
                     <thead>
@@ -295,8 +333,8 @@ const AdminDashboard: React.FC = () => {
                 </div>
               ))}
               <div className="user-info-footer">
-              <button className="send-btn">Done</button>
-            </div>
+                <button className="send-btn">Done</button>
+              </div>
             </div>
           </div>
         </div>

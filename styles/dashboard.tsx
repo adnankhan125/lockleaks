@@ -3,7 +3,6 @@ import "../styles/Daschboard.css";
 import PricingSection from "./PricingSection";
 import Link from "next/link";
 import TakedownReport from "./TakedownReport"; // ✅ Import here
-import "../styles/AdminDashboard.css";
 
 const Dashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Dashboard");
@@ -91,36 +90,6 @@ const Dashboard: React.FC = () => {
             {activeTab === "Dashboard" && (
               <>
                 <h4 className="mb-4">Dashboard</h4>
-
-                {/* 📊 Top Stats Boxes */}
-                <div className="row mb-4">
-                  <div className="col-md-4">
-                    <div className="send-pdf-card send-pdf-card-row">
-                      <h6>Scanned:</h6>
-                      <span className="send-pdf-value">982</span>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="send-pdf-card send-pdf-card-row">
-                      <h6>Leaks Found:</h6>
-                      <span className="send-pdf-value">542</span>
-                    </div>
-                  </div>
-                <div className="col-md-4">
-                  <div className="send-pdf-card send-pdf-card-row">
-                    <h6>Sent:</h6>
-                    {/* Replace number with SVG */}
-                    <img
-                      src="/icons/sent-icon.svg" // ✅ your SVG path here
-                      alt="Sent Icon"
-                      className="send-pdf-value-svg"
-                    />
-                  </div>
-                </div>
-
-                </div>
-
-          
                 <TakedownReport /> {/* ✅ Added here */}
               </>
             )}
