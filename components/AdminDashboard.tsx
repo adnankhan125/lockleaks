@@ -4,33 +4,52 @@ import "../styles/AdminDashboard.css";
 import "../styles/UserInfoModal.css";
 import Link from "next/link";
 
+interface User {
+  id: number;
+  username: string;
+  sendMode: string;
+  previousSent: string;
+  currentSent: string;
+  status: string;
+  subscription: string;
+  expire: string;
+}
+
+interface PdfData {
+  totalLinks: string;
+  viewImages: string;
+  removedUrls: string;
+}
+
 const AdminDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Search Engines");
-  const [selectedUser, setSelectedUser] = useState<any>(null);
-  const [editField, setEditField] = useState<string | null>(null); // user info edit field
-  const [formData, setFormData] = useState<any>({}); // editable values
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [editField, setEditField] = useState<keyof User | null>(null);
+  const [formData, setFormData] = useState<User | null>(null);
   const [showPdfModal, setShowPdfModal] = useState(false);
-  const [pdfData, setPdfData] = useState({
+  const [pdfData, setPdfData] = useState<PdfData>({
     totalLinks: "",
     viewImages: "",
     removedUrls: "",
   });
-  const [pdfEditField, setPdfEditField] = useState<string | null>(null); // separate edit field for PDF
+  const [pdfEditField, setPdfEditField] = useState<keyof PdfData | null>(null);
 
   const handleTabClick = (tab: string) => setActiveTab(tab);
 
-  const handleSelect = (user: any) => {
+  const handleSelect = (user: User) => {
     setSelectedUser(user);
     setFormData(user);
     setEditField(null);
   };
 
-  const handleSave = (field: string) => {
-    setSelectedUser((prev: any) => ({ ...prev, [field]: formData[field] }));
-    setEditField(null);
+  const handleSaveUserField = (field: keyof User) => {
+    if (selectedUser && formData) {
+      setSelectedUser({ ...selectedUser, [field]: formData[field] });
+      setEditField(null);
+    }
   };
 
-  const users = [
+  const users: User[] = [
     {
       id: 1,
       username: "@usman4u",
@@ -51,6 +70,12 @@ const AdminDashboard: React.FC = () => {
       subscription: "Inactive",
       expire: "Expired",
     },
+  ];
+
+  const pdfFields: { label: string; key: keyof PdfData }[] = [
+    { label: "Total Reported Links", key: "totalLinks" },
+    { label: "View Images", key: "viewImages" },
+    { label: "Removed URLs", key: "removedUrls" },
   ];
 
   return (
@@ -148,7 +173,7 @@ const AdminDashboard: React.FC = () => {
       </div>
 
       {/* User Info Modal */}
-      {selectedUser && (
+      {selectedUser && formData && (
         <div className="user-info-modal">
           <div className="user-info-content">
             <div className="user-info-header">
@@ -161,50 +186,44 @@ const AdminDashboard: React.FC = () => {
               </button>
             </div>
             <div className="user-info-body">
-              {[
-                "id",
-                "username",
-                "sendMode",
-                "previousSent",
-                "currentSent",
-                "status",
-                "subscription",
-                "expire",
-              ].map((field) => (
-                <div className="user-info-row" key={field}>
-                  {editField === field ? (
-                    <>
-                      <input
-                        type="text"
-                        value={formData[field]}
-                        onChange={(e) =>
-                          setFormData({ ...formData, [field]: e.target.value })
-                        }
-                        className="edit-input"
-                      />
-                      <button
-                        className="edit-btn"
-                        onClick={() => handleSave(field)}
-                      >
-                        Save
-                      </button>
-                    </>
-                  ) : (
-                    <>
-                      <span>
-                        {field.charAt(0).toUpperCase() + field.slice(1)}:{" "}
-                        {formData[field]}
-                      </span>
-                      <button
-                        className="edit-btn"
-                        onClick={() => setEditField(field)}
-                      >
-                        EDIT
-                      </button>
-                    </>
-                  )}
-                </div>
-              ))}
+              {Object.keys(selectedUser).map((field) => {
+                const key = field as keyof User;
+                return (
+                  <div className="user-info-row" key={key}>
+                    {editField === key ? (
+                      <>
+                        <input
+                          type="text"
+                          value={formData[key]}
+                          onChange={(e) =>
+                            setFormData({ ...formData, [key]: e.target.value })
+                          }
+                          className="edit-input"
+                        />
+                        <button
+                          className="edit-btn"
+                          onClick={() => handleSaveUserField(key)}
+                        >
+                          Save
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <span>
+                          {key.charAt(0).toUpperCase() + key.slice(1)}:{" "}
+                          {formData[key]}
+                        </span>
+                        <button
+                          className="edit-btn"
+                          onClick={() => setEditField(key)}
+                        >
+                          EDIT
+                        </button>
+                      </>
+                    )}
+                  </div>
+                );
+              })}
 
               <div className="user-info-row">
                 <span>PDF Info</span>
@@ -238,11 +257,7 @@ const AdminDashboard: React.FC = () => {
               </button>
             </div>
             <div className="user-info-body">
-              {[
-                { label: "Total Reported Links", key: "totalLinks" },
-                { label: "View Images", key: "viewImages" },
-                { label: "Removed URLs", key: "removedUrls" },
-              ].map((field) => (
+              {pdfFields.map((field) => (
                 <div className="user-info-row" key={field.key}>
                   {pdfEditField === field.key ? (
                     <>
@@ -250,7 +265,10 @@ const AdminDashboard: React.FC = () => {
                         type="text"
                         value={pdfData[field.key]}
                         onChange={(e) =>
-                          setPdfData({ ...pdfData, [field.key]: e.target.value })
+                          setPdfData({
+                            ...pdfData,
+                            [field.key]: e.target.value,
+                          })
                         }
                         className="edit-input"
                       />
@@ -270,12 +288,15 @@ const AdminDashboard: React.FC = () => {
                         className="edit-btn"
                         onClick={() => setPdfEditField(field.key)}
                       >
-                        EDIT
+                        ADD
                       </button>
                     </>
                   )}
                 </div>
               ))}
+              <div className="user-info-footer">
+              <button className="send-btn">Done</button>
+            </div>
             </div>
           </div>
         </div>
