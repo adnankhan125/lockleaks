@@ -90,7 +90,7 @@ const Dashboard: React.FC = () => {
             {/* Conditional Rendering for Tabs */}
             {activeTab === "Dashboard" && (
               <>
-                <h4 className="mb-4">Dashboardssssssssssssssssssssssssssssssss</h4>
+                <h4 className="mb-4">Dashboard 1</h4>
 
                 {/* 📊 Top Stats Boxes */}
                 <div className="row mb-4">
