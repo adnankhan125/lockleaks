@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../styles/Daschboard.css";
-import PricingSection from "./PricingSection";
+import PricingSection from "../components/PricingSection";
 import Link from "next/link";
-import TakedownReport from "./TakedownReport"; 
+import TakedownReport from "../components/TakedownReport"; 
 import "../styles/AdminDashboard.css";
 
 const Dashboard: React.FC = () => {
@@ -51,7 +51,7 @@ const Dashboard: React.FC = () => {
             >
               <i className="fa fa-comment-dots"></i> Support
             </a>
-            {/* <a
+            <a
               href="#"
               className={`lockdash-nav-button ${
                 activeTab === "Subscriptions" ? "lockdash-active" : ""
@@ -59,7 +59,7 @@ const Dashboard: React.FC = () => {
               onClick={() => handleTabClick("Subscriptions")}
             >
               <i className="fa fa-star"></i> Subscriptions
-            </a> */}
+            </a>
             <a
               href="#"
               className={`lockdash-nav-button ${
@@ -131,8 +131,8 @@ const Dashboard: React.FC = () => {
 
             {activeTab === "Subscriptions" && (
               <>
-                {/* <h4>Subscriptions</h4>
-                <PricingSection hideStartFree={true} /> */}
+                <h4>Subscriptions</h4>
+                <PricingSection hideStartFree={true} />
               </>
             )}
 
