@@ -131,8 +131,8 @@ const Dashboard: React.FC = () => {
 
             {activeTab === "Subscriptions" && (
               <>
-                <h4>Subscriptions</h4>
-                <PricingSection hideStartFree={true} />
+                {/* <h4>Subscriptions</h4>
+                <PricingSection hideStartFree={true} /> */}
               </>
             )}
 
