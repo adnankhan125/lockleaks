@@ -51,7 +51,7 @@ const Dashboard: React.FC = () => {
             >
               <i className="fa fa-comment-dots"></i> Support
             </a>
-            <a
+            {/* <a
               href="#"
               className={`lockdash-nav-button ${
                 activeTab === "Subscriptions" ? "lockdash-active" : ""
@@ -59,7 +59,7 @@ const Dashboard: React.FC = () => {
               onClick={() => handleTabClick("Subscriptions")}
             >
               <i className="fa fa-star"></i> Subscriptions
-            </a>
+            </a> */}
             <a
               href="#"
               className={`lockdash-nav-button ${
