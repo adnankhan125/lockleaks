@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../styles/Daschboard.css";
-import PricingSection from "./PricingSection";
+import PricingSection from "../components/PricingSection";
 import Link from "next/link";
-import TakedownReport from "./TakedownReport"; // ✅ Import here
+import TakedownReport from "../components/TakedownReport"; // ✅ Import here
 
 const Dashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Dashboard");
