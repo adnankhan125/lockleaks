@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import "../styles/AdminDashboard.css";
 import "../styles/UserInfoModal.css";
+import LeaksBoxes from '@/components/LeaksBoxes';
+
 import Link from "next/link";
 
 interface User {
@@ -125,6 +127,41 @@ const AdminDashboard: React.FC = () => {
               </div>
               <i className="fa fa-sign-out-alt admin-dashboard-logout-icon"></i>
             </div>
+
+
+      {/* Whitelist TAB */}
+            {activeTab === "Whitelist" && (
+              <div className="whitelist-tab">
+                <h6 className="text-center-search">Whitelist</h6>
+ {/* Top Stats Boxes */}
+    <div className="row mb-4">
+      <div className="col-md-4">
+        <div className="send-pdf-card send-pdf-card-row">
+          <h6>LEAKS :</h6>
+          <span className="send-pdf-value">120</span>
+        </div>
+      </div>
+      <div className="col-md-4">
+        <div className="send-pdf-card send-pdf-card-row">
+          <h6>MANUAL :</h6>
+          <span className="send-pdf-value">85</span>
+        </div>
+      </div>
+      <div className="col-md-4">
+        <div className="send-pdf-card send-pdf-card-row">
+          <h6>WHITELIST :</h6>
+          <span className="send-pdf-value">300</span>
+        </div>
+      </div>
+    </div>
+                {/* Include the LeaksBoxes component */}
+                <LeaksBoxes /> {/* The component is added here */}
+
+                {/* Any other content you want to include under the whitelist tab */}
+              </div>
+            )}
+
+
 
 {/* SEARCH ENGINES TAB */}
 {activeTab === "Search Engines" && (
@@ -339,6 +376,7 @@ const AdminDashboard: React.FC = () => {
 
   </div>
 )}
+
 
 
             {/* SEND PDF TAB */}
