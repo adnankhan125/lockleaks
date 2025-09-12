@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "../styles/AdminDashboard.css";
 import "../styles/UserInfoModal.css";
 import LeaksBoxes from '@/components/LeaksBoxes';
+import LeaksLinks from '@/components/LeaksLinks';
 
 import Link from "next/link";
 
@@ -92,28 +93,36 @@ const AdminDashboard: React.FC = () => {
               </Link>
             </div>
 
-            {/* Sidebar Nav Buttons */}
-            {[
-              { name: "Search Engines", icon: "fa-search" },
-              { name: "Leak Sites", icon: "fa-exclamation-triangle" },
-              { name: "Scraping", icon: "fa-robot" },
-              { name: "Users", icon: "fa-users" },
-              { name: "Keywords", icon: "fa-key" },
-              { name: "Send PDF", icon: "fa-file-pdf" },
-              { name: "Whitelist", icon: "fa-check-circle" },
-              { name: "Tasks", icon: "fa-tasks" }, // ✅ New Tab
-            ].map((tab) => (
-              <a
-                key={tab.name}
-                href="#"
-                className={`admin-dashboard-nav-button ${
-                  activeTab === tab.name ? "admin-dashboard-active" : ""
-                }`}
-                onClick={() => handleTabClick(tab.name)}
-              >
-                <i className={`fa ${tab.icon}`}></i> {tab.name}
-              </a>
-            ))}
+          {[
+            { name: "Search Engines", icon: "fa-search" },
+            { name: "Leak Sites", icon: "fa-exclamation-triangle" },
+            { name: "Scraping", icon: "fa-robot" },
+            { name: "Users", icon: "fa-users" },
+            { name: "Keywords", icon: "fa-key" },
+            { name: "Send PDF", icon: "fa-file-pdf" },
+            { name: "Whitelist", icon: "fa-check-circle" },
+            { name: "Tasks", icon: "fa-tasks" },
+
+            // Added tabs
+            { name: "Links", icon: "fa-link" },
+            { name: "Blogs", icon: "fa-blog" },
+            { name: "Security", icon: "fa-shield-alt" },
+            { name: "Reviews", icon: "fa-star" },
+            { name: "ID Check", icon: "fa-id-card" },
+            { name: "Subscriptions", icon: "fa-sync-alt" },
+          ].map((tab) => (
+            <a
+              key={tab.name}
+              href="#"
+              className={`admin-dashboard-nav-button ${
+                activeTab === tab.name ? "admin-dashboard-active" : ""
+              }`}
+              onClick={() => handleTabClick(tab.name)}
+            >
+              <i className={`fa ${tab.icon}`}></i> {tab.name}
+            </a>
+          ))}
+
           </div>
 
           {/* Main Content */}
@@ -133,33 +142,49 @@ const AdminDashboard: React.FC = () => {
             {activeTab === "Whitelist" && (
               <div className="whitelist-tab">
                 <h6 className="text-center-search">Whitelist</h6>
- {/* Top Stats Boxes */}
+              {/* Top Stats Boxes */}
+                  <div className="row mb-4">
+                    <div className="col-md-4">
+                      <div className="send-pdf-card send-pdf-card-row">
+                        <h6>LEAKS :</h6>
+                        <span className="send-pdf-value">120</span>
+                      </div>
+                    </div>
+                    <div className="col-md-4">
+                      <div className="send-pdf-card send-pdf-card-row">
+                        <h6>MANUAL :</h6>
+                        <span className="send-pdf-value">85</span>
+                      </div>
+                    </div>
+                    <div className="col-md-4">
+                      <div className="send-pdf-card send-pdf-card-row">
+                        <h6>WHITELIST :</h6>
+                        <span className="send-pdf-value">300</span>
+                      </div>
+                    </div>
+                  </div>
+                      <LeaksBoxes /> 
+                  </div>
+            )}
+
+       {/* LINKS TAB */}
+{activeTab === "Links" && (
+  <div className="links-tab">
+    <h6 className="text-center-search">Links</h6>
+    {/* Top Stats Boxes */}
     <div className="row mb-4">
-      <div className="col-md-4">
-        <div className="send-pdf-card send-pdf-card-row">
-          <h6>LEAKS :</h6>
+      <div className="col-md-12 d-flex justify-content-center">
+        <div className="send-pdf-card send-pdf-card-row-rt">
+          <h6>Total Links:</h6>
           <span className="send-pdf-value">120</span>
         </div>
       </div>
-      <div className="col-md-4">
-        <div className="send-pdf-card send-pdf-card-row">
-          <h6>MANUAL :</h6>
-          <span className="send-pdf-value">85</span>
-        </div>
-      </div>
-      <div className="col-md-4">
-        <div className="send-pdf-card send-pdf-card-row">
-          <h6>WHITELIST :</h6>
-          <span className="send-pdf-value">300</span>
-        </div>
-      </div>
     </div>
-                {/* Include the LeaksBoxes component */}
-                <LeaksBoxes /> {/* The component is added here */}
 
-                {/* Any other content you want to include under the whitelist tab */}
-              </div>
-            )}
+    <LeaksLinks />
+  </div>
+)}
+
 
 
 
@@ -461,13 +486,45 @@ const AdminDashboard: React.FC = () => {
               </div>
             )}
 
-            {/* TASKS TAB */}
-            {activeTab === "Tasks" && (
-              <div className="tasks-tab">
-                <h3 className="mb-3">Tasks</h3>
-                <p>Yaha apka tasks ka content ayega (e.g. list, table, forms).</p>
-              </div>
-            )}
+           {/* LINKS TAB */}
+                 
+
+                  {/* BLOGS TAB */}
+                  {activeTab === "Blogs" && (
+                    <div className="blogs-tab">
+                      <h3 className="mb-3">Blogs</h3>
+                    </div>
+                  )}
+
+                  {/* SECURITY TAB */}
+                  {activeTab === "Security" && (
+                    <div className="security-tab">
+                      <h3 className="mb-3">Security</h3>
+                    </div>
+                  )}
+
+                  {/* REVIEWS TAB */}
+                  {activeTab === "Reviews" && (
+                    <div className="reviews-tab">
+                      <h3 className="mb-3">Reviews</h3>
+                    </div>
+                  )}
+
+                  {/* ID CHECK TAB */}
+                  {activeTab === "ID Check" && (
+                    <div className="idcheck-tab">
+                      <h3 className="mb-3">ID Check</h3>
+                    </div>
+                  )}
+
+                  {/* SUBSCRIPTIONS TAB */}
+                  {activeTab === "Subscriptions" && (
+                    <div className="subscriptions-tab">
+                      <h3 className="mb-3">Subscriptions</h3>
+                    </div>
+                  )}
+                  
+
           </div>
         </div>
       </div>

@@ -1,0 +1,56 @@
+.post {
+  border-radius: 8px;
+  margin: 20px auto; /* Horizontally center the section */
+  padding: 20px;
+  width: 80%;
+  display: block; /* Ensure it's a block-level element */
+}
+
+
+.post-title-field {
+  margin-bottom: 15px;
+}
+
+.post-title-field label {
+    font-weight: bold;
+    display: block;
+    margin-left: 20px;
+}
+
+.post-title-field input {
+    border: 1px solid #2D2D2D;
+    border-radius: 30px;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    background: #2D2D2D;
+    color: #ffff;
+}
+
+.post-time-upload-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-time-field, .post-upload-video-field {
+  width: 48%;
+}
+
+.post-time-field label, .post-upload-video-field label
+ {
+    font-weight: bold;
+    display: block;
+    margin-left: 20px;
+}
+
+.post-time-field input, .post-upload-video-field input {
+    border: 1px solid #2D2D2D;
+    border-radius: 30px;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    background: #2D2D2D;
+        color: #ffff;
+
+}
+

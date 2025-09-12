@@ -350,9 +350,7 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-  .admin-dashboard-sidebar {
-    display: none; /* hide sidebar on mobile */
-  }
+
   .col-md-8.col-lg-10 {
     width: 100%;
     padding: 10px;
@@ -721,6 +719,11 @@
   .btn-download{ width:120px; height:38px; }
 }
 @media (max-width: 720px){
+
+  .start-btn-dash {
+    margin-right: 109px;
+    margin-top: 25px;
+}
   .reports-head{ display:none; }
   .report-row{
     grid-template-columns: 1fr 1fr;
@@ -729,4 +732,15 @@
   .report-row .id, .report-row .order{ opacity:.75; }
   .report-row .action{ grid-column: span 2; }
   .report-row .engines{ grid-column: span 2; }
+}
+.send-pdf-card-row-rt {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 45%;
+}
+.send-pdf-card-row-rt h6 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 0px;
 }

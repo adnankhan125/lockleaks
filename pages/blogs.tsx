@@ -6,7 +6,6 @@ import Footer from '@/components/footer';
 import CallToAction from '@/components/CallToAction';
 import PlatformSection from '@/components/PlatformSection';
 import Newheader from '@/components/newheader';
-import LeaksBoxes from '@/components/LeaksBoxes';
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <Blogs />
       <PlatformSection/>
       <CallToAction/>
-      <LeaksBoxes/>
       <Footer/>
           </>
 
