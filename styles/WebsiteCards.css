@@ -1,0 +1,121 @@
+/* WebsiteCards.css */
+.website-card {
+  background-color: #3E3E3E;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid #818181;
+  border-radius: 18px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  width: 99%;
+}
+
+.website-card h6 {
+  margin: 0;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tag {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.status {
+  background-color: #6F5523;
+  color: #FFD000CC;
+}
+
+.traffic {
+  background-color: #64114D;
+  color: #FFB6EBCC;
+}
+
+.removable {
+  background-color: #126145;
+  color: #0AFF3FCC;
+}
+
+.btn-primary-ok {
+    color: #fff;
+    background-color: #574d52;
+    border: 2px solid #f0a8d0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.btn-primary-ok:hover {
+    color: #fff;
+    background-color: #574d52;
+    border: 2px solid #f0a8d0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+/* Custom container width */
+.custom-container {
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .website-card {
+    flex-direction: column;
+    margin-left: -19px;
+    width: 114%;
+
+  }
+ 
+}
+/* Search Field Styling */
+.search-container {
+    background-color: #333;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    display: flex
+;
+    width: 30%;
+}
+
+.search-input {
+  width: 80%;
+  padding: 8px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background-color: #333;
+  color: white;
+}
+
+.search-input::placeholder {
+  color: #bbb;
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: #555;
+}
+
+.btn-primary-form {
+    color: #fff;
+    background-color: #C77ABC;
+    border: 2px solid #C77ABC !important;
+    margin-bottom: 0px !important;
+    margin-right: 10px !important;
+}
+.btn-primary-form:hover {
+     color: #fff;
+    background-color: #C77ABC;
+    border: 2px solid #C77ABC !important;
+    margin-bottom: 0px !important;
+    margin-right: 10px !important;
+}

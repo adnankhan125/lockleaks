@@ -5,6 +5,8 @@ import Link from "next/link";
 import TakedownReport from "../components/TakedownReport"; 
 import "../styles/AdminDashboard.css";
 import Post from '@/components/post';
+import WebsiteCards from '@/components/WebsiteCards';
+
 
 const Dashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Dashboard");
@@ -97,6 +99,14 @@ const Dashboard: React.FC = () => {
             >
               <i className="fa fa-paper-plane"></i> Post
             </a>
+           <a
+              href="#"
+              className={`lockdash-nav-button ${activeTab === "Post" ? "lockdash-active" : ""}`}
+              onClick={() => handleTabClick("Website")}
+            >
+              <i className="fa fa-globe"></i>Website
+            </a>
+
 
                         
 
@@ -187,6 +197,14 @@ const Dashboard: React.FC = () => {
               <>
                 <h4 className="mb-3">Post</h4>
                      <Post/>
+
+              </>
+            )}
+
+             {activeTab === "Website" && (
+              <>
+                <h4 className="mb-3">Website</h4>
+      <WebsiteCards/>
 
               </>
             )}
