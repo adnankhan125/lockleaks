@@ -6,6 +6,7 @@ import TakedownReport from "../components/TakedownReport";
 import "../styles/AdminDashboard.css";
 import Post from '@/components/post';
 import WebsiteCards from '@/components/WebsiteCards';
+import Tutorials from '@/components/Tutorials';
 
 
 const Dashboard: React.FC = () => {
@@ -101,18 +102,20 @@ const Dashboard: React.FC = () => {
             </a>
            <a
               href="#"
-              className={`lockdash-nav-button ${activeTab === "Post" ? "lockdash-active" : ""}`}
+              className={`lockdash-nav-button ${activeTab === "Website" ? "lockdash-active" : ""}`}
               onClick={() => handleTabClick("Website")}
             >
               <i className="fa fa-globe"></i>Website
             </a>
+<a
+  href="#"
+  className={`lockdash-nav-button ${activeTab === "Post Tutorials" ? "lockdash-active" : ""}`}
+  onClick={() => handleTabClick("Post Tutorials")}
+>
+  <i className="fa fa-book"></i> Post Tutorials
+</a>
 
 
-                        
-
-
-
-            
 
             <h6 className="mt-4 lockdash-text-gradient">Link</h6>
             <button className="lockdash-upgrade-btn">
@@ -204,7 +207,15 @@ const Dashboard: React.FC = () => {
              {activeTab === "Website" && (
               <>
                 <h4 className="mb-3">Website</h4>
-      <WebsiteCards/>
+          <WebsiteCards/>
+
+              </>
+            )}
+            
+            {activeTab === "Post Tutorials" && (
+              <>
+                <h4 className="mb-3">Post Tutorials</h4>
+      <Tutorials/>
 
               </>
             )}
