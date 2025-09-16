@@ -6,7 +6,6 @@ const AgenciesForm: React.FC = () => {
   return (
     <div className="container agency-form">
       <h4 className="text-white">Agencies</h4>
-      <a href="#" className="btn btn-outline-light agency-back-btn">Back</a>
       <form>
         <div className="row g-4">
           {/* Left Column */}
