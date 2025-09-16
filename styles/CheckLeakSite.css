@@ -1,0 +1,157 @@
+.leak-container {
+  background: #111;
+  color: #c8c8c8;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.leak-header {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.leak-title { color: #fff; }
+.leak-subtitle { color: #aaa; }
+
+/* 🔹 Content Section with separate BG */
+.leak-content {
+  background: #373737;
+  border: 1px solid #8C8F93;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.check-leak-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* cards ke beech gap */
+  padding: 20px;
+  background: #1e1e1e;
+  min-height: 100vh;
+  justify-content: center; 
+  align-items: center;
+}
+
+.leak-card {
+    color: #c8c8c8;
+    background: #3e3e3e;
+    border: 1px solid #9e9e9e;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px 20px 0px 20px;
+    box-shadow: 0 0 10px #0006;
+}
+
+/* 🔹 Icon + Title */
+.leak-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+/* 🔹 Badges */
+.leak-badges {
+  margin-bottom: 15px;
+}
+.leak-icon-img {
+  width: 75px;       /* size control */
+  height: 75px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.leak-badge {
+    color: #166534;
+    background: #DBEAFE;
+    border-radius: 15px;
+    margin-right: 8px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+.leak-badge-sec {
+    color: #6B21A8;
+    background: #F3E8FF;
+    border-radius: 15px;
+    margin-right: 8px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.leak-card-details {
+  border: none;
+  background: transparent;
+  padding: 20px 0;
+  color: #c8c8c8;
+}
+
+.leak-card-risk,
+.leak-card-dmca {
+  background: #3E3E3E;
+  border: 1px solid #9E9E9E;
+  border-radius: 10px;
+  padding: 20px;
+  color: #c8c8c8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Risk / DMCA */
+.leak-risk-score { color: red; font-weight: bold; font-size: 20px; }
+.leak-dmca-status { color: #00ff77; font-weight: bold; font-size: 18px; }
+.leak-info
+ {
+    color: #bbb;
+    font-size: 12px;
+    margin-top: 8px;
+}
+.leak-card-details p {
+  margin-bottom: 5px;   /* remove bottom margin */
+}
+
+/* Tags */
+.leak-tags { margin-top: 10px; }
+.leak-tag-badge {
+  display: inline-block;
+  background: #333;
+  color: #c8c8c8;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin: 3px;
+  font-size: 13px;
+}
+.leak-tag-badge.special { background: #5c3c58; color: #fff; }
+
+/* Buttons */
+.leak-btn-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  margin: 4px 4px 0 0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+.leak-btn-purple { background: #443b4d; color: #B302FF; border: 1px solid #574F5F;}
+.leak-btn-yellow { background: #514F38; color: #FFF203; border: 1px solid #62614C;}
+.leak-btn-blue   { background: rgba(30, 143, 255, 0.438);  color: #119CFF;}
+.leak-btn-green  { background: #395146;  color: #11FF84; border: 1px solid #4D6258;}
+.leak-btn-pink   { background: rgba(255, 20, 145, 0.397);  color: #ff1491;}
+
+.leak-btn-purple,
+.leak-btn-yellow,
+.leak-btn-blue,
+.leak-btn-green,
+.leak-btn-pink {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;  /* ✅ space below every button */
+}
+

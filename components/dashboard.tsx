@@ -7,6 +7,7 @@ import "../styles/AdminDashboard.css";
 import Post from '@/components/post';
 import WebsiteCards from '@/components/WebsiteCards';
 import Tutorials from '@/components/Tutorials';
+import CheckLeakSite from "./CheckLeakSite";
 
 
 const Dashboard: React.FC = () => {
@@ -88,7 +89,7 @@ const Dashboard: React.FC = () => {
 
            <a
               href="#"
-              className={`lockdash-nav-button ${activeTab === "Settings" ? "lockdash-active" : ""}`}
+              className={`lockdash-nav-button ${activeTab === "Tutorials" ? "lockdash-active" : ""}`}
               onClick={() => handleTabClick("Tutorials")}
             >
               <i className="fa fa-pencil-alt"></i> Tutorials
@@ -107,13 +108,14 @@ const Dashboard: React.FC = () => {
             >
               <i className="fa fa-globe"></i>Website
             </a>
-<a
-  href="#"
-  className={`lockdash-nav-button ${activeTab === "Post Tutorials" ? "lockdash-active" : ""}`}
-  onClick={() => handleTabClick("Post Tutorials")}
->
-  <i className="fa fa-book"></i> Post Tutorials
-</a>
+          <a
+            href="#"
+            className={`lockdash-nav-button ${activeTab === "Post Tutorials" ? "lockdash-active" : ""}`}
+            onClick={() => handleTabClick("Post Tutorials")}
+          >
+            <i className="fa fa-book"></i> Post Tutorials
+          </a>
+         
 
 
 
@@ -207,7 +209,7 @@ const Dashboard: React.FC = () => {
              {activeTab === "Website" && (
               <>
                 <h4 className="mb-3">Website</h4>
-          <WebsiteCards/>
+              <WebsiteCards/>
 
               </>
             )}
@@ -215,7 +217,7 @@ const Dashboard: React.FC = () => {
             {activeTab === "Post Tutorials" && (
               <>
                 <h4 className="mb-3">Post Tutorials</h4>
-      <Tutorials/>
+               <Tutorials/>
 
               </>
             )}
@@ -224,6 +226,11 @@ const Dashboard: React.FC = () => {
               <>
                 <h4>Subscriptions</h4>
                 <PricingSection hideStartFree={true} />
+              </>
+            )}
+              {activeTab === "Check a Leak Site" && (
+              <>
+                <CheckLeakSite/>
               </>
             )}
 
