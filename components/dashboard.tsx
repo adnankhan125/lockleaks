@@ -8,6 +8,8 @@ import Post from '@/components/post';
 import WebsiteCards from '@/components/WebsiteCards';
 import Tutorials from '@/components/Tutorials';
 import CheckLeakSite from "./CheckLeakSite";
+import ReviewForm from "./ReviewForm";
+import AgenciesForm from "./Agenciesform";
 
 
 const Dashboard: React.FC = () => {
@@ -115,8 +117,21 @@ const Dashboard: React.FC = () => {
           >
             <i className="fa fa-book"></i> Post Tutorials
           </a>
+           <a
+            href="#"
+            className={`lockdash-nav-button ${activeTab === "Reviews" ? "lockdash-active" : ""}`}
+            onClick={() => handleTabClick("Reviews")}
+          >
+            <i className="fa fa-quote-left"></i> Reviews
+          </a>
+            <a
+            href="#"
+            className={`lockdash-nav-button ${activeTab === "Agencies" ? "lockdash-active" : ""}`}
+            onClick={() => handleTabClick("Agencies")}
+          >
+            <i className="fa fa-quote-left"></i> Agencies
+          </a>
          
-
 
 
             <h6 className="mt-4 lockdash-text-gradient">Link</h6>
@@ -234,7 +249,46 @@ const Dashboard: React.FC = () => {
               </>
             )}
 
-            {activeTab === "Settings" && <h4>Settings Content Here</h4>}
+          
+              {activeTab === "Reviews" && (
+              <>
+              <h4>Reviews</h4>
+             <ReviewForm/>
+              </>
+            )}
+            {activeTab === "Agencies" && (
+              <>
+              <h4>Agencies</h4>
+             <AgenciesForm/>
+              </>
+            )}
+
+            
+              {activeTab === "Settings" && (
+                <>
+                  <div className="help-resources-buttons">
+                    <button
+                      className="help-button"
+                      onClick={() => setActiveTab("Agencies")}
+                    >
+                      Agencies
+                    </button>
+                    <button
+                      className="help-button"
+                      onClick={() => setActiveTab("Reviews")}
+                    >
+                      Reviews
+                    </button>
+                  </div>
+                </>
+              )}
+
+
+
+         
+
+
+
           </div>
         </div>
       </div>

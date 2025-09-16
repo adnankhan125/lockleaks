@@ -1,0 +1,38 @@
+
+.agency-form {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.agency-input {
+    color: #fff !important;
+    background-color: #3d3d3d !important;
+    border: 1px solid #333 !important;
+    height: 70px;
+}
+.agency-input::placeholder {
+  color: #ccc !important; /* placeholder */
+}
+
+.agency-btn {
+  background-color: #C6339D !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.agency-btn:hover {
+  background-color: #C6339D !important;
+}
+
+.agency-back-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+/* AgenciesForm.css */
+
+/* Right column inputs only */
+.agency-form .col-md-6:nth-child(2) .agency-input {
+    height: 38px;
+}
