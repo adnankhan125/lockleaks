@@ -14,6 +14,10 @@ import DownloadSection from "./DownloadSection";
 import CustomFormLayout from '@/components/CustomFormLayout';
 import FormSection from "./FormSection";
 import WebsiteCardsSec from '@/components/WebsiteCardsSec';
+import ContentLeaksLock from "./ContentLeaksLock";
+import SettingsLock from '@/components/SettingsLock';
+import SettingsLockSec from '@/components/SettingsLockSec';
+import Method from '@/components/Method';
 
 
 const Dashboard: React.FC = () => {
@@ -152,7 +156,27 @@ const Dashboard: React.FC = () => {
         >
           <i className="fa fa-dollar-sign"></i> Monetization
         </a>
-
+         <a
+          href="#"
+          className={`lockdash-nav-button ${activeTab === "Agencie " ? "lockdash-active" : ""}`}
+          onClick={() => handleTabClick("Agencie")}
+        >
+          <i className="fa fa-file"></i> Agencie
+        </a>
+        <a
+          href="#"
+          className={`lockdash-nav-button ${activeTab === "Settings Lock " ? "lockdash-active" : ""}`}
+          onClick={() => handleTabClick("Settings Lock")}
+        >
+          <i className=""></i> Settings Lock
+        </a>
+        <a
+          href="#"
+          className={`lockdash-nav-button ${activeTab === "Method" ? "lockdash-active" : ""}`}
+          onClick={() => handleTabClick("Method")}
+        >
+          <i className="fa fa-lock"></i> Method
+        </a>
 
 
 
@@ -287,6 +311,15 @@ const Dashboard: React.FC = () => {
 
               </>
             )}
+
+
+            {activeTab === "Settings Lock" && (
+              <>
+                <h4 className="mb-3">Settings Lock</h4>
+           <SettingsLock/>
+
+              </>
+            )}
             
             {activeTab === "Post Tutorials" && (
               <>
@@ -308,7 +341,6 @@ const Dashboard: React.FC = () => {
               </>
             )}
 
-          
               {activeTab === "Reviews" && (
               <>
               <h4>Reviews</h4>
@@ -336,6 +368,33 @@ const Dashboard: React.FC = () => {
 
               </>
             )}
+
+             {activeTab === "Agencie" && (
+              <>
+                <h4 className="mb-3">Agencie</h4>
+                     <ContentLeaksLock/>
+
+              </>
+            )}
+
+            {activeTab === "Setting Lock" && (
+              <>
+                <h4 className="mb-3">Setting Lock</h4>
+                     <SettingsLockSec/>
+
+              </>
+            )}
+               {activeTab === "Method" && (
+              <>
+                <h4 className="mb-3">Method</h4>
+                     <Method/>
+
+              </>
+            )}
+
+
+
+            
 
               {activeTab === "Settings" && (
                 <>

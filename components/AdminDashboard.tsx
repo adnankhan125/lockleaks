@@ -103,6 +103,7 @@ const AdminDashboard: React.FC = () => {
               { name: "Whitelist", icon: "fa-check-circle" },
               { name: "Report a Leak", icon: "fa-flag" },
               { name: "Check a Leak Site", icon: "fa-file" }
+              
 
             ].map((tab) => (
               <a

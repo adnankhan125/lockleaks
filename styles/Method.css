@@ -1,0 +1,47 @@
+.method-container {
+  margin: 20px;
+  padding: 20px;
+  width: 70%;
+  margin: auto;
+}
+
+.method-section {
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  background-color: #2c2c2c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  border-color:  #c52baf;
+  box-shadow: 0 0 5px  #c52baf;
+}
+
+.save-btn {
+    color: #fff;
+    background-color: #c52baf;
+    color: #fff;
+    background-color: #c52baf00;
+    border: 1px solid;
+     border-radius: 8px;
+    padding: 8px 16px;
+}
+
+/* Set the height of the first row fields */
+.first-row .form-control {
+  height: 150px; /* Approximate height for 6 rows */
+}
+
+/* Set the height of the Test Link(s) field to 4 rows */
+.second-row .form-control {
+  height: 100px; /* Approximate height for 4 rows */
+}
