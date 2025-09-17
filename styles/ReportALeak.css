@@ -1,0 +1,280 @@
+
+.report-leak-section {
+  padding: 40px 20px;
+}
+
+.report-leak-form {
+  /* background: #161616; */
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.report-leak-form input,
+.report-leak-form textarea {
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.report-leak-form input:focus,
+.report-leak-form textarea:focus {
+  border-color: #3D3D3D;
+  box-shadow: none;
+  background: #111;
+  color: #fff;
+}
+
+.report-leak-submit {
+  background: #333;
+  border: 1px solid #666;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.report-leak-submit:hover {
+  background: #555;
+}
+
+/* Updated Right Section with new background */
+.report-leak-right {
+  /* background: #121212; Updated background color */
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.report-leak-status {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.report-leak-status div {
+  background: #111;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #c39bd3;
+}
+
+
+.custom-report-table thead {
+  background-color: #222;
+  color: #aaa;
+}
+
+/* Adding 10px padding to th and td */
+.custom-report-table th,
+.custom-report-table td {
+  color: #fff;
+  vertical-align: middle;
+  padding: 10px;  /* 10px gap between th and td */
+  text-align: center;
+}
+
+.report-leak-view-btn {
+  background: #333;
+  border: none;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+
+.report-leak-view-btn:hover {
+  background: #555;
+}
+
+.pagination .page-link {
+  background-color: #222;
+  border: none;
+  color: #fff;
+}
+
+.pagination .page-link:hover {
+  background-color: #3D3D3D;
+}
+
+/* Additional Styling for Search Box */
+.search-box {
+  background: #111;
+  padding: 8px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  color: #fff;
+}
+.search-icon-report {
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 164px;
+    transform: translateY(-50%);
+}
+
+/* New CSS for the added class */
+.table-container {
+  border: 1px solid #2A2A2A;
+  padding: 10px;
+  border-radius: 10px;
+}
+/* ===========================
+   Send Leak Report Main Container
+=========================== */
+.report-leak-tab {
+    color: #fff;
+    background-color: #121212;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* ===========================
+   Leak Report Cards (Manual, Auto, Sent)
+=========================== */
+.report-leak-card {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border: 1px solid #2a262a;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
+}
+.report-leak-card:hover {
+  transform: translateY(-3px);
+}
+.report-leak-card h6 {
+  font-size: 14px;
+  color: #c4b1c1;
+  margin-bottom: 10px;
+}
+.report-leak-value {
+  font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #9a6292, #c4b1c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===========================
+   Card Row Layout
+=========================== */
+.report-leak-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.report-leak-card-row h6 {
+  color: rgb(196, 177, 193);
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.report-leak-card-row .report-leak-value {
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #9a6292, #c4b1c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===========================
+   Search Bar
+=========================== */
+.report-leak-search {
+  position: relative;
+  width: 33%;
+}
+.report-leak-search input {
+  background-color: #1a1a1a;
+  border: 1px solid #2a262a;
+  color: #fff !important;
+  border-radius: 12px;
+  padding: 10px 15px;
+}
+.report-leak-search input:focus {
+  background-color: #1a1a1a;
+  border-color: #644460;
+  outline: none;
+  box-shadow: none;
+}
+.report-leak-search input::placeholder {
+  color: #fff !important;
+  opacity: 0.7;
+}
+.report-leak-search .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* ===========================
+   Table Styling
+=========================== */
+.report-leak-tab table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* row gap */
+}
+
+/* Table Head Gradient with top + bottom rounded */
+.report-leak-tab table.table-dark thead tr {
+  background: linear-gradient(90deg, #1a1a1a, #30242e) !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.report-leak-tab table.table-dark thead th {
+  background: transparent !important;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  padding: 12px;
+}
+.report-leak-tab table.table-dark thead th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.report-leak-tab table.table-dark thead th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Table Body Gradient + Zero Padding */
+.report-leak-tab table.table-dark tbody tr {
+  background: linear-gradient(90deg, #1a1a1a, #30242e) !important;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+.report-leak-tab table.table-dark tbody tr td {
+  background: transparent !important; /* fix Bootstrap override */
+  padding: 3px 10px !important; /* remove padding */
+  vertical-align: middle;
+}
+.report-leak-tab table.table-dark tbody tr:first-child td:first-child {
+  border-top-left-radius: 10px;
+}
+.report-leak-tab table.table-dark tbody tr:first-child td:last-child {
+  border-top-right-radius: 10px;
+}
+.report-leak-tab table.table-dark tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+.report-leak-tab table.table-dark tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+.report-leak-tab table.table-dark tbody tr:hover {
+  background: linear-gradient(90deg, #3a2f39, #4a3b4a) !important;
+}

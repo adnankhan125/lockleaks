@@ -46,7 +46,7 @@
 }
 
 .btn-primary-ok {
-    color: #fff;
+    color: #000000;
     background-color: #574d52;
     border: 2px solid #f0a8d0;
     margin-bottom: 10px;
@@ -56,6 +56,13 @@
     color: #fff;
     background-color: #574d52;
     border: 2px solid #f0a8d0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.btn-primary-ok-black{
+    color: #ffffff;
+    background-color: #574d52;
+    border: 2px solid #f0a8d0 !important;
     margin-bottom: 10px;
     margin-right: 10px;
 }
@@ -118,4 +125,19 @@
     border: 2px solid #C77ABC !important;
     margin-bottom: 0px !important;
     margin-right: 10px !important;
+}
+.dd-btn {
+    color: #ffffff;
+    background-color: #2A2A2A;
+    border: 1px solid #3f3f3f;
+    align-items: center;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 14px;
+    display: flex
+;
+}
+
+.dd-btn:hover {
+  background-color: #000000;
 }

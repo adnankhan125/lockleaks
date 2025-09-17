@@ -17,13 +17,37 @@ const WebsiteCards: React.FC = () => {
             <button className="btn btn-primary-form">Search</button>
           </div>
         </div>
+        {/* DD Section with text and buttons in one line */}
+        <div className="col-md-12 mb-4">
+          <div className="d-flex align-items-center">
+            <h6 className="me-3">For example:</h6>
+            <div className="row d-flex justify-content-start">
+              {Array(8).fill(0).map((_, index) => (
+                <div key={index} className="col-auto mb-2">
+              <button className="btn btn-secondary dd-btn">
+                <img src="/images/DD-BUTTON.svg" alt="Google Icon" className="me-2" width="16" height="16" />
+                google.com
+              </button>
 
-        <div className="col-md-4">
+
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+       <div className="col-md-4">
           <h6>Filters</h6>
-          <button className="btn btn-primary-ok-black">Button 1</button>
-          <button className="btn btn-primary-ok-black">Button 2</button><br />
-          <button className="btn btn-primary-ok-black">Button 1</button>
-          <button className="btn btn-primary-ok-black">Button 2</button>
+          <button className="btn btn-primary-ok" style={{ color: 'white' }}>seo (6185)</button>
+          <button className="btn btn-primary-ok">seo (6185)</button><br />
+          <button className="btn btn-primary-ok">seo (6185)</button>
+          <button className="btn btn-primary-ok">seo (6185)</button><br />
+          <button className="btn btn-primary-ok">seo (6185)</button>
+          <button className="btn btn-primary-ok">seo (6185)</button><br />
+          <button className="btn btn-primary-ok">seo (6185)</button>
+          <button className="btn btn-primary-ok">seo (6185)</button><br />
+          <button className="btn btn-primary-ok">seo (6185)</button>
+          <button className="btn btn-primary-ok">seo (6185)</button><br />
         </div>
 
         {/* Column 2: Website Cards (7 cards) */}

@@ -1,0 +1,99 @@
+.download-section-container {
+  margin-top: 50px;
+}
+
+.download-section-badge-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.download-section-badge {
+  background: linear-gradient(to bottom, #000000, #3e2a3b); 
+  border: 1px solid #9f959e;
+  color: #c6c4c6;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.download-section-section-title {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.download-section-card {
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.download-section-card-header {
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.download-section-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #bbb;
+}
+
+.download-section-card-body input,
+.download-section-card-body textarea {
+  background: #111;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+}
+
+.download-section-card-body input:focus,
+.download-section-card-body textarea:focus {
+  background: #111;
+  color: white;
+  border-color: #3D3D3D;
+}
+
+.download-section-card-body button {
+  background-color: #9c79ff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.download-section-card-body button:hover {
+  background-color: #7a59d0;
+}
+
+.download-section-btn-download {
+  background-color: #2c2c2c;
+}
+
+.download-section-btn-download:hover {
+  background-color: #484848;
+}
+
+/* Custom style for non-editable text */
+.download-section-form-mail {
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+}

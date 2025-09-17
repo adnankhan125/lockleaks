@@ -6,7 +6,8 @@ import Footer from '@/components/footer';
 import CallToAction from '@/components/CallToAction';
 import PlatformSection from '@/components/PlatformSection';
 import Newheader from '@/components/newheader';
-import AgenciesForm from '@/components/Agenciesform';
+import WebsiteCards from '@/components/WebsiteCardsSec';
+
 
 export default function Home() {
   return (
@@ -17,8 +18,8 @@ export default function Home() {
       <Blogs />
       <PlatformSection/>
       <CallToAction/>
+      <WebsiteCards/>
       <Footer/>
-      <AgenciesForm/>
           </>
 
   );

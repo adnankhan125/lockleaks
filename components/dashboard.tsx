@@ -10,6 +10,10 @@ import Tutorials from '@/components/Tutorials';
 import CheckLeakSite from "./CheckLeakSite";
 import ReviewForm from "./ReviewForm";
 import AgenciesForm from "./Agenciesform";
+import DownloadSection from "./DownloadSection";
+import CustomFormLayout from '@/components/CustomFormLayout';
+import FormSection from "./FormSection";
+import WebsiteCardsSec from '@/components/WebsiteCardsSec';
 
 
 const Dashboard: React.FC = () => {
@@ -64,6 +68,7 @@ const Dashboard: React.FC = () => {
             >
               <i className="fa fa-shield-alt"></i> Check a Leak Site
             </a>
+              
 
             <a
               href="#"
@@ -110,6 +115,15 @@ const Dashboard: React.FC = () => {
             >
               <i className="fa fa-globe"></i>Website
             </a>
+            <a
+              href="#"
+              className={`lockdash-nav-button ${activeTab === "Check a Leak Website" ? "lockdash-active" : ""}`}
+              onClick={() => handleTabClick("Check a Leak Website")}
+            >
+              <img src="/images/leakwebs.svg" alt="Check a Leak Icon" className="me-2" width="16" height="16" />
+              Check a Leak Website
+            </a>
+
           <a
             href="#"
             className={`lockdash-nav-button ${activeTab === "Post Tutorials" ? "lockdash-active" : ""}`}
@@ -124,15 +138,25 @@ const Dashboard: React.FC = () => {
           >
             <i className="fa fa-quote-left"></i> Reviews
           </a>
-            <a
+          <a
             href="#"
-            className={`lockdash-nav-button ${activeTab === "Agencies" ? "lockdash-active" : ""}`}
-            onClick={() => handleTabClick("Agencies")}
+            className={`lockdash-nav-button ${activeTab === "Help & Resource" ? "lockdash-active" : ""}`}
+            onClick={() => handleTabClick("Help & Resource")}
           >
-            <i className="fa fa-quote-left"></i> Agencies
+            <i className="fa fa-life-ring"></i> Help & Resource
           </a>
-         
+        <a
+          href="#"
+          className={`lockdash-nav-button ${activeTab === "Monetization " ? "lockdash-active" : ""}`}
+          onClick={() => handleTabClick("Monetization ")}
+        >
+          <i className="fa fa-dollar-sign"></i> Monetization
+        </a>
 
+
+
+
+          
 
             <h6 className="mt-4 lockdash-text-gradient">Link</h6>
             <button className="lockdash-upgrade-btn">
@@ -181,7 +205,35 @@ const Dashboard: React.FC = () => {
               </>
         )}
 
-        {activeTab === "My Profile" && <h4>My Profile Content</h4>}
+         {activeTab === "My Profile" && (
+              <>
+                <h4 className="mb-3">My Profile Content</h4>
+                 {/* 📊 Top Stats Boxes */}
+            <div className="row mb-4">
+              <div className="col-md-4">
+                <div className="send-pdf-card send-pdf-card-row">
+                  <h6>Usernames:</h6>
+                  <span className="send-pdf-value">982</span>
+                </div>
+              </div>
+            <div className="col-md-4">
+            <div className="send-pdf-card send-pdf-card-row">
+              <h6>Stage Names:</h6>
+                <span className="send-pdf-value">982</span>
+                </div>
+                </div>
+                <div className="col-md-4">
+                <div className="send-pdf-card send-pdf-card-row">
+                <h6>Whitelist:</h6>
+                <span className="send-pdf-value">982</span>
+
+              </div>
+            </div>
+          </div>
+              <DownloadSection/>
+
+              </>
+            )}
 
             {activeTab === "Support" && <h4>Support Content Here</h4>}
 
@@ -217,6 +269,13 @@ const Dashboard: React.FC = () => {
               <>
                 <h4 className="mb-3">Post</h4>
                      <Post/>
+
+              </>
+            )}
+            {activeTab === "Help & Resource" && (
+              <>
+                <h4 className="mb-3">Post</h4>
+               <CustomFormLayout/>
 
               </>
             )}
@@ -260,6 +319,21 @@ const Dashboard: React.FC = () => {
               <>
               <h4>Agencies</h4>
              <AgenciesForm/>
+              </>
+            )}
+            
+            {activeTab === "Monetization " && (
+              <>
+              <h4>Monetization & Web Links</h4>
+             <FormSection/>
+                           </>
+            )}
+
+            {activeTab === "Check a Leak Website" && (
+              <>
+                <h4 className="mb-3">Check a Leak Website</h4>
+                  <WebsiteCardsSec/>
+
               </>
             )}
 

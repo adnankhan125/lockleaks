@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "../styles/AdminDashboard.css";
 import "../styles/UserInfoModal.css";
 import Link from "next/link";
+import ReportALeak from '@/components/ReportALeak';
 
 interface User {
   id: number;
@@ -99,6 +100,7 @@ const AdminDashboard: React.FC = () => {
               { name: "Keywords", icon: "fa-key" },
               { name: "Send PDF", icon: "fa-file-pdf" },
               { name: "Whitelist", icon: "fa-check-circle" },
+              { name: "Report a Leak", icon: "fa-flag" },
             ].map((tab) => (
               <a
                 key={tab.name}
@@ -124,6 +126,14 @@ const AdminDashboard: React.FC = () => {
               </div>
               <i className="fa fa-sign-out-alt admin-dashboard-logout-icon"></i>
             </div>
+
+            {/* "Report a Leak" Tab */}
+            {activeTab === "Report a Leak" && (
+              <div className="report-leak-tab">
+                {/* Render ReportALeak Component */}
+                <ReportALeak />
+              </div>
+            )}
 
             {/* SEND PDF TAB */}
             {activeTab === "Send PDF" && (
