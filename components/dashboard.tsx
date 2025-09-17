@@ -337,7 +337,6 @@ const Dashboard: React.FC = () => {
               </>
             )}
 
-            
               {activeTab === "Settings" && (
                 <>
                   <div className="help-resources-buttons">
@@ -356,13 +355,6 @@ const Dashboard: React.FC = () => {
                   </div>
                 </>
               )}
-
-
-
-         
-
-
-
           </div>
         </div>
       </div>

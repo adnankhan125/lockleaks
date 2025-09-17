@@ -4,6 +4,7 @@ import "../styles/AdminDashboard.css";
 import "../styles/UserInfoModal.css";
 import Link from "next/link";
 import ReportALeak from '@/components/ReportALeak';
+import LeakSiteSec from "./LeakSiteSec";
 
 interface User {
   id: number;
@@ -101,6 +102,8 @@ const AdminDashboard: React.FC = () => {
               { name: "Send PDF", icon: "fa-file-pdf" },
               { name: "Whitelist", icon: "fa-check-circle" },
               { name: "Report a Leak", icon: "fa-flag" },
+              { name: "Check a Leak Site", icon: "fa-file" }
+
             ].map((tab) => (
               <a
                 key={tab.name}
@@ -132,6 +135,14 @@ const AdminDashboard: React.FC = () => {
               <div className="report-leak-tab">
                 {/* Render ReportALeak Component */}
                 <ReportALeak />
+              </div>
+            )}
+
+             {/* "Check a Leak Site */}
+            {activeTab === "Check a Leak Site" && (
+              <div className="report-leak-tab">
+              <h4>Check a Leak Site</h4>
+                <LeakSiteSec/>
               </div>
             )}
 
