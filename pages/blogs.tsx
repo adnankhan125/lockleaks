@@ -6,6 +6,7 @@ import Footer from '@/components/footer';
 import CallToAction from '@/components/CallToAction';
 import PlatformSection from '@/components/PlatformSection';
 import Newheader from '@/components/newheader';
+// import UserName from '@/components/UserName';
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Blogs />
       <PlatformSection/>
       <CallToAction/>
+      {/* <UserName/> */}
       <Footer/>
           </>
 

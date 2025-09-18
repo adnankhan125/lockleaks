@@ -5,6 +5,7 @@ import "../styles/UserInfoModal.css";
 import Link from "next/link";
 import ReportALeak from '@/components/ReportALeak';
 import LeakSiteSec from "./LeakSiteSec";
+import UserInformation from '@/components/UserInformation';
 
 interface User {
   id: number;
@@ -102,8 +103,8 @@ const AdminDashboard: React.FC = () => {
               { name: "Send PDF", icon: "fa-file-pdf" },
               { name: "Whitelist", icon: "fa-check-circle" },
               { name: "Report a Leak", icon: "fa-flag" },
-              { name: "Check a Leak Site", icon: "fa-file" }
-              
+              { name: "Check a Leak Site", icon: "fa-file" },
+              { name: "User Information", icon: "fa-cogs" }
 
             ].map((tab) => (
               <a
@@ -144,6 +145,13 @@ const AdminDashboard: React.FC = () => {
               <div className="report-leak-tab">
               <h4>Check a Leak Site</h4>
                 <LeakSiteSec/>
+              </div>
+            )}
+             {/* "UserInformation */}
+            {activeTab === "User Information" && (
+              <div className="report-leak-tab">
+              <h4>User Information</h4>
+                <UserInformation/>
               </div>
             )}
 
