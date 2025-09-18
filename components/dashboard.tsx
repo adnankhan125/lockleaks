@@ -18,6 +18,7 @@ import ContentLeaksLock from "./ContentLeaksLock";
 import SettingsLock from '@/components/SettingsLock';
 import SettingsLockSec from '@/components/SettingsLockSec';
 import Method from '@/components/Method';
+import PricingStater from '@/components/PricingStater';
 
 
 const Dashboard: React.FC = () => {
@@ -80,6 +81,13 @@ const Dashboard: React.FC = () => {
               onClick={() => handleTabClick("Subscriptions")}
             >
               <i className="fa fa-star"></i> Subscriptions
+            </a>
+           <a
+              href="#"
+              className={`lockdash-nav-button ${activeTab === "Stater Plan" ? "lockdash-active" : ""}`}
+              onClick={() => handleTabClick("Stater Plan")}
+            >
+              <i className="fa fa-gem"></i> Stater Plan
             </a>
 
             <a
@@ -308,6 +316,13 @@ const Dashboard: React.FC = () => {
               <>
                 <h4 className="mb-3">Website</h4>
               <WebsiteCards/>
+
+              </>
+            )}
+            {activeTab === "Stater Plan" && (
+              <>
+                <h4 className="mb-3">Stater Plan</h4>
+             <PricingStater/>
 
               </>
             )}

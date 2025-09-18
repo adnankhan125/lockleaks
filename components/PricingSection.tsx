@@ -20,7 +20,7 @@ type Plan = {
 };
 
 type PricingSectionProps = {
-  hideStartFree?: boolean; // 👈 yeh prop add ki
+  hideStartFree?: boolean; 
 };
 
 const monthlyPlans: Plan[] = [
@@ -37,6 +37,7 @@ const monthlyPlans: Plan[] = [
     ],
     button: 'Start Free Scan',
   },
+
   {
     title: 'Starter',
     description: 'Essential protection for new and small creators.',
@@ -50,6 +51,7 @@ const monthlyPlans: Plan[] = [
     ],
     button: 'Activate Starter',
   },
+
   {
     title: 'Pro',
     description: 'Ultimate protection for established creators.',
@@ -64,6 +66,7 @@ const monthlyPlans: Plan[] = [
     ],
     button: 'Activate Pro',
   },
+
   {
     title: 'Star',
     description: 'Exclusive protection for elite creators.',
@@ -78,8 +81,8 @@ const monthlyPlans: Plan[] = [
     ],
     button: 'Activate Star',
   },
-];
 
+];
 const yearlyPlans: Plan[] = [
   {
     title: 'Free Scan',
@@ -137,23 +140,18 @@ const yearlyPlans: Plan[] = [
     button: 'Subscribe Star',
   },
 ];
-
 export default function PricingSection({ hideStartFree = false }: PricingSectionProps) {
   const [isYearly, setIsYearly] = useState(false);
   const plansToShow = isYearly ? yearlyPlans : monthlyPlans;
-
   return (
     <section className="pricing-section">
       <div className="container text-center">
         <h2 className="section-title">Pricing</h2>
-
         {/* Subtitle */}
         <p className="section-subtitle">
           {!hideStartFree && <>Start free.<br /></>}
           Upgrade for full protection whenever you're ready.
         </p>
-
-
         {/* Toggle Button */}
         <div className="custom-toggle-switch mb-5 d-flex justify-content-center align-items-center gap-3">
           <span className={!isYearly ? 'active-toggle' : ''}>Billed Monthly</span>
@@ -167,7 +165,6 @@ export default function PricingSection({ hideStartFree = false }: PricingSection
           </label>
           <span className={isYearly ? 'active-toggle' : ''}>Billed Yearly</span>
         </div>
-
         {/* Plans Grid */}
         <div className="row justify-content-center">
           {plansToShow.map((plan, idx) => (
@@ -181,7 +178,6 @@ export default function PricingSection({ hideStartFree = false }: PricingSection
                       <p className="extra-note fst-italic mb-2">{plan.extraNote}</p>
                     )}
                   </div>
-
                   <div className="d-flex justify-content-between align-items-center mb-2">
                     <h6 className="card-price">{plan.price}</h6>
                     {plan.badge && (

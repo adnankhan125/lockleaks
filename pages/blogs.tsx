@@ -6,8 +6,7 @@ import Footer from '@/components/footer';
 import CallToAction from '@/components/CallToAction';
 import PlatformSection from '@/components/PlatformSection';
 import Newheader from '@/components/newheader';
-// import UserName from '@/components/UserName';
-
+import PricingStater from '@/components/PricingStater';
 
 export default function Home() {
   return (
@@ -18,7 +17,7 @@ export default function Home() {
       <Blogs />
       <PlatformSection/>
       <CallToAction/>
-      {/* <UserName/> */}
+      <PricingStater/>
       <Footer/>
           </>
 
