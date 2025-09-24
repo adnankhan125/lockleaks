@@ -95,6 +95,8 @@ const LeakSiteSec: React.FC = () => {
             <span className="confidence">30% confidence</span>
           </div>
         </div>
+        <div className="history-tr">Show all history</div>
+
       </div>
     </div>
   );

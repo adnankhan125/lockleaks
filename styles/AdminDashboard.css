@@ -618,7 +618,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .custom-search {
-    width: 50% !important;   /* sirf 20% width */
+    width: 100% !important;   /* sirf 20% width */
     color: #fff;
     background-color: #1c1c1c;
     border: none;
@@ -638,7 +638,7 @@
     font-size: 14px;
     position: absolute;
     top: 50%;
-    left: 114px;
+    /* left: 114px; */
     transform: translateY(-50%);
 }
 .select-users-title {
@@ -656,6 +656,7 @@
     border-radius: 14px;
     overflow: hidden;
     margin-top: 70px !important;
+    width: 80%;
 }
 .reports-head{
   display:grid;

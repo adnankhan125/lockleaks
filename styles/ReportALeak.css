@@ -4,29 +4,29 @@
 }
 
 .report-leak-form {
-  /* background: #161616; */
-  border-radius: 12px;
-  padding: 20px;
+    border-radius: 25px;
+    padding: 20px;
+    border: 1px solid #333;
 }
-
 .report-leak-form input,
 .report-leak-form textarea {
-  background: #111;
-  border: 1px solid #333;
   color: #fff;
-  border-radius: 8px;
+  background: linear-gradient(to right, #2D2D2D, #121212); 
+  border: 0px solid #33333300;
+  border-radius: 25px;
 }
+
 
 .report-leak-form input:focus,
 .report-leak-form textarea:focus {
   border-color: #3D3D3D;
   box-shadow: none;
-  background: #111;
+  background: linear-gradient(to right, #2D2D2D, #121212); 
   color: #fff;
 }
 
 .report-leak-submit {
-  background: #333;
+  background: #33333300;
   border: 1px solid #666;
   color: #fff;
   border-radius: 8px;
@@ -34,14 +34,27 @@
 }
 
 .report-leak-submit:hover {
-  background: #555;
+  background: #55555500;
 }
+.form-label {
+  margin-bottom: .5rem;
+  font-size: 16px;
+  font-weight: 700;
+  
+  background: linear-gradient(to right, #ffffff, #ae7fa7); /* ✅ left → right */
+  -webkit-background-clip: text;  /* ✅ Chrome, Safari */
+  -webkit-text-fill-color: transparent; /* ✅ Gradient dikhane ke liye */
+  background-clip: text; /* ✅ Firefox (latest versions) */
+  color: transparent;    /* fallback */
+}
+
 
 /* Updated Right Section with new background */
 .report-leak-right {
-  /* background: #121212; Updated background color */
-  border-radius: 12px;
-  padding: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #333;
+    height: 62vh;
 }
 
 .report-leak-status {
@@ -89,14 +102,14 @@
 }
 
 .pagination .page-link {
-  background-color: #222;
-  border: none;
   color: #fff;
+  background: linear-gradient(to bottom, #C77ABC, #222); /* ✅ top #C77ABC → bottom dark */
+  border: 1px solid #848484;
+  margin: 0 5px;   
+  border-radius: 6px;
+
 }
 
-.pagination .page-link:hover {
-  background-color: #3D3D3D;
-}
 
 /* Additional Styling for Search Box */
 .search-box {
@@ -232,7 +245,7 @@
 
 /* Table Head Gradient with top + bottom rounded */
 .report-leak-tab table.table-dark thead tr {
-  background: linear-gradient(90deg, #1a1a1a, #30242e) !important;
+  background: linear-gradient(90deg, #222222, #1A1A1A) !important;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -243,6 +256,8 @@
   font-weight: 600;
   padding: 12px;
 }
+
+
 .report-leak-tab table.table-dark thead th:first-child {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -254,7 +269,7 @@
 
 /* Table Body Gradient + Zero Padding */
 .report-leak-tab table.table-dark tbody tr {
-  background: linear-gradient(90deg, #1a1a1a, #30242e) !important;
+  background: linear-gradient(90deg, #222222, #6565654D) !important;
   border-radius: 10px;
   transition: background 0.3s ease;
 }
@@ -276,5 +291,5 @@
   border-bottom-right-radius: 10px;
 }
 .report-leak-tab table.table-dark tbody tr:hover {
-  background: linear-gradient(90deg, #3a2f39, #4a3b4a) !important;
+  background: linear-gradient(90deg, #222222, #6565654D) !important;
 }

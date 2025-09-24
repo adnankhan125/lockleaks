@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo, useState } from "react";
 import "../styles/CheckPrivateContent.css";
+import { FaUserPlus } from "react-icons/fa"; 
 import "../styles/Newheader.css";
 import Images from "next/image";
 
@@ -115,15 +116,7 @@ const CheckPrivateContent: React.FC = () => {
   const StepFooter = () => (
     <div className="d-flex justify-content-end align-items-center mt-4">
       <div className="d-flex gap-2">
-        <button
-          type="button"
-          className="btn btn-outline-light"
-          onClick={prevStep}
-          disabled={step === 1}
-        >
-          Back
-        </button>
-
+ 
         {step < TOTAL_STEPS ? (
           <button type="button" className="btn btn-pink px-4" onClick={nextStep}>
             Next
@@ -223,53 +216,46 @@ const CheckPrivateContent: React.FC = () => {
     </>
   );
 
-  const Step2Urls = () => (
-    <div>
-      <div className="input-group mb-3">
-        <input
-          type="url"
-          className="form-control"
-          placeholder="https://onlyfans.com/@username"
-          value={accountUrls[0]}
-          onChange={(e) => updateUrl(0, e.target.value)}
-        />
-        <button
-          type="button"
-          className="btn btn-pink"
-          onClick={() => console.log("Save clicked")}
-        >
-          Save
-        </button>
-      </div>
 
-      <div className="input-group mb-3">
-        <input
-          type="url"
-          className="form-control"
-          placeholder="https://onlyfans.com/@username"
-          value={accountUrls[1] || ""}
-          onChange={(e) => updateUrl(1, e.target.value)}
-        />
-        <button
-          type="button"
-          className="btn btn-pink"
-          onClick={() => console.log("Add clicked")}
-        >
-          Add
-        </button>
-      </div>
+const Step2Urls = () => (
+<div
+  className="d-flex justify-content-center align-items-center flex-column"
+  style={{ minHeight: "45vh", gap: "10px" }}
+>    
+    <p className="txt-frm-h mb-2">
+      Just enter your username
+    </p>
 
-      <div className="mt-3">
-        <button
-          type="button"
-          className="btn btn-link text-pink p-0"
-          onClick={addUrlField}
-        >
-          Add Account from Another Platform
-        </button>
-      </div>
+    <div className="custom-input-group">
+      <input
+        type="url"
+        className="form-control custom-input"
+        placeholder="https://onlyfans.com/@username"
+        value={accountUrls[0]}
+        onChange={(e) => updateUrl(0, e.target.value)}
+      />
+      <button
+        type="button"
+        className="btn custom-save-btn"
+        onClick={() => console.log("Save clicked")}
+      >
+        Save
+      </button>
     </div>
-  );
+
+    <div className="mt-3 text-center">
+      <button
+        type="button"
+        className="btn btn-link text-pink p-0"
+        onClick={addUrlField}
+      >
+        Add Account from Another Platform
+      </button>
+    </div>
+  </div>
+);
+
+
 
   const Step3Verify = () => {
     const [email, setEmail] = useState("");
@@ -377,7 +363,7 @@ const CheckPrivateContent: React.FC = () => {
     return (
       <div className="step4-container">
         <p className="selected-plan">You’ve selected the {selectedPlan}</p>
-        <p>By proceeding, you confirm your subscription to Lock Leaks Premium.</p>
+        <p className="selected-plan-italic">By proceeding, you confirm your subscription to Lock Leaks Premium.</p>
 
         <div className="step4-terms">
           <label className="checkbox-label">
@@ -451,6 +437,8 @@ const CheckPrivateContent: React.FC = () => {
         <div className="col-md-6 platform-login-box text-center">
           <div className="check-header">Check if your private content has been leaked</div>
           <div className="check-sub">Free & Secure</div>
+                    <div className="check-heading">Submit your Offical Links</div>
+
           <p className="check-instruction">
             Please provide the URLs of your primary accounts across all platforms you use, even if they are{" "}
             <strong>no longer active</strong>. This helps ensure comprehensive protection.
@@ -494,33 +482,55 @@ const CheckPrivateContent: React.FC = () => {
               <div className="carousel-item text-center px-4">
                 <h4>24/7 Protection</h4>
                 <p>Sleep easy knowing your brand is always guarded.</p>
-                <Images src="/images/card3.png" className="img-fluid" style={{ maxWidth: "85%" }} width={500} height={300} alt="Slide 3" />
+                <Images src="/images/card3.png" className="img-fluid" style={{ maxWidth: "50%" }} width={200} height={200} alt="Slide 3" />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Platform Modal */}
-      <div className="modal fade" id="platformModal" tabIndex={-1} aria-labelledby="platformModalLabel" aria-hidden="true">
-        <div className="modal-dialog modal-dialog-centered modal-lg">
-          <div className="modal-content custom-popup text-white">
-            <div className="modal-header border-0">
-              <h5 className="modal-title w-100 text-center" id="platformModalLabel">
-                {step === 1 && "Select your platform"}
-                {step === 2 && "Add your OnlyFans account"}
-                {step === 3 && "Add your contact information"}
-                {step === 4 && "Ready to Protect Your Content?"}
-                {step === 5 && "Ready to Protect Your Content?"}
-              </h5>
-              <button
-                id="closePlatformModalBtn"
-                type="button"
-                className="btn-close btn-close-white"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
+
+{/* Platform Modal */}
+<div
+  className="modal fade"
+  id="platformModal"
+  tabIndex={-1}
+  aria-labelledby="platformModalLabel"
+  aria-hidden="true"
+>
+  <div className="modal-dialog modal-dialog-centered modal-lg">
+    <div className="modal-content custom-popup text-white">
+      <div className="modal-header border-0">
+    <h5 className="modal-title w-100 text-center" id="platformModalLabel">
+      {step === 1 && "Select your platform"}
+      {step === 2 && (
+        <>
+          Add your{" "}
+          <img
+            src="/icons/Photoroom.svg"
+            alt="OnlyFans Icon"
+            width="45"
+            height="45"
+            className="inline-block mx-1"
+          />{" "}
+          OnlyFans account
+        </>
+      )}
+      {step === 3 && "Add your contact information"}
+      {step === 4 && "Ready to Protect Your Content?"}
+      {step === 5 && "Ready to Protect Your Content?"}
+    </h5>
+
+
+
+        <button
+          id="closePlatformModalBtn"
+          type="button"
+          className="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
 
             <div className="modal-body">
               <StepHeader />

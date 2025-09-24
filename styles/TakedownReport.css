@@ -1,5 +1,5 @@
 .report-card {
-  background: linear-gradient(180deg, #613b5ccc, #c77abccc);
+  background: linear-gradient(180deg, #885881, #4D3449);
   border-radius: 16px;
   padding: 30px;
   text-align: left;
@@ -7,6 +7,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   width: 350px;
   margin: auto;
+  border: 1px solid #B9A5B7;
 }
 
 .report-card h5 {
@@ -63,7 +64,15 @@
 }
 
 .small-text {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.8;
   margin-bottom: 10px;
+  text-align: left;
+}
+.takedown-section {
+  background: #303030;
+  padding: 40px 20px;
+  border-radius: 8px;
+  width: 920px;
+  margin: auto;
 }

@@ -36,7 +36,7 @@ const ReportALeak = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">Link(s) to content</label>
-              <textarea rows={4} className="form-control" placeholder="https://example.com..." />
+              <textarea rows={8} className="form-control" placeholder="https://example.com..." />
             </div>
             <div className="mb-3">
               <label className="form-label">Additional details (optional)</label>
@@ -99,7 +99,7 @@ const ReportALeak = () => {
                       <td>{report.date}</td>
                       <td>
                         <button
-                          className="btn btn-sm btn-primary"
+                          className="table-dark-bt"
                           onClick={() => handleSelect(report)}
                         >
                           Select

@@ -14,16 +14,18 @@
 }
 
 .form-control {
-  background: linear-gradient(to right, #2b2b2b, #1a1a1a);
+  background: linear-gradient(to right, #2b2b2b, #1a1a1a) !important;
   border: none;
   color: #fff;
+  padding: 15px;
 }
 
 .form-control:focus {
-  background: linear-gradient(to right, #3a3a3a, #1a1a1a);
+  background: linear-gradient(to right, #3a3a3a, #1a1a1a)!important;
   color: #fff;
   box-shadow: none;
   border: 1px solid #666;
+  padding: 15px;
 }
 
 .btn-post {

@@ -7,7 +7,6 @@ import icon from '../public/images/megaphone-icon.svg'; // Replace with your bel
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <>
       {/* Top Notification Bar */}

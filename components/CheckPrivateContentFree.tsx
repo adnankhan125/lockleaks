@@ -360,7 +360,7 @@ const CheckPrivateContent: React.FC = () => {
         </div>
       </div>
     );
-  };
+  }; 
 
   return (
     <div className="d-flex justify-content-center align-items-center min-vh-100">
@@ -369,6 +369,7 @@ const CheckPrivateContent: React.FC = () => {
         <div className="col-md-6 platform-login-box text-center">
           <div className="check-header">Check if your private content has been leaked</div>
           <div className="check-sub">Free & Secure</div>
+          <div className="check-heading">Submit your Offical Links</div>
           <p className="check-instruction">
             Please provide the URLs of your primary accounts across all platforms you use, even if they are <strong>no longer active</strong>. This helps ensure comprehensive protection.
           </p>

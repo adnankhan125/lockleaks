@@ -31,15 +31,15 @@ body {
     border-radius: 12px;
     padding: 15px;
     width: 75%;
-    margin: 0 auto;   /* 👈 isse center ho jayega */
+    margin: 0 auto;  
 }
 
 
-.history-header
- {
+.history-header{
     color: #e0e0e0;
     font-weight: bold;
     text-align: center;
+    margin-top: 30px;
 }
 .history-item {
     color: #bbb;
@@ -102,4 +102,12 @@ body {
 
 .d-flex span {
   margin-right: 10px;
+}
+
+.history-tr{
+  font-size: 14px;
+  color: #C77ABC;
+  margin-top: 20px;
+  text-decoration: underline;
+
 }

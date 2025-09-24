@@ -28,13 +28,15 @@ const WebsiteCards: React.FC = () => {
                 <img src="/images/DD-BUTTON.svg" alt="Google Icon" className="me-2" width="16" height="16" />
                 google.com
               </button>
-
-
                 </div>
               ))}
             </div>
           </div>
+<p className="domain-range">
+  Showing domains ranked 58 - 8859 out of 1,077,123 websites.
+</p>
         </div>
+        
 
        <div className="col-md-4">
           <h6>Filters</h6>

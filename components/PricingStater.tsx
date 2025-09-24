@@ -51,8 +51,8 @@ export default function PricingStarter({ hideStartFree = false }: PricingStarter
         </p>
         {/* Button Below Subscription Info */}
         <a href="/manage-subscription" className="custom-btn mt-3 mb-4 text-center d-inline-block">
-          Manage Subscription
-        </a>
+         Cancel Subscription        
+         </a>
         {/* Plans Grid */}
         <div className="row justify-content-center">
           {monthlyPlans.map((plan, index) => (

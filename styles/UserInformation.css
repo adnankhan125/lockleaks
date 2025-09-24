@@ -14,22 +14,31 @@
 }
 
 .editable-row {
-  border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 10px;
+  border-radius: 8px;
+  font-weight: 600;
 }
 
+/* Gradient text sirf paragraph ke andar */
 .editable-row p {
   margin: 0;
   flex: 1;
   min-width: 250px;
+
+  background: linear-gradient(to right, #ffffff, #C77ABC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
+/* Edit button normal visible rahega */
 .edit-btn {
   background: linear-gradient(to bottom, #000000, #c77abc);
-  color: white;
+  color: #fff !important;  /* force white text */
   border-radius: 8px;
   border: 1px solid #a298a1;
   padding: 2px 8px;
