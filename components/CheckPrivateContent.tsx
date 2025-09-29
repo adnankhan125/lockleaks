@@ -1,7 +1,7 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import "../styles/CheckPrivateContent.css";
-import { FaUserPlus } from "react-icons/fa"; 
+import { FaUserPlus } from "react-icons/fa";
 import "../styles/Newheader.css";
 import Images from "next/image";
 
@@ -67,19 +67,50 @@ const socialPlatforms: PlatformKey[] = [
 
 const TOTAL_STEPS = 5;
 
+// 🖼️ Platform logos mapping
+const platformLogos: Record<PlatformKey, string> = {
+  // Subscription
+  OnlyFans: "/images/Group 35.svg",
+  Fansly: "/images/Group 36.svg",
+  Fanvue: "/images/Group 6.svg",
+  "My.Club": "/images/Group 7.svg",
+  Patreon: "/images/Group 8.svg",
+  Manyvids: "/images/Group 9.svg",
+  "Just For Fans": "/images/Group 13.svg",
+  Fancentro: "/images/Group 14.svg",
+  iFans: "/images/Group 15.svg",
+  LoyalFans: "/images/Group 16.svg",
+
+  // Streaming
+  Chaturbate: "/images/chaturbate.svg",
+  MFC: "/images/mfc.svg",
+  Stripchat: "/images/stripchat.svg",
+  Streamate: "/images/streamate.svg",
+  LiveJasmin: "/images/Livejasmin.svg",
+  BongaCams: "/images/bongacoms.svg",
+  CAM4: "/images/cam4.svg",
+  CamSoda: "/images/camsoda.svg",
+  Jerkmate: "/images/jerkmate.svg",
+
+  // Social
+  "Twitter(X)": "/images/Group 26.svg",
+  TikTok: "/images/Group 28.svg",
+  Instagram: "/images/Group 29.svg",
+  Reddit: "/images/Group 30.svg",
+  Facebook: "/images/Group 39.svg",
+
+  // Other
+  Custom: "/images/1232Vector.svg",
+};
+
 const CheckPrivateContent: React.FC = () => {
   const [step, setStep] = useState<number>(1);
 
   // Step 1 selections
-  const [selectedPlatforms, setSelectedPlatforms] = useState<Set<PlatformKey>>(
-    new Set()
-  );
+  const [selectedPlatforms, setSelectedPlatforms] = useState<Set<PlatformKey>>(new Set());
 
   // Step 2 URLs
   const [accountUrls, setAccountUrls] = useState<string[]>([""]);
-  const [verificationMethod, setVerificationMethod] = useState<
-    "email" | "dns" | "file" | "none"
-  >("email");
 
   const togglePlatform = (p: PlatformKey) => {
     setSelectedPlatforms((prev) => {
@@ -100,7 +131,6 @@ const CheckPrivateContent: React.FC = () => {
     setStep(1);
     setSelectedPlatforms(new Set());
     setAccountUrls([""]);
-    setVerificationMethod("email");
   };
 
   const nextStep = () => setStep((s) => Math.min(TOTAL_STEPS, s + 1));
@@ -116,7 +146,6 @@ const CheckPrivateContent: React.FC = () => {
   const StepFooter = () => (
     <div className="d-flex justify-content-end align-items-center mt-4">
       <div className="d-flex gap-2">
- 
         {step < TOTAL_STEPS ? (
           <button type="button" className="btn btn-pink px-4" onClick={nextStep}>
             Next
@@ -134,6 +163,7 @@ const CheckPrivateContent: React.FC = () => {
     </div>
   );
 
+  // ✅ Step1 Platforms
   const Step1Platforms = () => (
     <>
       <h6 className="platform-heading">Subscription Platforms</h6>
@@ -142,12 +172,10 @@ const CheckPrivateContent: React.FC = () => {
           <button
             key={idx}
             type="button"
-            className={`platform-btn ${
-              selectedPlatforms.has(platform) ? "active" : ""
-            }`}
+            className={`platform-btn ${selectedPlatforms.has(platform) ? "active" : ""}`}
             onClick={() => togglePlatform(platform)}
           >
-            {platform}
+            <Images src={platformLogos[platform]} alt={platform} width={90} height={40} />
           </button>
         ))}
       </div>
@@ -158,29 +186,10 @@ const CheckPrivateContent: React.FC = () => {
           <button
             key={idx}
             type="button"
-            className={`platform-btn ${
-              selectedPlatforms.has(platform) ? "active" : ""
-            }`}
+            className={`platform-btn ${selectedPlatforms.has(platform) ? "active" : ""}`}
             onClick={() => togglePlatform(platform)}
           >
-            {["LiveJasmin", "BongaCams", "CAM4", "CamSoda"].includes(platform) ? (
-              <Images
-                src={
-                  platform === "LiveJasmin"
-                    ? "/images/Livejasmin.svg"
-                    : platform === "BongaCams"
-                    ? "/images/bomgacom.svg"
-                    : platform === "CAM4"
-                    ? "/images/cam4.svg"
-                    : "/images/cams.svg"
-                }
-                alt={platform}
-                width={90}
-                height={40}
-              />
-            ) : (
-              platform
-            )}
+            <Images src={platformLogos[platform]} alt={platform} width={90} height={40} />
           </button>
         ))}
       </div>
@@ -191,12 +200,10 @@ const CheckPrivateContent: React.FC = () => {
           <button
             key={idx}
             type="button"
-            className={`platform-btn ${
-              selectedPlatforms.has(platform) ? "active" : ""
-            }`}
+            className={`platform-btn ${selectedPlatforms.has(platform) ? "active" : ""}`}
             onClick={() => togglePlatform(platform)}
           >
-            {platform}
+            <Images src={platformLogos[platform]} alt={platform} width={90} height={40} />
           </button>
         ))}
       </div>
@@ -205,61 +212,75 @@ const CheckPrivateContent: React.FC = () => {
       <div className="platform-grid">
         <button
           type="button"
-          className={`platform-btn ${
-            selectedPlatforms.has("Custom") ? "active" : ""
-          }`}
+          className={`platform-btn ${selectedPlatforms.has("Custom") ? "active" : ""}`}
           onClick={() => togglePlatform("Custom")}
         >
-          + Add Custom Platform
+          <Images
+            src={platformLogos["Custom"]}
+            alt="Custom"
+            width={20}
+            height={40}
+            style={{ marginRight: "10px" }}
+          />
+          <span className="platform-text">Add Custom Platform</span>
         </button>
       </div>
     </>
   );
 
+  // ✅ Step2 URLs
+  const Step2Urls = () => (
+    <div
+      className="d-flex justify-content-center align-items-center flex-column"
+      style={{ minHeight: "45vh", gap: "10px" }}
+    >
+      <p className="txt-frm-h mb-2">Just enter your username</p>
 
-const Step2Urls = () => (
-<div
-  className="d-flex justify-content-center align-items-center flex-column"
-  style={{ minHeight: "45vh", gap: "10px" }}
->    
-    <p className="txt-frm-h mb-2">
-      Just enter your username
-    </p>
+      <div className="custom-input-group">
+        <input
+          type="url"
+          className="form-control custom-input"
+          placeholder="https://onlyfans.com/@username"
+          value={accountUrls[0]}
+          onChange={(e) => updateUrl(0, e.target.value)}
+        />
+        <button
+          type="button"
+          className="btn custom-save-btn"
+          onClick={() => console.log("Save clicked")}
+        >
+          Save
+        </button>
+      </div>
 
-    <div className="custom-input-group">
-      <input
-        type="url"
-        className="form-control custom-input"
-        placeholder="https://onlyfans.com/@username"
-        value={accountUrls[0]}
-        onChange={(e) => updateUrl(0, e.target.value)}
-      />
-      <button
-        type="button"
-        className="btn custom-save-btn"
-        onClick={() => console.log("Save clicked")}
-      >
-        Save
-      </button>
+      <div className="mt-3 text-center">
+        <button
+          type="button"
+          className="btn btn-link text-pink-btn p-0"
+          onClick={addUrlField}
+        >
+          Add Account from Another Platform
+        </button>
+      </div>
     </div>
+  );
 
-    <div className="mt-3 text-center">
-      <button
-        type="button"
-        className="btn btn-link text-pink p-0"
-        onClick={addUrlField}
-      >
-        Add Account from Another Platform
-      </button>
-    </div>
-  </div>
-);
-
-
-
+   // ✅ Step3 Contact Info (with checkboxes)
   const Step3Verify = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [whatsapp, setWhatsapp] = useState("");
+    const [phone, setPhone] = useState("");
+    const [livechat, setLivechat] = useState("");
+    const [altEmail, setAltEmail] = useState("");
+
+    const [enabledFields, setEnabledFields] = useState({
+      whatsapp: false,
+      phone: false,
+      livechat: false,
+      altEmail: false,
+    });
+
     const [errors, setErrors] = useState({ email: "", password: "" });
 
     const validate = () => {
@@ -274,12 +295,17 @@ const Step2Urls = () => (
       if (validate()) nextStep();
     };
 
+    const toggleField = (field: keyof typeof enabledFields) => {
+      setEnabledFields((prev) => ({ ...prev, [field]: !prev[field] }));
+    };
+
     return (
       <div className="step3-container">
         <p className="text-muted text-center mb-4">
           Enter your email and set a password for your free scan account.
         </p>
 
+        {/* Email + Password */}
         <div className="d-flex gap-3 mb-2">
           <div className="flex-fill">
             <label>Email Address</label>
@@ -310,60 +336,102 @@ const Step2Urls = () => (
           Note: (Required for scan updates and account creation.)
         </p>
 
-        <h6 className="text-center mb-2">Select Your Preferred Contact Method</h6>
+        <h6 className="text-center mb-2">Enter Your Preferred Contact Details</h6>
         <div className="list-group mb-3">
-          <label className="list-group-item">
+          {/* WhatsApp */}
+          <div className="list-group-item d-flex align-items-center gap-2">
+            <label className="checkbox-label d-flex align-items-center">
+              <input
+                type="checkbox"
+                checked={enabledFields.whatsapp}
+                onChange={() => toggleField("whatsapp")}
+              />
+              <span className="custom-check"></span>
+            </label>
             <input
-              type="radio"
-              name="verify"
-              className="me-2"
-              checked={verificationMethod === "email"}
-              onChange={() => setVerificationMethod("email")}
+              type="text"
+              className="form-control"
+              placeholder="Enter WhatsApp Number"
+              value={whatsapp}
+              onChange={(e) => setWhatsapp(e.target.value)}
+              disabled={!enabledFields.whatsapp}
             />
-            Your WhatsApp Number
-          </label>
-          <label className="list-group-item">
+          </div>
+
+          {/* Phone */}
+          <div className="list-group-item d-flex align-items-center gap-2">
+            <label className="checkbox-label d-flex align-items-center">
+              <input
+                type="checkbox"
+                checked={enabledFields.phone}
+                onChange={() => toggleField("phone")}
+              />
+              <span className="custom-check"></span>
+            </label>
             <input
-              type="radio"
-              name="verify"
-              className="me-2"
-              checked={verificationMethod === "dns"}
-              onChange={() => setVerificationMethod("dns")}
+              type="text"
+              className="form-control"
+              placeholder="Enter Phone Number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              disabled={!enabledFields.phone}
             />
-            Phone Number
-          </label>
-          <label className="list-group-item">
+          </div>
+
+          {/* Live Chat */}
+          <div className="list-group-item d-flex align-items-center gap-2">
+            <label className="checkbox-label d-flex align-items-center">
+              <input
+                type="checkbox"
+                checked={enabledFields.livechat}
+                onChange={() => toggleField("livechat")}
+              />
+              <span className="custom-check"></span>
+            </label>
             <input
-              type="radio"
-              name="verify"
-              className="me-2"
-              checked={verificationMethod === "file"}
-              onChange={() => setVerificationMethod("file")}
+              type="text"
+              className="form-control"
+              placeholder="Enter Live Chat ID"
+              value={livechat}
+              onChange={(e) => setLivechat(e.target.value)}
+              disabled={!enabledFields.livechat}
             />
-            Live Chat
-          </label>
-          <label className="list-group-item">
+          </div>
+
+          {/* Alternate Email */}
+          <div className="list-group-item d-flex align-items-center gap-2">
+            <label className="checkbox-label d-flex align-items-center">
+              <input
+                type="checkbox"
+                checked={enabledFields.altEmail}
+                onChange={() => toggleField("altEmail")}
+              />
+              <span className="custom-check"></span>
+            </label>
             <input
-              type="radio"
-              name="verify"
-              className="me-2"
-              checked={verificationMethod === "none"}
-              onChange={() => setVerificationMethod("none")}
+              type="email"
+              className="form-control"
+              placeholder="Enter Alternate Email"
+              value={altEmail}
+              onChange={(e) => setAltEmail(e.target.value)}
+              disabled={!enabledFields.altEmail}
             />
-            Email Only
-          </label>
+          </div>
         </div>
       </div>
     );
   };
 
+  // ✅ Step4 Review
   const Step4Review = ({ selectedPlan = "Starter Plan" }) => {
     const [agreed, setAgreed] = useState(false);
 
     return (
       <div className="step4-container">
         <p className="selected-plan">You’ve selected the {selectedPlan}</p>
-        <p className="selected-plan-italic">By proceeding, you confirm your subscription to Lock Leaks Premium.</p>
+        <p className="selected-plan-italic">
+          By proceeding, you confirm your subscription to Lock Leaks Premium.
+        </p>
 
         <div className="step4-terms">
           <label className="checkbox-label">
@@ -385,51 +453,50 @@ const Step2Urls = () => (
     );
   };
 
+  // ✅ Step5 Done
   const Step5Done = ({ selectedPlan = "Starter Plan" }) => {
-  const [agreed, setAgreed] = useState(false);
-  const [annualAccepted, setAnnualAccepted] = useState(false);
+    const [agreed, setAgreed] = useState(false);
+    const [annualAccepted, setAnnualAccepted] = useState(false);
 
-  return (
-    <div className="step5-container text-center py-4">
-      {/* Step 5 main content */}    
-      <p className="selected-plan">You’ve selected the {selectedPlan}</p>
-      <p>By proceeding, you confirm your subscription to Lock Leaks Premium.</p>
-      <div className="step4-terms">
-        <label className="checkbox-label">
-          <input
-            type="checkbox"
-            checked={agreed}
-            onChange={() => setAgreed(!agreed)}
-          />
-          <span className="custom-check"></span>
-          You agree to our <a href="#">Terms and Conditions</a> and{" "}
-          <a href="#">Privacy Policy</a>.
-        </label>
+    return (
+      <div className="step5-container text-center py-4">
+        <p className="selected-plan">You’ve selected the {selectedPlan}</p>
+        <p>By proceeding, you confirm your subscription to Lock Leaks Premium.</p>
+        <div className="step4-terms">
+          <label className="checkbox-label">
+            <input
+              type="checkbox"
+              checked={agreed}
+              onChange={() => setAgreed(!agreed)}
+            />
+            <span className="custom-check"></span>
+            You agree to our <a href="#">Terms and Conditions</a> and{" "}
+            <a href="#">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <div className="step4-terms mt-3">
+          <label className="checkbox-label">
+            <input
+              type="checkbox"
+              checked={annualAccepted}
+              onChange={() => setAnnualAccepted(!annualAccepted)}
+            />
+            <span className="custom-check"></span>
+            I accept the <a href="#">[Annual Subscription Terms]</a>, including Traffic Redirection and Content Use policies.
+          </label>
+        </div>
+
+        <button
+          className="step4-btn mt-3"
+          disabled={!agreed || !annualAccepted}
+        >
+          Buy {selectedPlan}
+        </button>
       </div>
+    );
+  };
 
-      {/* New Annual Subscription Terms checkbox */}
-      <div className="step4-terms mt-3">
-       <label className="checkbox-label">
-  <input
-    type="checkbox"
-    checked={annualAccepted}
-    onChange={() => setAnnualAccepted(!annualAccepted)}
-  />
-  <span className="custom-check"></span>
-  I accept the <a href="#">[Annual Subscription Terms]</a>, including Traffic Redirection and Content Use policies.
-</label>
-
-      </div>
-
-      <button
-        className="step4-btn mt-3"
-        disabled={!agreed || !annualAccepted} // button enabled only if both checkboxes are checked
-      >
-        Buy {selectedPlan}
-      </button>
-    </div>
-  );
-};
   return (
     <div className="d-flex justify-content-center align-items-center min-vh-100">
       <div className="dailogs-login-slider-section d-flex flex-md-row flex-column">
@@ -437,7 +504,7 @@ const Step2Urls = () => (
         <div className="col-md-6 platform-login-box text-center">
           <div className="check-header">Check if your private content has been leaked</div>
           <div className="check-sub">Free & Secure</div>
-                    <div className="check-heading">Submit your Offical Links</div>
+          <div className="check-heading">Submit your Offical Links</div>
 
           <p className="check-instruction">
             Please provide the URLs of your primary accounts across all platforms you use, even if they are{" "}
@@ -489,59 +556,40 @@ const Step2Urls = () => (
         </div>
       </div>
 
-
-{/* Platform Modal */}
-<div
-  className="modal fade"
-  id="platformModal"
-  tabIndex={-1}
-  aria-labelledby="platformModalLabel"
-  aria-hidden="true"
->
-  <div className="modal-dialog modal-dialog-centered modal-lg">
-    <div className="modal-content custom-popup text-white">
-      <div className="modal-header border-0">
-    <h5 className="modal-title w-100 text-center" id="platformModalLabel">
-      {step === 1 && "Select your platform"}
-      {step === 2 && (
-        <>
-          Add your{" "}
-          <img
-            src="/icons/Photoroom.svg"
-            alt="OnlyFans Icon"
-            width="45"
-            height="45"
-            className="inline-block mx-1"
-          />{" "}
-          OnlyFans account
-        </>
-      )}
-      {step === 3 && "Add your contact information"}
-      {step === 4 && "Ready to Protect Your Content?"}
-      {step === 5 && "Ready to Protect Your Content?"}
-    </h5>
-
-
-
-        <button
-          id="closePlatformModalBtn"
-          type="button"
-          className="btn-close btn-close-white"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
+      {/* Platform Modal */}
+      <div
+        className="modal fade"
+        id="platformModal"
+        tabIndex={-1}
+        aria-labelledby="platformModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered modal-lg">
+          <div className="modal-content custom-popup text-white">
+            <div className="modal-header border-0">
+              <h5 className="modal-title w-100 text-center" id="platformModalLabel">
+                {step === 1 && "Select your platform"}
+                {step === 2 && "Add your account"}
+                {step === 3 && "Add Your Contact Information"}
+                {step === 4 && "Ready to Protect Your Content?"}
+                {step === 5 && "Ready to Protect Your Content?"}
+              </h5>
+              <button
+                type="button"
+                className="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                id="closePlatformModalBtn"
+              ></button>
+            </div>
 
             <div className="modal-body">
               <StepHeader />
-
-              {/* Step Content */}
               {step === 1 && <Step1Platforms />}
               {step === 2 && <Step2Urls />}
               {step === 3 && <Step3Verify />}
               {step === 4 && <Step4Review />}
               {step === 5 && <Step5Done />}
-
               <StepFooter />
             </div>
           </div>

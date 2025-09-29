@@ -115,15 +115,15 @@ body {
   font-weight: 500;
   border: none;
   border-radius: 12px;
-  padding: 8px 14px;
+  padding: 0px 21px;
   transition: all 0.3s ease;
   font-size: 14px;
   border: 1px solid #444;
 }
 
 .platform-btn:hover {
-  border: 1px solid #f06ad3;
-  transform: scale(1.05);
+  /* border: 1px solid #f06ad3; */
+  /* transform: scale(1.05); */
 }
 
 .btn-pink {
@@ -206,11 +206,11 @@ body {
 .step3-container .list-group-item {
     cursor: pointer;
     color: #fff;
-    background: #585858;
-    border: 1px solid #585858;
+    background: #58585800;
+    border: 1px solid #58585800;
     border-radius: 12px;
     margin-bottom: 5px;
-    padding: 10px;
+    padding: 0px;
     display: flex;
     align-items: center;    
     width: 60%;
@@ -537,7 +537,7 @@ body {
     margin-bottom: 22px;
 }
 
-.text-pink {
+.text-pink-btn {
   color: #ffffff;
   text-decoration: none;
   padding: 9px !important;
@@ -547,8 +547,15 @@ body {
   border-radius: 6px;   
 }
 
-.text-pink:hover {
+.text-pink-btn:hover {
   color: #ffffff;
   text-decoration: none;
   background-color: #cf3ca6;
+}
+
+.platform-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
