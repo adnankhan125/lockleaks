@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import "../styles/CheckPrivateContent.css";
 import { FaUserPlus } from "react-icons/fa";
 import "../styles/Newheader.css";
+import proimg from "../public/images/pro.png";
+
 import Images from "next/image";
 
 type PlatformKey =
@@ -65,7 +67,7 @@ const socialPlatforms: PlatformKey[] = [
   "Facebook",
 ];
 
-const TOTAL_STEPS = 5;
+const TOTAL_STEPS = 6;
 
 // 🖼️ Platform logos mapping
 const platformLogos: Record<PlatformKey, string> = {
@@ -497,6 +499,53 @@ const CheckPrivateContent: React.FC = () => {
     );
   };
 
+  // --------------------- STEP 6 ----------------------
+const Step6 = () => {
+  const handleCopy = () => {
+    navigator.clipboard.writeText(
+      "Content protected and enforced by lockleaks.com."
+    );
+    alert("Copied to clipboard!");
+  };
+
+  return (
+    <div className="step text-center">
+      <p className="popup-description">
+        To ensure your content is protected and enforced, add the following line
+        to your profile description:
+      </p>
+      <p className="popup-instruction">
+        Just copy the text above and paste it into your profile description on
+        OnlyFans or any other platform.
+      </p>
+      <input
+        type="text"
+        className="input-field gradient-text"
+        readOnly
+        value="Content protected and enforced by lockleaks.com."
+      />
+      <div className="text-start mb-4">
+        <button
+          className="btn text-white"
+          style={{ backgroundColor: "#CF3CA6" }}
+          onClick={handleCopy}
+        >
+          Copy to Clipboard
+        </button>
+      </div>
+      <h5 className="profile-preview-heading">
+        How It Should Look on Your Profile:
+      </h5>
+      <Images
+        src={proimg}
+        alt="Example Preview"
+        className="popup-image mb-3 d-block mx-auto"
+      />
+    </div>
+  );
+};
+
+
   return (
     <div className="d-flex justify-content-center align-items-center min-vh-100">
       <div className="dailogs-login-slider-section d-flex flex-md-row flex-column">
@@ -573,6 +622,8 @@ const CheckPrivateContent: React.FC = () => {
                 {step === 3 && "Add Your Contact Information"}
                 {step === 4 && "Ready to Protect Your Content?"}
                 {step === 5 && "Ready to Protect Your Content?"}
+                {step === 6 && "Ready to Protect Your Contents?"}
+
               </h5>
               <button
                 type="button"
@@ -583,15 +634,18 @@ const CheckPrivateContent: React.FC = () => {
               ></button>
             </div>
 
-            <div className="modal-body">
-              <StepHeader />
-              {step === 1 && <Step1Platforms />}
-              {step === 2 && <Step2Urls />}
-              {step === 3 && <Step3Verify />}
-              {step === 4 && <Step4Review />}
-              {step === 5 && <Step5Done />}
-              <StepFooter />
-            </div>
+           <div className="modal-body">
+  <StepHeader />
+  {step === 1 && <Step1Platforms />}
+  {step === 2 && <Step2Urls />}
+  {step === 3 && <Step3Verify />}
+  {step === 4 && <Step4Review />}
+  {step === 5 && <Step5Done />}
+  {step === 6 && <Step6 />}   {/* ✅ replaced Step6Done with Step6 */}
+
+  <StepFooter />
+</div>
+
           </div>
         </div>
       </div>
