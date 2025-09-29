@@ -45,22 +45,27 @@
 }
 
 .btn-custom {
-    color: #fff;
+    color: #c5c5c5;
     background: linear-gradient(to right, #281c26, #4c2d48, #251a23);
     border: 1px solid #975d90;
     border-radius: 8px;
-    padding: 8px 25px;
+    padding: 8px 40px;
     font-size: 14px;
+    font-weight: 700;
 }
 
 .btn-custom:hover {
     border: 1px solid #975d90;
+        color: #c5c5c5;
+
 }
 
 .nav-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 25px;
+  margin: 0 auto;
+  width: 75%;
+  margin-top: -30px;
 }
 
 .small-text {

@@ -227,7 +227,7 @@ const Dashboard: React.FC = () => {
                 </div>
                 <div className="col-md-4">
                 <div className="send-pdf-card send-pdf-card-row">
-                <h6>Sent:</h6>
+                <h6>Removal Status:</h6>
                 {/* Replace number with SVG */}
                 <img src="/icons/sent-icon.svg" alt="Sent Icon" className="send-pdf-value-svg"/>
               </div>

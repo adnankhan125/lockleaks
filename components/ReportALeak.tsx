@@ -13,8 +13,8 @@ interface LeakReport {
 const ReportALeak = () => {
   // Sample data for the table, replace with your data or API call
   const [reports, setReports] = useState<LeakReport[]>([
-    { id: 1, type: 'Impersonator', link: 'https://example.com/1 +2', status: 'Pending', date: '19.03.2025' },
-    { id: 2, type: 'Impersonator', link: 'https://example.com/2 +2', status: 'Pending', date: '19.03.2025' },
+    { id: 1, type: 'Impersonator', link: 'https://.. +2', status: 'Pending', date: '19.03.2025' },
+    { id: 2, type: 'Impersonator', link: 'https://.. +2', status: 'Pending', date: '19.03.2025' },
     // Add more reports as needed
   ]);
 
@@ -52,13 +52,13 @@ const ReportALeak = () => {
             <div className="row mb-4">
               <div className="col-md-6">
                 <div className="send-pdf-card send-pdf-card-row">
-                  <h6>Scanned:</h6>
+                  <h6>Pending:</h6>
                   <span className="send-pdf-value">983</span>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="send-pdf-card send-pdf-card-row">
-                  <h6>Leaks Found:</h6>
+                  <h6>Solved:</h6>
                   <span className="send-pdf-value">542</span>
                 </div>
               </div>

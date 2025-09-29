@@ -183,7 +183,7 @@
   color: rgb(196, 177, 193);
   margin: 0;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .send-pdf-card-row .send-pdf-value {
   font-size: 20px;
@@ -741,7 +741,7 @@
     width: 45%;
 }
 .send-pdf-card-row-rt h6 {
-    font-weight: 700;
+    font-weight: 900;
     font-size: 22px;
     margin-bottom: 0px;
 }

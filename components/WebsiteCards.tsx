@@ -19,11 +19,11 @@ const WebsiteCards: React.FC = () => {
         </div>
 
         <div className="col-md-4">
-          <h6>Filters</h6>
-          <button className="btn btn-primary-ok-black">Button 1</button>
-          <button className="btn btn-primary-ok-black">Button 2</button><br />
-          <button className="btn btn-primary-ok-black">Button 1</button>
-          <button className="btn btn-primary-ok-black">Button 2</button>
+          <div className= "heading-filter"> <h6>Filters</h6></div>
+          <button className="btn btn-primary-ok-black">Removable</button>
+          <button className="btn btn-primary-ok-black">Monitoring</button><br />
+          <button className="btn btn-primary-ok-black">seo (6185)</button>
+          <button className="btn btn-primary-ok-black">seo (6185)</button>
         </div>
 
         {/* Column 2: Website Cards (7 cards) */}

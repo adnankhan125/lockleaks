@@ -4,7 +4,7 @@
 } */
 
 .leaks-card {
-  background: #121212;
+  background: #222222;
   border-radius: 20px;
   padding: 25px;
   color: #fff;
@@ -33,11 +33,12 @@
 }
 
 .add-btn {
-    color: #fff;
+    color: #c5c5c5;
     background: #292228;
-    border: 1PX SOLID #986090;
-    border-radius: 32px;
-    padding: 0px 19px;
+    border: 1px solid #986090;
+    border-radius: 12px;
+    padding: 0 30px;
+    font-weight: 700;
 }
 .domain-item {
   background: #000;
@@ -70,7 +71,7 @@
   text-orientation: mixed;
   font-size: 40px;
   font-weight: 800;
-  background: linear-gradient(180deg, #723e6a, #c09dbb);
+  background: linear-gradient(180deg, #723e6a, #e3d5e1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 3px;
@@ -107,12 +108,13 @@
   }
 }
 .search-btn {
-    color: #fff;
+    color: #c5c5c5;
     background: #292228;
     border: 1px solid #986090;
-    border-radius: 32px;
-    padding: 0 19px;
-    width: 65%;
+    border-radius: 12px;
+    padding: 0 30px;
+    font-weight: 700;
+    width: 70%;
 }
 
 .leaks-section {
