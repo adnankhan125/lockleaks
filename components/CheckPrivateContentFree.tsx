@@ -311,7 +311,7 @@ const CheckPrivateContent: React.FC = () => {
              <label>Email Address</label>
              <input
                type="email"
-               className={`form-control ${errors.email ? "is-invalid" : ""}`}
+               className={`form-control custom-input ${errors.email ? "is-invalid" : ""}`}
                placeholder="your@email.com"
                value={email}
                onChange={(e) => setEmail(e.target.value)}
@@ -323,7 +323,7 @@ const CheckPrivateContent: React.FC = () => {
              <label>Password</label>
              <input
                type="password"
-               className={`form-control ${errors.password ? "is-invalid" : ""}`}
+               className={`form-control custom-input ${errors.password ? "is-invalid" : ""}`}
                placeholder="Enter password"
                value={password}
                onChange={(e) => setPassword(e.target.value)}
@@ -350,7 +350,7 @@ const CheckPrivateContent: React.FC = () => {
              </label>
              <input
                type="text"
-               className="form-control"
+               className="form-control custom-input"
                placeholder="Enter WhatsApp Number"
                value={whatsapp}
                onChange={(e) => setWhatsapp(e.target.value)}
@@ -370,7 +370,7 @@ const CheckPrivateContent: React.FC = () => {
              </label>
              <input
                type="text"
-               className="form-control"
+               className="form-control custom-input"
                placeholder="Enter Phone Number"
                value={phone}
                onChange={(e) => setPhone(e.target.value)}
@@ -390,7 +390,7 @@ const CheckPrivateContent: React.FC = () => {
              </label>
              <input
                type="text"
-               className="form-control"
+               className="form-control custom-input"
                placeholder="Enter Live Chat ID"
                value={livechat}
                onChange={(e) => setLivechat(e.target.value)}
@@ -410,7 +410,7 @@ const CheckPrivateContent: React.FC = () => {
              </label>
              <input
                type="email"
-               className="form-control"
+               className="form-control custom-input"
                placeholder="Enter Alternate Email"
                value={altEmail}
                onChange={(e) => setAltEmail(e.target.value)}
