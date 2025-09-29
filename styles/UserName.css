@@ -93,8 +93,8 @@ ease-in-out;
 }
 .userlist-item .action{
   background: radial-gradient(100% 120% at 50% 0%, #000000 0%, #653E60 50%, #C77ABC 100%);
-  border: 1px solid #858585;
-  color:#fff; padding:.35rem .9rem; border-radius:999px; font-weight:700;
+  border: 2px solid #858585;
+  color:#cbc8cb; padding: 4px 10px; border-radius:999px; font-weight:700;
   display:inline-flex; align-items:center; gap:.45rem;
   transition: transform .05s ease-in-out, filter .15s ease-in-out;
 }
@@ -102,3 +102,19 @@ ease-in-out;
 .userlist-item .action:active{ transform:translateY(1px); }
 .userlist-ellipsis{ color:#8e829c; font-size:1.2rem; }
 .userlist-dot{ width:6px; height:6px; border-radius:50%; background:#5b5067; display:inline-block; }
+
+/* .userlist-item .action {
+    background: radial-gradient(100% 120% at 50% 0, #000000 0, #653E60 50%, #C77ABC 100%);
+    border: 2px solid #858585;
+    color: #cbc8cb;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    transition: transform .05s 
+ease-in-out, filter .15s 
+ease-in-out;
+    font-size: 11px;
+} */
