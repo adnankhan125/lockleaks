@@ -65,13 +65,54 @@ const socialPlatforms: PlatformKey[] = [
   "Facebook",
 ];
 
-const TOTAL_STEPS = 5; // Added Step 5
+const TOTAL_STEPS = 5;
+
+// 🖼️ Platform logos mapping
+const platformLogos: Record<PlatformKey, string> = {
+  OnlyFans: "/images/Group 35.svg",
+  Fansly: "/images/Group 36.svg",
+  Fanvue: "/images/Group 6.svg",
+  "My.Club": "/images/Group 7.svg",
+  Patreon: "/images/Group 8.svg",
+  Manyvids: "/images/Group 9.svg",
+  "Just For Fans": "/images/Group 13.svg",
+  Fancentro: "/images/Group 14.svg",
+  iFans: "/images/Group 15.svg",
+  LoyalFans: "/images/Group 16.svg",
+
+  // Streaming
+  Chaturbate: "/images/chaturbate.svg",
+  MFC: "/images/mfc.svg",
+  Stripchat: "/images/stripchat.svg",
+  Streamate: "/images/streamate.svg",
+  LiveJasmin: "/images/Livejasmin.svg",
+  BongaCams: "/images/bongacoms.svg",
+  CAM4: "/images/cam4.svg",
+  CamSoda: "/images/camsoda.svg",
+  Jerkmate: "/images/jerkmate.svg",
+
+  // Social
+  "Twitter(X)": "/images/Group 26.svg",
+  TikTok: "/images/Group 28.svg",
+  Instagram: "/images/Group 29.svg",
+  Reddit: "/images/Group 30.svg",
+  Facebook: "/images/Group 39.svg",
+
+  // Other
+  Custom: "/images/1232Vector.svg",
+};
 
 const CheckPrivateContent: React.FC = () => {
   const [step, setStep] = useState<number>(1);
+
+  // Step 1 selections
   const [selectedPlatforms, setSelectedPlatforms] = useState<Set<PlatformKey>>(new Set());
+
+  // Step 2 URLs
   const [accountUrls, setAccountUrls] = useState<string[]>([""]);
-  const [verificationMethod, setVerificationMethod] = useState<"email" | "dns" | "file" | "none">("email");
+
+  // Step 3 Verification
+  const [verificationMethod, setVerificationMethod] = useState<string>("email");
 
   const togglePlatform = (p: PlatformKey) => {
     setSelectedPlatforms((prev) => {
@@ -83,13 +124,15 @@ const CheckPrivateContent: React.FC = () => {
   };
 
   const addUrlField = () => setAccountUrls((u) => [...u, ""]);
-  const updateUrl = (idx: number, val: string) => setAccountUrls((u) => u.map((v, i) => (i === idx ? val : v)));
+  const removeUrlField = (idx: number) =>
+    setAccountUrls((u) => u.filter((_, i) => i !== idx));
+  const updateUrl = (idx: number, val: string) =>
+    setAccountUrls((u) => u.map((v, i) => (i === idx ? val : v)));
 
   const resetWizard = () => {
     setStep(1);
     setSelectedPlatforms(new Set());
     setAccountUrls([""]);
-    setVerificationMethod("email");
   };
 
   const nextStep = () => setStep((s) => Math.min(TOTAL_STEPS, s + 1));
@@ -100,24 +143,19 @@ const CheckPrivateContent: React.FC = () => {
     el?.click();
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText("Content protected and enforced by lockleaks.com.");
-    alert("Copied to clipboard!");
-  };
-
   const StepFooter = () => (
     <div className="d-flex justify-content-end align-items-center mt-4">
       <div className="d-flex gap-2">
-        <button type="button" className="btn btn-outline-light" onClick={prevStep} disabled={step === 1}>
-          Back
-        </button>
-
         {step < TOTAL_STEPS ? (
           <button type="button" className="btn btn-pink px-4" onClick={nextStep}>
             Next
           </button>
         ) : (
-          <button type="button" className="btn btn-pink px-4" onClick={handleFinish}>
+          <button
+            type="button"
+            className="btn btn-pink px-4"
+            onClick={handleFinish}
+          >
             Finish
           </button>
         )}
@@ -125,7 +163,7 @@ const CheckPrivateContent: React.FC = () => {
     </div>
   );
 
-  // --------------------- STEP 1 ----------------------
+  // ✅ Step1 Platforms
   const Step1Platforms = () => (
     <>
       <h6 className="platform-heading">Subscription Platforms</h6>
@@ -137,7 +175,7 @@ const CheckPrivateContent: React.FC = () => {
             className={`platform-btn ${selectedPlatforms.has(platform) ? "active" : ""}`}
             onClick={() => togglePlatform(platform)}
           >
-            {platform}
+            <Image src={platformLogos[platform]} alt={platform} width={90} height={40} />
           </button>
         ))}
       </div>
@@ -151,7 +189,7 @@ const CheckPrivateContent: React.FC = () => {
             className={`platform-btn ${selectedPlatforms.has(platform) ? "active" : ""}`}
             onClick={() => togglePlatform(platform)}
           >
-            {platform}
+            <Image src={platformLogos[platform]} alt={platform} width={90} height={40} />
           </button>
         ))}
       </div>
@@ -165,7 +203,7 @@ const CheckPrivateContent: React.FC = () => {
             className={`platform-btn ${selectedPlatforms.has(platform) ? "active" : ""}`}
             onClick={() => togglePlatform(platform)}
           >
-            {platform}
+            <Image src={platformLogos[platform]} alt={platform} width={90} height={40} />
           </button>
         ))}
       </div>
@@ -177,152 +215,252 @@ const CheckPrivateContent: React.FC = () => {
           className={`platform-btn ${selectedPlatforms.has("Custom") ? "active" : ""}`}
           onClick={() => togglePlatform("Custom")}
         >
-          + Add Custom Platform
+          <Image
+            src={platformLogos["Custom"]}
+            alt="Custom"
+            width={20}
+            height={40}
+            style={{ marginRight: "10px" }}
+          />
+          <span className="platform-text">Add Custom Platform</span>
         </button>
       </div>
     </>
   );
 
-  // --------------------- STEP 2 ----------------------
+  // ✅ Step2 URLs
   const Step2Urls = () => (
-    <div>
-      <div className="text-center my-3">
-        <h5 className="form-heading">Just enter your username</h5>
-        <div className="d-flex justify-content-center">
-          <div className="input-group mb-3 custom-input-group">
-            <input
-              type="url"
-              className="form-control custom-input"
-              placeholder="https://onlyfans.com/@username"
-              value={accountUrls[0]}
-              onChange={(e) => updateUrl(0, e.target.value)}
-            />
-            <button type="button" className="btn btn-pink" onClick={() => console.log("Save clicked")}>
-              Save
-            </button>
-          </div>
-        </div>
+    <div
+      className="d-flex justify-content-center align-items-center flex-column"
+      style={{ minHeight: "45vh", gap: "10px" }}
+    >
+      <p className="txt-frm-h mb-2">Just enter your username</p>
+
+      <div className="custom-input-group">
+        <input
+          type="url"
+          className="form-control custom-input"
+          placeholder="https://onlyfans.com/@username"
+          value={accountUrls[0]}
+          onChange={(e) => updateUrl(0, e.target.value)}
+        />
+        <button
+          type="button"
+          className="btn custom-save-btn"
+          onClick={() => console.log("Save clicked")}
+        >
+          Save
+        </button>
       </div>
-      <div className="mt-3">
-        <button type="button" className="btn custom-btn-free p-0" onClick={addUrlField}>
+
+      <div className="mt-3 text-center">
+        <button
+          type="button"
+          className="btn btn-link text-pink-btn p-0"
+          onClick={addUrlField}
+        >
           Add Account from Another Platform
         </button>
       </div>
     </div>
   );
 
-  // --------------------- STEP 3 ----------------------
-  const Step3Verify = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [errors, setErrors] = useState({ email: "", password: "" });
+  // ✅ Step3 Contact Info (with checkboxes)
+   const Step3Verify = () => {
+     const [email, setEmail] = useState("");
+     const [password, setPassword] = useState("");
+     const [whatsapp, setWhatsapp] = useState("");
+     const [phone, setPhone] = useState("");
+     const [livechat, setLivechat] = useState("");
+     const [altEmail, setAltEmail] = useState("");
+ 
+     const [enabledFields, setEnabledFields] = useState({
+       whatsapp: false,
+       phone: false,
+       livechat: false,
+       altEmail: false,
+     });
+ 
+     const [errors, setErrors] = useState({ email: "", password: "" });
+ 
+     const validate = () => {
+       const newErrors = { email: "", password: "" };
+       if (!email.includes("@")) newErrors.email = "Please enter a valid email address";
+       if (password.length < 6) newErrors.password = "Don't forget to set your password!";
+       setErrors(newErrors);
+       return !newErrors.email && !newErrors.password;
+     };
+ 
+     const handleNextStep = () => {
+       if (validate()) nextStep();
+     };
+ 
+     const toggleField = (field: keyof typeof enabledFields) => {
+       setEnabledFields((prev) => ({ ...prev, [field]: !prev[field] }));
+     };
+ 
+     return (
+       <div className="step3-container">
+         <p className="text-muted text-center mb-4">
+           Enter your email and set a password for your free scan account.
+         </p>
+ 
+         {/* Email + Password */}
+         <div className="d-flex gap-3 mb-2">
+           <div className="flex-fill">
+             <label>Email Address</label>
+             <input
+               type="email"
+               className={`form-control ${errors.email ? "is-invalid" : ""}`}
+               placeholder="your@email.com"
+               value={email}
+               onChange={(e) => setEmail(e.target.value)}
+             />
+             {errors.email && <small className="text-danger">{errors.email}</small>}
+           </div>
+ 
+           <div className="flex-fill">
+             <label>Password</label>
+             <input
+               type="password"
+               className={`form-control ${errors.password ? "is-invalid" : ""}`}
+               placeholder="Enter password"
+               value={password}
+               onChange={(e) => setPassword(e.target.value)}
+             />
+             {errors.password && <small className="text-danger">{errors.password}</small>}
+           </div>
+         </div>
+ 
+         <p className="text-center text-muted mb-3">
+           Note: (Required for scan updates and account creation.)
+         </p>
+ 
+         <h6 className="text-center mb-2">Enter Your Preferred Contact Details</h6>
+         <div className="list-group mb-3">
+           {/* WhatsApp */}
+           <div className="list-group-item d-flex align-items-center gap-2">
+             <label className="checkbox-label d-flex align-items-center">
+               <input
+                 type="checkbox"
+                 checked={enabledFields.whatsapp}
+                 onChange={() => toggleField("whatsapp")}
+               />
+               <span className="custom-check"></span>
+             </label>
+             <input
+               type="text"
+               className="form-control"
+               placeholder="Enter WhatsApp Number"
+               value={whatsapp}
+               onChange={(e) => setWhatsapp(e.target.value)}
+               disabled={!enabledFields.whatsapp}
+             />
+           </div>
+ 
+           {/* Phone */}
+           <div className="list-group-item d-flex align-items-center gap-2">
+             <label className="checkbox-label d-flex align-items-center">
+               <input
+                 type="checkbox"
+                 checked={enabledFields.phone}
+                 onChange={() => toggleField("phone")}
+               />
+               <span className="custom-check"></span>
+             </label>
+             <input
+               type="text"
+               className="form-control"
+               placeholder="Enter Phone Number"
+               value={phone}
+               onChange={(e) => setPhone(e.target.value)}
+               disabled={!enabledFields.phone}
+             />
+           </div>
+ 
+           {/* Live Chat */}
+           <div className="list-group-item d-flex align-items-center gap-2">
+             <label className="checkbox-label d-flex align-items-center">
+               <input
+                 type="checkbox"
+                 checked={enabledFields.livechat}
+                 onChange={() => toggleField("livechat")}
+               />
+               <span className="custom-check"></span>
+             </label>
+             <input
+               type="text"
+               className="form-control"
+               placeholder="Enter Live Chat ID"
+               value={livechat}
+               onChange={(e) => setLivechat(e.target.value)}
+               disabled={!enabledFields.livechat}
+             />
+           </div>
+ 
+           {/* Alternate Email */}
+           <div className="list-group-item d-flex align-items-center gap-2">
+             <label className="checkbox-label d-flex align-items-center">
+               <input
+                 type="checkbox"
+                 checked={enabledFields.altEmail}
+                 onChange={() => toggleField("altEmail")}
+               />
+               <span className="custom-check"></span>
+             </label>
+             <input
+               type="email"
+               className="form-control"
+               placeholder="Enter Alternate Email"
+               value={altEmail}
+               onChange={(e) => setAltEmail(e.target.value)}
+               disabled={!enabledFields.altEmail}
+             />
+           </div>
+         </div>
+       </div>
+     );
+   };
 
-    const validate = () => {
-      const newErrors = { email: "", password: "" };
-      if (!email.includes("@")) newErrors.email = "Please enter a valid email address";
-      if (password.length < 6) newErrors.password = "Don't forget to set your password!";
-      setErrors(newErrors);
-      return !newErrors.email && !newErrors.password;
-    };
-
-    const handleNextStep = () => {
-      if (validate()) nextStep();
+  // --------------------- STEP 4 ----------------------
+  const Step4Protect = () => {
+    const handleCopy = () => {
+      navigator.clipboard.writeText("Content protected and enforced by lockleaks.com.");
+      alert("Copied to clipboard!");
     };
 
     return (
-      <div className="step3-container">
-        <p className="text-muted text-center mb-4">Enter your email and set a password for your free scan account.</p>
-
-        <div className="d-flex gap-3 mb-2">
-          <div className="flex-fill">
-            <label>Email Address</label>
-            <input
-              type="email"
-              className={`form-control ${errors.email ? "is-invalid" : ""}`}
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {errors.email && <small className="text-danger">{errors.email}</small>}
-          </div>
-
-          <div className="flex-fill">
-            <label>Password</label>
-            <input
-              type="password"
-              className={`form-control ${errors.password ? "is-invalid" : ""}`}
-              placeholder="Enter password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {errors.password && <small className="text-danger">{errors.password}</small>}
-          </div>
-        </div>
-
-        <p className="text-center text-muted mb-3">Note: (Required for scan updates and account creation.)</p>
-
-        <h6 className="text-center mb-2">Select Your Preferred Contact Method</h6>
-        <div className="list-group mb-3">
-          <label className="list-group-item">
-            <input type="radio" name="verify" className="me-2" checked={verificationMethod === "email"} onChange={() => setVerificationMethod("email")} />
-            Your WhatsApp Number
-          </label>
-          <label className="list-group-item">
-            <input type="radio" name="verify" className="me-2" checked={verificationMethod === "dns"} onChange={() => setVerificationMethod("dns")} />
-            Phone Number
-          </label>
-          <label className="list-group-item">
-            <input type="radio" name="verify" className="me-2" checked={verificationMethod === "file"} onChange={() => setVerificationMethod("file")} />
-            Live Chat
-          </label>
-          <label className="list-group-item">
-            <input type="radio" name="verify" className="me-2" checked={verificationMethod === "none"} onChange={() => setVerificationMethod("none")} />
-            Email Only
-          </label>
-        </div>
-
-        <div className="text-center">
-          <button type="button" className="btn btn-pink px-4" onClick={handleNextStep}>
-            Next
+      <div className="step text-center">
+        {/* <h3 className="popup-heading">Protect Your Content</h3> */}
+        <p className="popup-description">
+          To ensure your content is protected and enforced, add the following line to your profile description:
+        </p>
+        <p className="popup-instruction">
+          Just copy the text above and paste it into your profile description on OnlyFans or any other platform.
+        </p>
+        <input
+          type="text"
+          className="input-field gradient-text"
+          readOnly
+          value="Content protected and enforced by lockleaks.com."
+        />
+        <div className="text-start mb-4">
+          <button className="btn text-white" style={{ backgroundColor: "#CF3CA6" }} onClick={handleCopy}>
+            Copy to Clipboard
           </button>
         </div>
+        <h5 className="profile-preview-heading">How It Should Look on Your Profile:</h5>
+        <Image src={proimg} alt="Example Preview" className="popup-image mb-3 d-block mx-auto" />
       </div>
     );
   };
 
-  // --------------------- STEP 4 ----------------------
-  const Step4Protect = () => (
-    <div className="step text-center">
-      <h3 className="popup-heading">Protect Your Content</h3>
-      <p className="popup-description">
-        To ensure your content is protected and enforced, add the following line to your profile description:
-      </p>
-      <p className="popup-instruction">
-        Just copy the text above and paste it into your profile description on OnlyFans or any other platform.
-      </p>
-      <input
-        type="text"
-        className="input-field gradient-text"
-        readOnly
-        value="Content protected and enforced by lockleaks.com."
-      />
-      <div className="text-start mb-4">
-        <button className="btn text-white" style={{ backgroundColor: "#CF3CA6" }} onClick={handleCopy}>
-          Copy to Clipboard
-        </button>
-      </div>
-      <h5 className="profile-preview-heading">How It Should Look on Your Profile:</h5>
-      <Image src={proimg} alt="Example Preview" className="popup-image mb-3 d-block mx-auto" />
-    </div>
-  );
-
-  // --------------------- STEP 5 (NEW) ----------------------
+  // --------------------- STEP 5 ----------------------
   const Step5Scanning = () => {
     const [progress, setProgress] = useState(0);
     const [iconIndex, setIconIndex] = useState(0);
-    const icons = ["/icons/folder.svg", "/icons/1download.svg", "/icons/11search.svg"]; // Replace with your actual icon paths
+    const icons = ["/icons/folder.svg", "/icons/1download.svg", "/icons/11search.svg"];
 
-    // Progress simulation
     useEffect(() => {
       const interval = setInterval(() => {
         setProgress((prev) => {
@@ -335,7 +473,6 @@ const CheckPrivateContent: React.FC = () => {
       return () => clearInterval(interval);
     }, []);
 
-    // Icon rotation
     useEffect(() => {
       const iconTimer = setInterval(() => {
         setIconIndex((prev) => (prev + 1) % icons.length);
@@ -360,7 +497,7 @@ const CheckPrivateContent: React.FC = () => {
         </div>
       </div>
     );
-  }; 
+  };
 
   return (
     <div className="d-flex justify-content-center align-items-center min-vh-100">
