@@ -24,10 +24,12 @@
 .website-card h6 {
   margin: 0;
 }
-.heading-filter{
-  font-size: 24px;
-  font-weight: 700;
-  color: #c5c5c5;
+
+.heading-filter {
+    color: #c5c5c5;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .tags {
