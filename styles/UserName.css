@@ -94,7 +94,7 @@ ease-in-out;
 .userlist-item .action{
   background: radial-gradient(100% 120% at 50% 0%, #000000 0%, #653E60 50%, #C77ABC 100%);
   border: 2px solid #858585;
-  color:#cbc8cb; padding: 4px 10px; border-radius:999px; font-weight:700;
+  color:#cbc8cb; padding: 4px 10px; border-radius:999px; font-weight:700; font-size: 11px;
   display:inline-flex; align-items:center; gap:.45rem;
   transition: transform .05s ease-in-out, filter .15s ease-in-out;
 }
