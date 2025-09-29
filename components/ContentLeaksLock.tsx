@@ -62,7 +62,8 @@ const ContentLeaksLock: React.FC = () => {
             </div>
           </div>
 
-          <div className="form-row">
+          {/* Submit Button Row */}
+          <div className="form-row button-row">
             <button type="submit">Post</button>
           </div>
         </form>

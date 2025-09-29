@@ -5,21 +5,28 @@ const Method: React.FC = () => {
   return (
     <div className="method-container">
       <div className="method-section">
-        {/* <h3>Method</h3> */}
-        
         <div className="row first-row">
           <div className="col-md-6">
             <div className="form-row">
               <label htmlFor="background">Method</label>
-              <input type="text" id="background" className="form-control cstm-frm" placeholder="Enter background URL" />
-              <button className="save-btn mt-2">Save</button>
+              <textarea
+                id="background"
+                className="form-control cstm-frm"
+                placeholder="Enter background URL"
+              />
+              <button className="save-btn">Save</button>
             </div>
           </div>
+
           <div className="col-md-6">
             <div className="form-row">
               <label htmlFor="contact">Contact(s)</label>
-              <input type="text" id="contact" className="form-control cstm-frm" placeholder="Enter contact URL" />
-              <button className="save-btn mt-2">Save</button>
+              <textarea
+                id="contact"
+                className="form-control cstm-frm"
+                placeholder="Enter contact URL"
+              />
+              <button className="save-btn">Save</button>
             </div>
           </div>
         </div>
@@ -28,8 +35,12 @@ const Method: React.FC = () => {
           <div className="col-md-12">
             <div className="form-row">
               <label htmlFor="test">Test Link(s)</label>
-              <input type="text" id="test" className="form-control cstm-frm" placeholder="Enter test link" />
-              <button className="save-btn mt-2">Save</button>
+              <textarea
+                id="test"
+                className="form-control cstm-frm"
+                placeholder="Enter test link"
+              />
+              <button className="save-btn">Save</button>
             </div>
           </div>
         </div>

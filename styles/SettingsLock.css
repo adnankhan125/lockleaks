@@ -5,11 +5,12 @@
 }
 
 .custom-input-1 {
-  background-color: #3d3d3d !important;
-  border: none !important;
-  color: #c5c5c5 !important;
-  font-weight: 700;
-  border-radius: 8px; /* Added border-radius */
+    border-radius: 8px;
+    font-weight: 700;
+    color: #c5c5c5 !important;
+    background-color: #3d3d3d !important;
+    border: none !important;
+    padding: 15px;
 }
 
 .form-control:focus {

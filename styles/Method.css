@@ -12,6 +12,8 @@
 
 .form-row {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* label → input → button */
 }
 
 .form-control.cstm-frm {
@@ -19,22 +21,36 @@
   color: white;
   border: none;
   border-radius: 8px;
+  padding: 10px;
+  text-align: left;          /* text left aligned */
+  vertical-align: top;       /* top align */
+  padding-top: 12px;         /* thoda gap upar se */
 }
 
 
 .form-control:focus {
-  border-color:  #c52baf;
-  box-shadow: 0 0 5px  #c52baf;
+  border-color: #c52baf;
+  box-shadow: 0 0 5px #c52baf;
+  outline: none;
 }
 
 .save-btn {
-    color: #fff;
-    background-color: #c52baf;
-    color: #fff;
-    background-color: #c52baf00;
-    border: 1px solid;
-     border-radius: 8px;
-    padding: 8px 16px;
+  margin-top: 10px;         /* input aur button ke beech gap */
+  align-self: flex-end;     /* button right align */
+  background-color: #c52baf00;
+  color: #c5c5c5;
+  font-weight: 700;
+  font-size: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  padding: 4px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #000000;
+  color: #fff;
 }
 
 /* Set the height of the first row fields */
@@ -43,6 +59,15 @@
 }
 
 /* Set the height of the Test Link(s) field to 4 rows */
-.second-row .form-control {
+.second-row .form-control.cstm-frm {
   height: 100px; /* Approximate height for 4 rows */
 }
+label[for="background"],
+label[for="contact"],
+label[for="test"] {
+  font-size: 24px !important;
+  font-weight: 700;
+  color: #c5c5c5;
+  text-align: center;
+}
+

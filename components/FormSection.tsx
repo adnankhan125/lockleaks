@@ -5,28 +5,23 @@ const FormSection: React.FC = () => {
   return (
     <div className="form-section">
       {/* Monetization Section */}
+      <h5 className="mt-4 hidng">Monetization & Web Links</h5>
       <div className="mb-3">
-        {/* <label className="form-label">Background</label> */}
-        <input type="url" className="form-control" placeholder="https://example.com..." />
+        <input type="url" className="form-control cntrl-12" placeholder="https://example.com..." />
       </div>
       <div className="mb-3">
-        {/* <label className="form-label">Background</label> */}
-        <input type="url" className="form-control" placeholder="https://example.com..." />
+        <input type="url" className="form-control cntrl-12" placeholder="https://example.com..." />
       </div>
       <div className="mb-3">
-        {/* <label className="form-label">Background</label> */}
-        <input type="url" className="form-control" placeholder="https://example.com..." />
+        <input type="url" className="form-control cntrl-12" placeholder="https://example.com..." />
       </div>
       <div className="mb-3">
-        {/* <label className="form-label">Background</label> */}
-        <input type="url" className="form-control" placeholder="https://example.com..." />
+        <input type="url" className="form-control cntrl-12" placeholder="https://example.com..." />
       </div>
 
-      {/* History Section */}
-      <h5 className="mt-4">History & Background</h5>
+      <h5 className="mt-4 hidng">History & Background</h5>
       <div className="mb-3">
-        {/* <label className="form-label">Background</label> */}
-        <textarea className="form-control" rows={5} placeholder="https://example.com..."></textarea>
+        <textarea className="form-control cntrl-12" rows={5} placeholder="https://example.com..."></textarea>
       </div>
 
       {/* Button */}

@@ -371,7 +371,7 @@ const Dashboard: React.FC = () => {
             
             {activeTab === "Monetization " && (
               <>
-              <h4>Monetization & Web Links</h4>
+              {/* <h4>Monetization & Web Links</h4> */}
              <FormSection/>
                            </>
             )}
