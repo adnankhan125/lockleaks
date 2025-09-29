@@ -288,10 +288,10 @@
 /* Buttons inside table */
 .table-dark button {
   background: linear-gradient(to bottom, #000000, #C77ABC);
-  border: 1px solid #fff;
-  color: #fff; 
+  border: 1px solid #c5c5c5;
+  color: #c5c5c5; 
   border-radius: 12px;
-  padding: 5px 12px;
+  padding: 4px 22px;
   font-size: 12px;
   font-weight: 600;
   color: white;
