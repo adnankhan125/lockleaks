@@ -6,6 +6,7 @@ import Link from "next/link";
 import ReportALeak from '@/components/ReportALeak';
 import LeakSiteSec from "./LeakSiteSec";
 import UserInformation from '@/components/UserInformation';
+import UserAdminTab from "./UserAdminTab";
 
 interface User {
   id: number;
@@ -140,6 +141,8 @@ const AdminDashboard: React.FC = () => {
               </div>
             )}
 
+
+
              {/* "Check a Leak Site */}
             {activeTab === "Check a Leak Site" && (
               <div className="report-leak-tab">
@@ -154,6 +157,20 @@ const AdminDashboard: React.FC = () => {
                 <UserInformation/>
               </div>
             )}
+
+            
+            
+            {/* USERS TAB */}
+            {activeTab === "Users" && (
+              <div className="users-tab">
+                {/* <h4>Users</h4> */}
+
+                
+
+                <UserAdminTab/>
+              </div>
+            )}
+
 
             {/* SEND PDF TAB */}
             {activeTab === "Send PDF" && (
